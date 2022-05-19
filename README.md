@@ -14,5 +14,5 @@ Sofiia (Dev)
 <hr>
 projektskiss:
 <br>
-Webbshop i C# (asp.net-mvc/razor-pages) med databas. (webbshop, about-us, news, contact)
+En Filmwebshop där man köper filmer digitalt (asp.net-mvc/razor-pages) med databas. (webbshop, about-us, news, contact)
 
