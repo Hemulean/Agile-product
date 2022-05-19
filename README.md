@@ -7,7 +7,7 @@ Product owner (Jeanette)
 <br>
 Scrum master (Emil)
 <br>
-Sven (Dev)
+(TESTING FOR CONFLICT USING CAPSLOCK (SVEN)) (Dev)
 <br>
 Sofiia (Dev)
 
