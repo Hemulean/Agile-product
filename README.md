@@ -15,4 +15,3 @@ Sofiia (Dev)
 projektskiss:
 <br>
 En Filmwebshop där man köper filmer digitalt (asp.net-mvc/razor-pages) med databas. (webbshop, about-us, news, contact)
-
