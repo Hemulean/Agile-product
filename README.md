@@ -7,9 +7,9 @@ Product owner (Jeanette)
 <br>
 Scrum master (Emil)
 <br>
-Sven (Dev)
+Sven (Dev-team)
 <br>
-Sofiia (Dev)
+Sofiia (Dev-team)
 
 <hr>
 projektskiss:
