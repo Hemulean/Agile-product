@@ -14,7 +14,21 @@ Sofiia (Dev-team)
 <hr>
 projektskiss:
 <br>
-En Filmwebshop där man köper filmer digitalt (asp.net-mvc/razor-pages) med databas. (webbshop, about-us, news, contact)
+En Smink-webshop där man köper Smink och hudvårdsprodukter digitalt (asp.net-mvc/razor-pages) med databas. (webbshop, about-us, news, contact)
+<br>
+api för Sminkförsäljning: http://makeup-api.herokuapp.com/api/v1/products.json
 
-alternativ api för produktförsäljning: https://dummyproducts-api.herokuapp.com/
-
+<hr>
+inspirationskällor:
+<br>
+<ol>
+<li>
+  https://www.sephora.se/
+  </li>
+  <li>
+    https://www.ahlens.se/
+  </li>
+   <li>
+   https://www.ahlens.se/](https://www.beautybay.com
+  </li>
+  </ol>
