@@ -9,7 +9,7 @@ Scrum master (Emil)
 <br>
 (TESTING FOR CONFLICT USING CAPSLOCK (SVEN)) (Dev)
 <br>
-Sofiia (Dev)
+Sofiia (Dev-team)
 
 <hr>
 projektskiss:
