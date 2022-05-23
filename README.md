@@ -54,6 +54,9 @@ inspirationskällor:
   <li>
     Förståelse - alla i teamet ska vara införstådda med alla issues/features, och hur dom passar in i helheten.
   </li>
+  <li>
+    Checkbox för färdig - En tydlig mall för att se så att en feature är färdig i beskrivningen.
+  </li>
 
   </ul>
   
@@ -66,19 +69,19 @@ inspirationskällor:
    Status inne på GitHub är uppdaterad
   </li>
   <li>
-   Relevanta test (manuella/se till att produkten är bugg-fri) skrivna och godkända (har gått genom ok)
+   Relevanta test (manuella/se till att produkten är bugg-fri) räcker med att köra programmet och se så att det inte finns några buggar och att features fungerar som beskrivet i product backlog (har gått genom ok)
   </li>
   <li>
-   Relevant dokumentation producerad/uppdaterad???? fråga björn
+   Relevant dokumentation producerad/uppdaterad (kodkommentarer i issue-branches)(vad gör koden? hur funkar det? varför?)  
   </li>
   <li>
-   Genomgång (Review) av all kod/dokumentation klar
+   Review av alla pull-requests är genomförda.
   </li>
   <li>
-   Är mergat till sprintbranchen
+   Är mergat till sprintbranchen.
   </li>
   <li>
-   Det finns inget kvar att göra innan det i teorin hade kunnat levereras till en kund
+   Det som är definerat i issue ska vara genomfört för att bli "done".
   </li>
 
   </ul>
