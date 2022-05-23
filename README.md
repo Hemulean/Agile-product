@@ -57,3 +57,28 @@ inspirationskällor:
 
   </ul>
   
+  
+  <hr>
+  
+  <h3>Definition of Done (DoD)</h3>
+  <ul>
+  <li>
+   Status inne på GitHub är uppdaterad
+  </li>
+  <li>
+   Relevanta test (manuella/se till att produkten är bugg-fri) skrivna och godkända (har gått genom ok)
+  </li>
+  <li>
+   Relevant dokumentation producerad/uppdaterad???? fråga björn
+  </li>
+  <li>
+   Genomgång (Review) av all kod/dokumentation klar
+  </li>
+  <li>
+   Är mergat till sprintbranchen
+  </li>
+  <li>
+   Det finns inget kvar att göra innan det i teorin hade kunnat levereras till en kund
+  </li>
+
+  </ul>
