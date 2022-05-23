@@ -81,7 +81,7 @@ inspirationskällor:
    Är mergat till sprintbranchen.
   </li>
   <li>
-   Det som är definerat i issue ska vara genomfört för att bli "done".
+   Läs igenom issue beskrivningen en gång till när du tror du är färdig och checka av.
   </li>
 
   </ul>
