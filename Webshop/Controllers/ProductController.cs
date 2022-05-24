@@ -1,6 +1,6 @@
 ﻿namespace Webshop.Controllers
 {
-    public class MovieController
+    public class ProductController
     {
     }
 }
