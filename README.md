@@ -85,3 +85,13 @@ inspirationskällor:
   </li>
 
   </ul>
+  
+  <h3> style </h3>
+  font-familj: montserrat
+  för både headers och paragrafer, men kan skiljas åt i boldness, weight, storlek etc.
+  Vi jämför text från alla separata sidor senare för att se så att det ser enhetligt ut.
+  
+ [ `` <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">  ``   ]
+  
