@@ -85,6 +85,7 @@ inspirationskällor:
   </li>
 
   </ul>
+  <hr>
   
   <h3> style </h3>
   font-familj: montserrat
