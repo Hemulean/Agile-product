@@ -87,14 +87,14 @@ inspirationskällor:
   </ul>
   <hr>
   
-  ###styling 
+  ### styling 
   font-familj: montserrat
   för både headers och paragrafer, men kan skiljas åt i boldness, weight, storlek etc.
   Vi jämför text från alla separata sidor senare för att se så att det ser enhetligt ut.
   https://fonts.google.com/specimen/Montserrat?query=mont
  <br>
  
-  ###Logotyp: 
+  ### Logotyp: 
   ![Razor Cosmetics](https://user-images.githubusercontent.com/86913330/170215535-5b5b8680-f405-405e-a1e1-08e035328de2.png)
   <br>
  ### Hexkoder för färger: 
@@ -105,7 +105,7 @@ Kolla wireframe:
 ![index-nav-footer Wireframe](https://user-images.githubusercontent.com/86913330/170216530-e53afde9-04d1-4471-b51b-ce7ff570acd5.png)
 
 <hr>
-###Arbetssätt för branching:
+### Arbetssätt för branching:
 >När vi skapar en arbetsbranch så ärver vi av den nuvarande sprinten och döper branchen till issue28
 >Använd gärna githubs beta-feature för att koppla branch till issue. På det sättet så kan vi se
 >vilken pullrequest som är lösningen på issuen automatiskt.
