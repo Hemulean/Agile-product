@@ -87,14 +87,24 @@ inspirationskällor:
   </ul>
   <hr>
   
-  <h3> style </h3>
+  <h3> styling </h3>
   font-familj: montserrat
   för både headers och paragrafer, men kan skiljas åt i boldness, weight, storlek etc.
   Vi jämför text från alla separata sidor senare för att se så att det ser enhetligt ut.
+  https://fonts.google.com/specimen/Montserrat?query=mont
+ <br>
   
-  <p>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">   
-  </p>
-  
+ ### Logotyp: 
+  ![Razor Cosmetics](https://user-images.githubusercontent.com/86913330/170215535-5b5b8680-f405-405e-a1e1-08e035328de2.png)
+  <br>
+ ### Hexkoder för färger: 
+#FBF8F1 #F7ECDE #E9DAC1 #54BAB9 #BA6D54
+Kolla wireframe:
+![index-nav-footer Wireframe](https://user-images.githubusercontent.com/86913330/170216530-e53afde9-04d1-4471-b51b-ce7ff570acd5.png)
+
+<hr>
+### Arbetssätt för branching:
+>När vi skapar en arbetsbranch så ärver vi av den nuvarande sprinten och döper branchen till issue28
+>Använd gärna githubs beta-feature för att koppla branch till issue. På det sättet så kan vi se
+>vilken pullrequest som är lösningen på issuen automatiskt.
+<img width="680" alt="koppla issue med branch" src="https://user-images.githubusercontent.com/86913330/170217769-faf8bb0e-86c4-440e-8975-d3b0c015bfe6.png">
