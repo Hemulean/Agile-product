@@ -14,9 +14,9 @@ namespace Webshop.Controllers
 
         public async Task<IActionResult> GetApi()
         {
-            var responseList = _apiHandler.GetAllDataFromApi();
+            var responseList = await _apiHandler.GetAllDataFromApi();
 
-            return View("_Layout");
+            return View("_Layout",responseList);
         }
     }
 }

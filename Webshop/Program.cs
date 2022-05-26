@@ -10,6 +10,7 @@ builder.Services.AddScoped<Database>();
 builder.Services.AddDbContext<MakeUpDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MakeUpDb")));
 
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
