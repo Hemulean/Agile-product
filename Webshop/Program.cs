@@ -23,6 +23,7 @@ using (var scope = app.Services.CreateScope())
         .GetRequiredService<Database>();
 
     await database.CreateDatabse();
+    await database.CreateAndSeedIfNotExist();
 
 }
 

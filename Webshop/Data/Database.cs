@@ -19,15 +19,42 @@ namespace Webshop.Data
         public async Task CreateDatabse()
         {
            await _ctx.Database.EnsureDeletedAsync();
-           await _ctx.Database.EnsureCreatedAsync();
+        
         }
 
+        public async Task CreateAndSeedIfNotExist()
+        {
+            bool ifNotExist = await _ctx.Database.EnsureCreatedAsync();
+
+            if (ifNotExist)
+            {
+                await Seed();
+            }
+        }
 
         public async Task Seed()
         {
-            
+            var responseList = await _apiHandler.GetAllDataFromApi();
 
+            foreach (var item in responseList)
+            {
+                var product = new Product
+                {
+                    Name = item.Name,
+                    Brand = item.Brand,
+                    Description = item.Description,
+                    Type = item.Type,
+                    Price = item.Price,
+                    Category = item.Category,
+                    Rating = item.Rating,
+                    Image = item.Image
+                };
 
+                _ctx.Products.Add(product);
+                
+            }
+
+            await _ctx.SaveChangesAsync();
         }
     }
 }
