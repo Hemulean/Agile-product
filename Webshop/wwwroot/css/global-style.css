@@ -1,2 +1,45 @@
 ﻿body {
+    background-color: #f7ecde;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: black
 }
+
+nav {
+    background-color: #fbf8f1;
+    color: black;
+    box-shadow: 0 0 15px 0 rgb(153, 153, 153);
+}
+
+.nav li a {
+    color: black;
+}
+
+.nav > li > a:hover {
+    color: #54BAB9;
+}
+
+.nav > li > a:focus {
+    color: #54BAB9;
+}
+
+.logo-cropped {
+    width: 500px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 0% 50%;
+}
+
+.dropdown-menu {
+    background-color: #fbf8f1;
+    box-shadow: 0 0 15px 0 rgb(153, 153, 153);
+}
+
+.dropdown-menu > li > a:hover {
+     color: #54BAB9;
+}
+
+.dropdown-menu > li > a:focus {
+     color: #54BAB9;
+}
+

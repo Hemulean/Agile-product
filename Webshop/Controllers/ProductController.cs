@@ -9,5 +9,30 @@ namespace Webshop.Controllers
         {
             return View();
         }
+
+        public IActionResult Product()
+        {
+            return View();
+        }
+
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public IActionResult Cart()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult MyAccount()
+        {
+            return View();
+        }
     }
 }
