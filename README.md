@@ -112,3 +112,7 @@ Kolla wireframe:
 >Använd gärna githubs beta-feature för att koppla branch till issue. På det sättet så kan vi se
 >vilken pullrequest som är lösningen på issuen automatiskt.
 <img width="680" alt="koppla issue med branch" src="https://user-images.githubusercontent.com/86913330/170217769-faf8bb0e-86c4-440e-8975-d3b0c015bfe6.png">
+<br>
+När man väljer source av branch så väljer man sprint/sprint (1/2) beroende på vilken sprint man är i
+<img width="181" alt="branchhantering" src="https://user-images.githubusercontent.com/86913330/170438233-4f738a55-ac68-431c-b76a-d191af993dbd.png">
+
