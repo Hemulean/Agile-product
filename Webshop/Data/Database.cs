@@ -34,23 +34,56 @@ namespace Webshop.Data
 
         public async Task Seed()
         {
+          
             var responseList = await _apiHandler.GetAllDataFromApi();
 
             foreach (var item in responseList)
             {
-                var product = new Product
+                //TODO price (random-generator), category, 
+                if (item.Category != null & item.Category != "")
                 {
-                    Name = item.Name,
-                    Brand = item.Brand,
-                    Description = item.Description,
-                    Type = item.Type,
-                    Price = item.Price,
-                    Category = item.Category,
-                    Rating = item.Rating,
-                    Image = item.Image
-                };
 
-                _ctx.Products.Add(product);
+                    if (item.Price == "0.0" | item.Price == null) 
+                    {
+                        Random rnd = new Random();
+                        var priceInt = rnd.Next(1, 35);
+
+                        var price = priceInt.ToString();
+
+                         var productRandPrice = new Product
+                         {
+                             Name = item.Name,
+                             Brand = item.Brand,
+                             Description = item.Description,
+                             Type = item.Type,
+                             Price = price,
+                             Category = item.Category,
+                             Rating = item.Rating,
+                             Image = item.Image
+                         };
+
+                         _ctx.Products.Add(productRandPrice);
+
+                    }
+                    else
+                    {
+                        var product = new Product
+                        {
+                            Name = item.Name,
+                            Brand = item.Brand,
+                            Description = item.Description,
+                            Type = item.Type,
+                            Price = item.Price,
+                            Category = item.Category,
+                            Rating = item.Rating,
+                            Image = item.Image
+                        };
+
+                        _ctx.Products.Add(product);
+                    }
+
+                   
+                }
                 
             }
 

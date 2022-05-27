@@ -33,7 +33,6 @@ namespace Webshop.Services
                    makeUpList = JsonConvert.DeserializeObject<List<Product>>(apiResponse, new JsonSerializerSettings(){NullValueHandling = NullValueHandling.Ignore, });
                 }
 
-
             }
 
             return makeUpList;
