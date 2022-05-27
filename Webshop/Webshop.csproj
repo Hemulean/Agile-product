@@ -9,7 +9,10 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Data\" />
-    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\Razor Cosmetics.png" />
   </ItemGroup>
 
 </Project>
