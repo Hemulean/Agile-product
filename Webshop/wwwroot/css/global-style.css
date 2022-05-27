@@ -1,12 +1,12 @@
 ﻿body {
     background-color: #f7ecde;
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
     color: black
 }
 
 nav {
     background-color: #fbf8f1;
+    font-size: 20px;
     color: black;
     box-shadow: 0 0 15px 0 rgb(153, 153, 153);
 }
