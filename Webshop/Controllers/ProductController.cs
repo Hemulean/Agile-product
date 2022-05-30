@@ -21,10 +21,23 @@ namespace Webshop.Controllers
             return View("_Layout",responseList);
         }
 
-
-        public async Task<IActionResult> GetProductsHighRating()
+        public async Task<IActionResult> GetProductsHighRating(int limit)
         {
-            var productsList = await _productHandler.GetMostPopularProducts(12);
+            var productsList = await _productHandler.GetMostPopularProducts(limit);
+            return View("Product", productsList);
+        }
+
+
+        public async Task<IActionResult> GetProductsByBrand(string brand, int limit)
+        {
+            var productsList = await _productHandler.GetProductsByBrand(brand, limit);
+
+            return View("Product", productsList);
+        }
+        public async Task<IActionResult> GetProductsByType(string type, int limit)
+        {
+            var productsList = await _productHandler.GetRecommendedProducts(type, limit);
+
             return View("Product", productsList);
         }
 
