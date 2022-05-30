@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<APIHandler>();
 builder.Services.AddScoped<Database>();
+builder.Services.AddScoped<ProductHandler>();
 
 builder.Services.AddDbContext<MakeUpDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MakeUpDb")));

@@ -6,9 +6,11 @@ namespace Webshop.Controllers
     public class ProductController : Controller
     {
         private readonly APIHandler _apiHandler;
-        public ProductController(APIHandler apiHandler)
+        private readonly ProductHandler _productHandler;
+        public ProductController(APIHandler apiHandler, ProductHandler productHandler)
         {
             _apiHandler = apiHandler;
+            _productHandler = productHandler;
         }
 
 
@@ -18,5 +20,13 @@ namespace Webshop.Controllers
 
             return View("_Layout",responseList);
         }
+
+
+        public async Task<IActionResult> GetProductsHighRating()
+        {
+            var productsList = await _productHandler.GetMostPopularProducts(12);
+            return View("Product", productsList);
+        }
+
     }
 }
