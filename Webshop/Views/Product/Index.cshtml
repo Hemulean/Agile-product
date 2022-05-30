@@ -1,1 +1,115 @@
 ﻿<h1>Home Page</h1>
+
+
+
+
+<style>
+    body {
+        background: #FBF8F1;
+    }
+    .fa-star {
+        color: goldenrod;
+    }
+ 
+    .card-body {
+        border: 1px solid black;
+        border-style: outset;
+        box-shadow: 5px 2px 20px #BA6D54;
+    }
+    .btns {
+        background: #BA6D54;
+        background: bisque;
+        
+        border-radius: 5px 5px 5px 5px;
+        justify-content: center;
+        align-self: end;
+        
+
+                    
+    }
+    button {
+        background-color: #54BAB9;
+        
+    }
+    .prod-btn {
+        color: whitesmoke;
+        background:  bisque;
+        
+    }
+   .background-img {
+       background-image: url("../img/shadow.jpg");
+       background-attachment: fixed;
+     
+       
+
+
+   }
+    .header {
+        height: 100%;
+        width: 50%;
+        justify-self: center;
+    }
+    
+</style>
+
+<section class="header d-flex justify-content-center">
+    <div class="card background-img text-center justify-self-center">
+        <h1>Welcome to Razor Cosmetics
+        </h1>
+        <p>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+        </div>
+    
+</section>
+
+<section class="cards container-fluid d-flex justify-content-center my-4 mx-5 gap-5">
+    
+    <section class="header d-flex justify-content-center">
+        <div class="card background-img text-center justify-self-center">
+            <h2>Most Popular
+            </h2>
+            <p>
+           
+            </p>
+        </div>
+    
+    </section>
+
+
+    @{
+        var list = new List<string>(50);
+
+        int counter = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            counter++;
+            <div class="card text-center" id="product-container">
+                <!-- här visas product cards -->
+                <div class="card-body">
+                    <div class="image">
+                        <img src="/img./Razor Cosmetics.png" alt="">
+                    </div>
+                    <h5> <strong>product name</strong></h5>
+                    <p>By: brand name</p>
+                    <p>Pris: <strong>79kr</strong>
+                    <div class="rating">
+
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="btns my-4">
+                        <button class="">add to cart</button>
+                        <button class="">more</button>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</section>       
+        
