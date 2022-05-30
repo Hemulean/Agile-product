@@ -1,38 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Webshop.Controllers
+﻿namespace Webshop.Controllers
 {
     public class ProductController : Controller
     {
-
-        public IActionResult Index()
+        private readonly APIHandler _apiHandler;
+        private readonly ProductHandler _productHandler;
+        public ProductController(APIHandler apiHandler, ProductHandler productHandler)
         {
-            return View();
+            _apiHandler = apiHandler;
+            _productHandler = productHandler;
         }
 
-        public IActionResult Product()
+
+        public async Task<IActionResult> GetApi()
         {
-            return View();
+            var responseList = await _apiHandler.GetAllDataFromApi();
+
+            return View("_Layout",responseList);
         }
 
-        public IActionResult AboutUs()
+
+        public async Task<IActionResult> GetProductsHighRating()
         {
-            return View();
+            var productsList = await _productHandler.GetMostPopularProducts(12);
+            return View("Product", productsList);
         }
 
-        public IActionResult Cart()
-        {
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            return View();
-        }
-
-        public IActionResult MyAccount()
-        {
-            return View();
-        }
     }
 }
