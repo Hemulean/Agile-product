@@ -20,11 +20,11 @@ namespace Webshop.Services
 
             foreach (var item in productRatingList)
             {
+                if (newList.Count < limit)
+                    {
+                        newList.Add(item);
+                    }
                 
-                while (newList.Count< limit)
-                {
-                    newList.Add(item);
-                }
             }
 
             return newList;
@@ -38,7 +38,7 @@ namespace Webshop.Services
             foreach (var item in productsListByBrand)
             {
 
-                while (newList.Count < limit)
+                if (newList.Count < limit)
                 {
                     newList.Add(item);
                 }
@@ -55,7 +55,7 @@ namespace Webshop.Services
             foreach (var item in productsListByType)
             {
 
-                while (newList.Count < limit)
+                if (newList.Count < limit)
                 {
                     newList.Add(item);
                 }

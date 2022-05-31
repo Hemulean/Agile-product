@@ -32,6 +32,8 @@ namespace Webshop.Models
         [JsonProperty("category")]
         public string? Category { get; set; }
 
+        public string? Ingredients { get; set; }
+
 
         // TODO Fixa objectreferens till colors, skapa en Color-tabell
         // public List<string> Colors { get; set; }
