@@ -1,9 +1,35 @@
 ﻿@inject Webshop.Services.ProductHandler _ProductHandler;
+@using System.Collections
+@using System.Diagnostics.Metrics
+@using Webshop.Models
 @model IList<Webshop.Models.Product>;
 
 @{
     //var top_products = await _ProductHandler.GetMostPopularProducts(12);
-    
+    //var productSelection = productTake(3);
+    IEnumerable<Product> productTake(int select)
+    {
+
+        var list = @Model.Take(select);
+        Model.RemoveAt(select - 3);
+        Model.RemoveAt(select - 2);
+        Model.RemoveAt(select - 1);
+       
+        return list;
+
+    }
+
+    void RatingStars(double? rating)
+    {
+
+        for (int i = 0; i < rating; i++)
+        {
+
+            <i class="bi bi-star"></i>
+
+
+        }
+    }
 }
 
 
@@ -13,54 +39,52 @@
     body {
         background: #FBF8F1;
     }
-    .fa-star {
+
+    .bi-star {
         color: goldenrod;
     }
- 
-    .card-body {
-        border: 1px solid black;
-        border-style: outset;
-        box-shadow: 5px 2px 20px #BA6D54;
-    }
-    .btns {
+    .Btns {
         background: #BA6D54;
         background: bisque;
-        
         border-radius: 5px 5px 5px 5px;
         justify-content: center;
         align-self: end;
-        
-
-                    
     }
     button {
-        background-color: #54BAB9;
-        
+       
+        background-color: white;
+        border-top:1.5px solid #BA6D54;
+        border-bottom:1.5px solid #BA6D54;
+        border-right:none;
+        border-left:none;
+       
     }
+
     .prod-btn {
         color: whitesmoke;
-        background:  bisque;
-        
+        background: bisque;
     }
-   .background-img {
-       background-image: url("../img/shadow.jpg");
-       background-attachment: fixed;
-     
-       
+    .background-img {
+        background-image: url("../img/shadow.jpg");
+        background-attachment: fixed;
+    }
 
-
-   }
     .header {
+        margin-top: 3rem;
         height: 100%;
-        width: 50%;
+        width: 100%;
         justify-self: center;
     }
-    
+    .shadow-custom {
+        box-shadow: 0px -1px 10px gray;
+    }
+ 
 </style>
 
 <section class="header d-flex justify-content-center">
-    <div class="card background-img text-center justify-self-center">
-        <h1>Welcome to Razor Cosmetics
+    <div class="card background-img text-center justify-self-center shadow-custom">
+        <h1>
+            Welcome to Razor Cosmetics
         </h1>
         <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -69,56 +93,170 @@
             in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         </p>
-        </div>
-    
+    </div>
+
 </section>
 
-<section class="cards container-fluid d-flex justify-content-center my-4 mx-5 gap-5">
-    
-    <section class="header d-flex justify-content-center">
-        <div class="card background-img text-center justify-self-center">
-            <h2>Most Popular
-            </h2>
-            <p>
+<section class="pt-5 pb-5">
+    <div class="container ">
+        <div class="row row-cols-4">
+            <div class="col-12 ">
+                <h3 class="mb-3 text-center text-white background-img">Most Popular </h3>
+            </div>
            
-            </p>
-        </div>
-    
-    </section>
-    @{
-        foreach (var product in @Model)
-        {
-           
-                <div class="card text-center" id="product-container">
-                    <!-- här visas product cards -->
-                    <div class="card-body">
-                        <div class="image">
-                       
-                        
-                            <img src="@product.Image"/>
-                        </div>  
-                        <h5><strong>@product.Name</strong></h5>
-                   
-                        <p>By:@product.Brand</p>
-                        <p>Price: <strong>@product.Price</strong>
-                        <div class="rating">
-                            <p>Customer rating:</p><br/>
-                            <p>@product.Rating</p>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+
+                                @{
+
+                                    foreach (var product in productTake(4))
+                                    {
+                                        <div class="col-12 col-md-6 col-lg-3">
+
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src=@product.Image>
+                                                <div class="card-body">
+                                                    <h4 class="card-title"><strong>@product.Name</strong></h4>
+                                                    <p class="card-text">By <strong>@product.Brand</strong></p>
+
+                                                    @if (product.Rating != null)
+                                                    {
+                                                        var ratingCount = @product.Rating;
+
+                                                        RatingStars(ratingCount);
+                                                    }
+
+
+                                                    <p class="card-text">Price: <strong>@product.Price</strong> </p>
+                                                    <div class="Btns d-flex my-4 background-img justify-content-around">
+                                                        <button class="">add to cart</button>
+                                                        <button class="">more</button>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+                                    }
+
+                                }
+                            </div>
                         </div>
-                        <div class="btns my-4">
-                            <button class="">add to cart</button>
-                            <button class="">more</button>
+
+                        <div class="carousel-item">
+                            <div class="row">
+                                @{
+                                    foreach (var product in productTake(4))
+                                    {
+
+
+                                        <div class="col-12 col-md-6 col-lg-3">
+
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src=@product.Image>
+                                                <div class="card-body">
+                                                    <h4 class="card-title"><strong>@product.Name</strong></h4>
+                                                    <p class="card-text">By <strong>@product.Brand</strong></p>
+
+                                                    @if (product.Rating != null)
+                                                    {
+                                                        var ratingCount = @product.Rating;
+
+                                                        RatingStars(ratingCount);
+                                                    }
+
+
+                                                    <p class="card-text">Price: <strong>@product.Price</strong> </p>
+                                                    <div class="Btns d-flex my-4 background-img justify-content-around">
+                                                        <button class="">add to cart</button>
+                                                        <button class="">more</button>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="row">
+                                @{
+                                    foreach (var product in productTake(4))
+                                    {
+
+
+                                        <div class="col-12 col-md-6 col-lg-3">
+
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src=@product.Image>
+                                                <div class="card-body">
+                                                    <h4 class="card-title"><strong>@product.Name</strong></h4>
+                                                    <p class="card-text">By <strong>@product.Brand</strong></p>
+
+                                                    @if (product.Rating != null)
+                                                    {
+                                                        var ratingCount = @product.Rating;
+
+                                                        RatingStars(ratingCount);
+                                                    }
+
+
+                                                    <p class="card-text">Price: <strong>@product.Price</strong> </p>
+                                                    <div class="Btns d-flex my-4 background-img justify-content-around">
+                                                        <button class="">add to cart</button>
+                                                        <button class="">more</button>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+                                    }
+                                }
+
+
+
+
+
+
+
+
+                            </div>
                         </div>
                     </div>
+                   
                 </div>
-            }
-            
-        }
+               
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
         
-    
-    
-
-
-  </section>
+    </div>
+</section>
