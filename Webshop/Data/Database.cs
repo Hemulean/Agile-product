@@ -16,11 +16,6 @@ namespace Webshop.Data
             _apiHandler = apiHandler;
         }
 
-        public async Task CreateDatabse()
-        {
-           await _ctx.Database.EnsureDeletedAsync();
-        
-        }
 
         public async Task CreateAndSeedIfNotExist()
         {
