@@ -34,6 +34,8 @@ namespace Webshop.Data
 
             foreach (var item in responseList)
             {
+                var description = "";
+                var ingredients = "";
 
                 //TODO price (random-generator), category, 
                 if (item.Category != null & item.Category != "")
@@ -43,7 +45,21 @@ namespace Webshop.Data
                     double rating;
                     int ratingInt;
 
+                    if (item.Description != null)
+                    {
+                        var descriptions = item.Description.Split("Ingredients:");
 
+                        if (descriptions.Length == 2)
+                        {
+                            description = descriptions[0];
+                            ingredients = descriptions[1];
+                        }
+                        else
+                        {
+                            description = descriptions[0];
+                            ingredients = "Not available";
+                        }
+                    }
                     if (item.Price == "0.0" | item.Price == null)
                     {
 
@@ -65,7 +81,8 @@ namespace Webshop.Data
                         {
                             Name = item.Name,
                             Brand = item.Brand,
-                            Description = item.Description,
+                            Description = description,
+                            Ingredients = ingredients,
                             Type = item.Type,
                             Price = price,
                             Category = item.Category,
@@ -86,7 +103,8 @@ namespace Webshop.Data
                         {
                             Name = item.Name,
                             Brand = item.Brand,
-                            Description = item.Description,
+                            Description = description,
+                            Ingredients = ingredients,
                             Type = item.Type,
                             Price = item.Price,
                             Category = item.Category,
@@ -102,7 +120,8 @@ namespace Webshop.Data
                         {
                             Name = item.Name,
                             Brand = item.Brand,
-                            Description = item.Description,
+                            Description = description,
+                            Ingredients = ingredients,
                             Type = item.Type,
                             Price = item.Price,
                             Category = item.Category,
