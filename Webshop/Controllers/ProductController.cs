@@ -1,4 +1,7 @@
-﻿namespace Webshop.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+using Webshop.Services;
+
+namespace Webshop.Controllers
 {
     public class ProductController : Controller
     {
@@ -10,19 +13,24 @@
             _productHandler = productHandler;
         }
 
-
+        public async Task<IActionResult> Index()
+        {
+            var productsList = await _productHandler.GetMostPopularProducts(12);
+            return View("Index",productsList);
+        }
         public async Task<IActionResult> GetApi()
         {
             var responseList = await _apiHandler.GetAllDataFromApi();
 
             return View("_Layout",responseList);
+
         }
 
 
         public async Task<IActionResult> GetProductsHighRating()
         {
-            var productsList = await _productHandler.GetMostPopularProducts(12);
-            return View("Product", productsList);
+            //var productsList = await _productHandler.GetMostPopularProducts(12);
+            return View("Index");
         }
 
     }

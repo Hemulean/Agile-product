@@ -1,4 +1,10 @@
-﻿<h1>Home Page</h1>
+﻿@inject Webshop.Services.ProductHandler _ProductHandler;
+@model IList<Webshop.Models.Product>;
+
+@{
+    //var top_products = await _ProductHandler.GetMostPopularProducts(12);
+    
+}
 
 
 
@@ -79,37 +85,40 @@
         </div>
     
     </section>
-
-
     @{
-        var list = new List<string>(50);
-
-        int counter = 0;
-        for (int i = 0; i < 4; i++)
+        foreach (var product in @Model)
         {
-            counter++;
-            <div class="card text-center" id="product-container">
-                <!-- här visas product cards -->
-                <div class="card-body">
-                    <div class="image">
-                        <img src="/img./Razor Cosmetics.png" alt="">
-                    </div>
-                    <h5> <strong>product name</strong></h5>
-                    <p>By: brand name</p>
-                    <p>Pris: <strong>79kr</strong>
-                    <div class="rating">
-
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <div class="btns my-4">
-                        <button class="">add to cart</button>
-                        <button class="">more</button>
+           
+                <div class="card text-center" id="product-container">
+                    <!-- här visas product cards -->
+                    <div class="card-body">
+                        <div class="image">
+                       
+                        
+                            <img src="@product.Image"/>
+                        </div>  
+                        <h5><strong>@product.Name</strong></h5>
+                   
+                        <p>By:@product.Brand</p>
+                        <p>Price: <strong>@product.Price</strong>
+                        <div class="rating">
+                            <p>Customer rating:</p><br/>
+                            <p>@product.Rating</p>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="btns my-4">
+                            <button class="">add to cart</button>
+                            <button class="">more</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
+            
         }
-    }
-
-</section>       
         
+    
+    
+
+
+  </section>
