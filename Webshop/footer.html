@@ -99,7 +99,7 @@
             justify-content: flex-start;
             flex-direction: column;
             font-size: 20px;
-            padding-bottom: 45%;
+            padding-bottom: 170px;
         }
 
         .info {
@@ -141,8 +141,8 @@
         }
 
         img {
-            width: 95%;
-            height: 95%;
+            width: 100px;
+            height: 150px;
         }
 
         h1 {
@@ -162,10 +162,51 @@
             text-decoration: none;
         }
 
+        @media screen and (max-width: 639px) {
+            img {
+                width: 120px;
+                height: 200px;
+            }
+
+            #footer {
+                height: 250px;
+            }
+
+            #footer div {
+                height: 250px;
+            }
+
+            h2 {
+                font-size: 6;
+            }
+
+            .build {
+                font-size: 10px;
+                padding-bottom: 60px;
+            }
+
+            .Two {
+                font-size: 8px;
+            }
+
+        }
+
+        @media screen and (min-width: 640px) {
+            img {
+                width: 250px;
+                height: 300px;
+            }
+
+            h2 {
+                font-size: 12;
+            }
+
+        }
+
         @media screen and (min-width: 1140px) {
             img {
-                width: 85%;
-                height: 85%;
+                width: 350px;
+                height: 350px;
             }
 
             h2 {
@@ -176,7 +217,7 @@
 
         @media screen and (min-width: 1440px) {
             img {
-                width: 70%;
+
                 height: 70%;
             }
 
@@ -197,9 +238,7 @@
         }
 
         @media screen and (max-width: 770px) {
-            .Two {
-                font-size: 10px;
-            }
+
 
             .fa {
                 padding: 8px;
