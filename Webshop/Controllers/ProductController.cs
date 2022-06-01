@@ -1,38 +1,81 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Webshop.Services;
 
 namespace Webshop.Controllers
 {
     public class ProductController : Controller
     {
-
-        public IActionResult Index()
+        private readonly APIHandler _apiHandler;
+        private readonly ProductHandler _productHandler;
+        public ProductController(APIHandler apiHandler, ProductHandler productHandler)
         {
-            return View();
+            _apiHandler = apiHandler;
+            _productHandler = productHandler;
         }
 
-        public IActionResult Product()
+        public class ProductController : Controller
         {
-            return View();
+
+            public IActionResult Index()
+            {
+                return View();
+            }
+
+            public IActionResult Product()
+            {
+                return View();
+            }
+
+            public IActionResult AboutUs()
+            {
+                return View();
+            }
+
+            public IActionResult Cart()
+            {
+                return View();
+            }
+
+            public IActionResult Contact()
+            {
+                return View();
+            }
+
+            public IActionResult MyAccount()
+            {
+                return View();
+            }
+
+            public async Task<IActionResult> GetApi()
+        {
+            var responseList = await _apiHandler.GetAllDataFromApi();
+
+            return View("_Layout",responseList);
         }
 
-        public IActionResult AboutUs()
+        public async Task<IActionResult> GetProductsHighRating(int limit)
         {
-            return View();
+            var productsList = await _productHandler.GetMostPopularProducts(limit);
+            return View("Product", productsList);
         }
 
-        public IActionResult Cart()
+
+        public async Task<IActionResult> GetProductsByBrand(string brand, int limit)
         {
-            return View();
+            var productsList = await _productHandler.GetProductsByBrand(brand, limit);
+
+            return View("Product", productsList);
+        }
+        public async Task<IActionResult> GetProductsByType(string type, int limit)
+        {
+            var productsList = await _productHandler.GetRecommendedProducts(type, limit);
+
+            return View("Product", productsList);
         }
 
-        public IActionResult Contact()
-        {
-            return View();
-        }
 
-        public IActionResult MyAccount()
+        public async Task<IActionResult> GetProductsByCategory(string category)
         {
-            return View();
-        }
+            var productsList = await _productHandler.GetProductsByCategory(category);
     }
 }
