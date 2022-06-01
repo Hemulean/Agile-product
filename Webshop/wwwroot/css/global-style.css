@@ -70,3 +70,232 @@ nav {
     .dropdown-menu > li > a:focus {
         color: #54BAB9;
     }
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 45px;
+    text-align: end;
+    text-decoration: none;
+    margin: 0px 0px;
+}
+
+    .fa:hover {
+        opacity: 0.6;
+    }
+
+.fa-facebook {
+    background: blue;
+    color: white;
+}
+
+.fa-twitter {
+    background: lightblue;
+    color: white;
+}
+
+.fa-google {
+    background: red;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-youtube {
+    background: red;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.one {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.Two {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.Three {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.build {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-size: 20px;
+    padding-bottom: 180px;
+}
+
+.info {
+    color: #BA6D54;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+#footer {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+
+    #footer div {
+        width: 33.33%;
+        height: 400px;
+        background-color: #E9DAC1;
+        text-decoration: none;
+        flex-direction: column;
+    }
+
+    #footer a:hover {
+        opacity: 0.6;
+    }
+
+img {
+    width: 100px;
+    height: 150px;
+}
+
+h1 {
+    color: #BA6D54;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.d {
+    font-size: 10px;
+}
+
+h2 {
+    color: #BA6D54;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 639px) {
+    img {
+        width: 120px;
+        height: 200px;
+    }
+
+    #footer {
+        height: 250px;
+    }
+
+        #footer div {
+            height: 250px;
+        }
+
+    h2 {
+        font-size: 6px;
+    }
+
+    .build {
+        font-size: 10px;
+        padding-bottom: 90px;
+    }
+
+    .Two {
+        font-size: 8px;
+    }
+
+    .info {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    img {
+        width: 250px;
+        height: 280px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+
+    .Two {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 1140px) {
+    img {
+        width: 350px;
+        height: 350px;
+    }
+
+    h2 {
+        font-size: 1px;
+    }
+
+    .Two {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    img {
+        height: 70%;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1441px) {
+}
+
+@media screen and (min-width: 770px) {
+}
+
+@media screen and (max-width: 770px) {
+
+
+    .fa {
+        padding: 8px;
+        font-size: 20px;
+        width: 30px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .Three {
+        font-size: 10px;
+    }
+}
