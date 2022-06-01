@@ -1,10 +1,15 @@
-﻿body {
+﻿html {
+    -moz-transform: scale(0.5, 0.5); 
+    zoom: 0.5; 
+    zoom: 60%; 
+}
+body {
     background-color: #f7ecde;
     color: black
 }
 
 nav {
-    background-color: #fbf8f1;
+    background-color: #F7ECDE;
     font-size: 20px;
     color: black;
     box-shadow: 0 0 15px 0 rgb(153, 153, 153);
@@ -186,7 +191,7 @@ nav {
         opacity: 0.6;
     }
 
-img {
+footer img {
     width: 100px;
     height: 150px;
 }
@@ -207,7 +212,7 @@ h2 {
 }
 
 @media screen and (max-width: 639px) {
-    img  {
+   footer img  {
         width: 120px;
         height: 200px;
     }
@@ -239,7 +244,7 @@ h2 {
 }
 
 @media screen and (min-width: 640px) {
-    img {
+   footer img {
         width: 250px;
         height: 280px;
     }
@@ -254,12 +259,12 @@ h2 {
 }
 
 @media screen and (min-width: 1140px) {
-    img {
+  footer img {
         width: 350px;
         height: 350px;
     }
 
-    h2 {
+  footer  h2 {
         font-size: 1px;
     }
 
@@ -269,11 +274,11 @@ h2 {
 }
 
 @media screen and (min-width: 1440px) {
-    img {
+   footer img {
         height: 70%;
     }
 
-    h2 {
+  footer  h2 {
         font-size: 15px;
     }
 }
@@ -287,7 +292,7 @@ h2 {
 @media screen and (max-width: 770px) {
 
 
-    .fa {
+   footer .fa {
         padding: 8px;
         font-size: 20px;
         width: 30px;
