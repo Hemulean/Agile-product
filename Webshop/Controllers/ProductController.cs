@@ -13,6 +13,37 @@ namespace Webshop.Controllers
             _productHandler = productHandler;
         }
 
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Product()
+        {
+            return View();
+        }
+
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public IActionResult Cart()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult MyAccount()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> Index()
         {
             var productsList = await _productHandler.GetMostPopularProducts(11);
@@ -22,8 +53,7 @@ namespace Webshop.Controllers
         {
             var responseList = await _apiHandler.GetAllDataFromApi();
 
-            return View("_Layout",responseList);
-
+            return View("_Layout", responseList);
         }
 
         public async Task<IActionResult> GetProductsHighRating(int limit)
@@ -43,6 +73,21 @@ namespace Webshop.Controllers
         {
             //var productsList = await _productHandler.GetMostPopularProducts(12);
             return View("Index");
+        }
+
+
+        public async Task<IActionResult> GetProductsByCategory(string category)
+        {
+            var productsList = await _productHandler.GetProductsByCategory(category);
+
+            return View("Product", productsList);
+        }
+
+        public async Task<IActionResult> GetProductById(int id)
+        {
+            var productById = await _productHandler.GetProductById(id);
+
+            return View("Product", productById);
         }
 
     }

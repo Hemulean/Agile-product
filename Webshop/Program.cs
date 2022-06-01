@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<APIHandler>();
 builder.Services.AddScoped<Database>();
 builder.Services.AddScoped<ProductHandler>();
+builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<MakeUpDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MakeUpDb")));
@@ -26,7 +27,7 @@ using (var scope = app.Services.CreateScope())
         .GetRequiredService<Database>();
 
     await database.CreateAndSeedIfNotExist();
-
+ 
 }
 
 app.UseRouting();
