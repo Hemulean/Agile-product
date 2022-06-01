@@ -1,6 +1,5 @@
 ﻿body {
     background-color: #f7ecde;
-    font-family: 'Montserrat', sans-serif;
     color: black
 }
 
@@ -11,21 +10,50 @@ nav {
     box-shadow: 0 0 15px 0 rgb(153, 153, 153);
 }
 
-.nav li a {
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+}
+
+.navbar-toggler {
+    border: 1px solid black;
+}
+
+.navbar .navbar-toggler:focus {
+    color: #54BAB9;
+}
+
+.navbar-nav li a {
     color: black;
 }
 
-.nav > li > a:hover {
+.navbar-nav > li > a:hover {
     color: #54BAB9;
 }
 
-.nav > li > a:focus {
+.navbar-nav > li > a:focus {
     color: #54BAB9;
 }
 
-.logo-cropped {
+.cropped {
     width: 500px;
     height: 200px;
+    object-fit: cover;
+    object-position: 0% 50%;
+}
+
+.navbar-brand {
+    float: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    max-width: none;
+}
+
+.cropped-2 {
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 105px;
     object-fit: cover;
     object-position: 0% 50%;
 }
@@ -35,11 +63,10 @@ nav {
     box-shadow: 0 0 15px 0 rgb(153, 153, 153);
 }
 
-.dropdown-menu > li > a:hover {
-     color: #54BAB9;
-}
+    .dropdown-menu > li > a:hover {
+        color: #54BAB9;
+    }
 
-.dropdown-menu > li > a:focus {
-     color: #54BAB9;
-}
-
+    .dropdown-menu > li > a:focus {
+        color: #54BAB9;
+    }
