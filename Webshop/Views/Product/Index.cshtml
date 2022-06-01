@@ -4,6 +4,91 @@
 @using Webshop.Models
 @model IList<Webshop.Models.Product>;
 
+<style>
+    body {
+        background: #FBF8F1;
+    }
+    .container {
+        width: 100%;/*whatever size you want your container*/
+       
+       
+        display: flex; /*Make sure to call this on your container*/
+        align-items: stretch; /*stretches all cards same height*/
+        justify-content: space-around; /*some space between cards*/
+    }
+   
+    .bi-star {
+        color: goldenrod;
+    }
+    .card  {
+        margin-left: 6px;
+        margin-right: 6px;
+        box-shadow: 2px 2px 7px gray;
+        
+        align-self: stretch;
+    }
+    .Btns {
+        background: #BA6D54;
+        background: bisque;
+        border-radius: 5px 5px 5px 5px;
+        justify-content: center;
+        align-self: end;
+    }
+    button {
+       
+        background-color: white;
+        border-top:1.5px solid #BA6D54;
+        border-bottom:1.5px solid #BA6D54;
+        border-right:none;
+        border-left:none;
+       
+    }
+
+    .img-product{
+        max-height: 211px;
+
+    }
+
+    .prod-btn {
+        color: whitesmoke;
+        background: bisque;
+    }
+    .background-img {
+        background-image: url("../img/shadow.jpg");
+        background-attachment: fixed;
+        background-repeat:round;
+    }
+
+    .header {
+        margin-top: 3rem;
+        height: 100%;
+        width: 100%;
+        justify-self: center;
+    }
+    .shadow-custom {
+        box-shadow: 0px -1px 10px gray;
+    }
+    .text-shadow {
+        text-shadow: 2px 1.5px 2px black;
+    }
+    .card-header {
+        max-height: 135px;
+        background: none;
+        border-bottom: none;
+    }
+     pre{
+         font-size: medium;
+         text-shadow: 1px 1px 2px whitesmoke;
+         font-weight: bold;
+         text-wrap: none;
+         overflow: hidden;
+
+         
+    }
+    
+ 
+</style>
+
 @{
     //var top_products = await _ProductHandler.GetMostPopularProducts(12);
     //var productSelection = productTake(3);
@@ -62,6 +147,9 @@
                         <div class="Btns d-flex my-4 background-img justify-content-around">
                             <button class="">add to cart</button>
                             <button class="">more</button>
+                            
+
+                            
                         </div>
 
                     </div>
@@ -179,92 +267,7 @@
 
 
 
-<style>
-    body {
-        background: #FBF8F1;
-    }
-    .container {
-        width: 100%;/*whatever size you want your container*/
-       
-       
-        display: flex; /*Make sure to call this on your container*/
-        align-items: stretch; /*stretches all cards same height*/
-        justify-content: space-around; /*some space between cards*/
-    }
-   
-    .bi-star {
-        color: goldenrod;
-    }
-    .card  {
-        margin-left: 6px;
-        margin-right: 6px;
-        box-shadow: 2px 2px 7px gray;
-        
-        //border: 2px rgba(86, 39, 59, 0.51);
-        //border-style: ridge;
-        align-self: stretch;
-    }
-    .Btns {
-        background: #BA6D54;
-        background: bisque;
-        border-radius: 5px 5px 5px 5px;
-        justify-content: center;
-        align-self: end;
-    }
-    button {
-       
-        background-color: white;
-        border-top:1.5px solid #BA6D54;
-        border-bottom:1.5px solid #BA6D54;
-        border-right:none;
-        border-left:none;
-       
-    }
 
-    .img-product{
-        max-height: 211px;
-
-    }
-
-    .prod-btn {
-        color: whitesmoke;
-        background: bisque;
-    }
-    .background-img {
-        background-image: url("../img/shadow.jpg");
-        background-attachment: fixed;
-        background-repeat:round;
-    }
-
-    .header {
-        margin-top: 3rem;
-        height: 100%;
-        width: 100%;
-        justify-self: center;
-    }
-    .shadow-custom {
-        box-shadow: 0px -1px 10px gray;
-    }
-    .text-shadow {
-        text-shadow: 2px 1.5px 2px black;
-    }
-    .card-header {
-        max-height: 135px;
-        background: none;
-        border-bottom: none;
-    }
-     pre{
-         font-size: medium;
-         text-shadow: 1px 1px 2px whitesmoke;
-         font-weight: bold;
-         text-wrap: none;
-         overflow: hidden;
-
-         
-    }
-    
- 
-</style>
 
 <section class="header d-flex justify-content-center container-fluid w-100">
     <div class="card background-img text-center justify-self-center text- px-3">
