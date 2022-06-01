@@ -63,5 +63,32 @@ namespace Webshop.Services
 
             return newList;
         }
+
+        public async Task<List<Product>> GetProductsByCategory(string category)
+        {
+            var productsListByCategory = await _ctx.Products.Where(b => b.Category == category).ToListAsync();
+            var newList = new List<Product>();
+
+            foreach (var item in productsListByCategory)
+            {
+
+                newList.Add(item);
+                
+            }
+
+            return newList;
+        }
+
+        public async Task<Product> GetProductById(int id)
+        {
+            var singleProduct = await _ctx.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
+
+            if(singleProduct != null)
+            {
+                return singleProduct;
+            }
+
+            return null;
+        }
     }
 }

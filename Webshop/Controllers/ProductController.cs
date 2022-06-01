@@ -41,5 +41,19 @@ namespace Webshop.Controllers
             return View("Product", productsList);
         }
 
+
+        public async Task<IActionResult> GetProductsByCategory(string category)
+        {
+            var productsList = await _productHandler.GetProductsByCategory(category);
+
+            return View("Product", productsList);
+        }
+
+        public async Task<IActionResult> GetProductById(int id)
+        {
+            var productById = await _productHandler.GetProductById(id);
+
+            return View("Product", productById);
+        }
     }
 }

@@ -24,7 +24,7 @@ using (var scope = app.Services.CreateScope())
         .GetRequiredService<Database>();
 
     await database.CreateAndSeedIfNotExist();
-
+ 
 }
 
 app.UseRouting();
