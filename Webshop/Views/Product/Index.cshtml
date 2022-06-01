@@ -7,15 +7,14 @@
 @{
     //var top_products = await _ProductHandler.GetMostPopularProducts(12);
     //var productSelection = productTake(3);
-    IEnumerable<Product> productTake(int select)
+    IEnumerable<Product> productTake(IEnumerable<Product> list,int select)
     {
-
-        var list = @Model.Take(select);
-        Model.RemoveAt(select - 3);
+       var newList = list.Take(select);
         Model.RemoveAt(select - 2);
         Model.RemoveAt(select - 1);
        
-        return list;
+       
+        return newList;
 
     }
 
@@ -30,6 +29,95 @@
 
         }
     }
+    void RenderMostPopular()
+    {
+        var popularProducts = @Model.Take(Range.All);
+        foreach (var product in productTake(popularProducts,4))
+        {
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div class="card">
+                    @if (product.Image == null)
+                    {
+                        <img class="img-fluid" alt="100%x280" src="/img/hummingbird.png">
+                    }
+                    <img class="img-fluid" alt="100%x280" src=@product.Image>
+                    <div class="card-header">
+                        <h5 class="card-title title-font my-5"><strong>@product.Name</strong></h5>
+                    </div>
+                    <div class="card-body align-content-stretch ">
+
+                        <p class="card-text">By <strong>@product.Brand</strong></p>
+
+                        @if (product.Rating != null)
+                        {
+                            var ratingCount = @product.Rating;
+
+                            RatingStars(ratingCount);
+                        }
+
+
+                        <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
+                        <div class="Btns d-flex my-4 background-img justify-content-around">
+                            <button class="">add to cart</button>
+                            <button class="">more</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        }
+    }
+    void RenderRecommended()
+    {
+        
+       var recommendedList =  _ProductHandler.GetRecommendedProducts("lipstick",12);    
+        
+        
+        foreach (var product in productTake(recommendedList.Result.AsEnumerable(),4))
+        {
+            <div class="col-12  col-md-6 col-lg-3">
+
+                <div class="card">
+                    @if (product.Image == null)
+                    {   
+                        <img class="img-fluid" alt="100%x280" src="/img/hummingbird.png">
+                    }
+                    <img class="img-fluid" alt="100%x280" src=@product.Image>
+                    <div class="card-header">
+                        <h5 class="card-title title-font my-5"><strong>@product.Name</strong></h5>
+                    </div>
+                    <div class="card-body align-content-stretch ">
+
+                        @if (product.Rating != null)
+                        {
+                            var ratingCount = @product.Rating;
+
+                            RatingStars(ratingCount);
+                        }
+
+
+                        <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
+                        <div class="Btns d-flex my-4 background-img justify-content-around">
+                            <button class="">add to cart</button>
+                            <button class="">more</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        }
+    } 
 }
 
 
@@ -39,9 +127,25 @@
     body {
         background: #FBF8F1;
     }
-
+    .container {
+        width: 100%;/*whatever size you want your container*/
+       
+       
+        display: flex; /*Make sure to call this on your container*/
+        align-items: stretch; /*stretches all cards same height*/
+        justify-content: space-around; /*some space between cards*/
+    }
+   
     .bi-star {
         color: goldenrod;
+    }
+    .card  {
+       
+        
+        border: 2px rgba(86, 39, 59, 0.51);
+        border-style: ridge;
+        align-self: stretch;
+        
     }
     .Btns {
         background: #BA6D54;
@@ -58,6 +162,9 @@
         border-right:none;
         border-left:none;
        
+    }
+    .title-font {
+
     }
 
     .prod-btn {
@@ -78,10 +185,18 @@
     .shadow-custom {
         box-shadow: 0px -1px 10px gray;
     }
+    .text-shadow {
+        text-shadow: 2px 1.5px 2px black;
+    }
+    .card-header {
+        max-height: 135px;
+        background: none;
+        border-bottom: none;
+    }
  
 </style>
 
-<section class="header d-flex justify-content-center">
+<section class="header d-flex justify-content-center ">
     <div class="card background-img text-center justify-self-center shadow-custom">
         <h1>
             Welcome to Razor Cosmetics
@@ -101,7 +216,7 @@
     <div class="container ">
         <div class="row row-cols-4">
             <div class="col-12 ">
-                <h3 class="mb-3 text-center text-white background-img">Most Popular </h3>
+                <h3 class="mb-3 my-3 text-center text-white background-img text-shadow">Most Popular </h3>
             </div>
            
             <div class="col-12">
@@ -112,41 +227,16 @@
                             <div class="row">
 
                                 @{
+                                    RenderMostPopular();
+                                }
 
-                                    foreach (var product in productTake(4))
-                                    {
-                                        <div class="col-12 col-md-6 col-lg-3">
+                            </div>
+                        </div>
 
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src=@product.Image>
-                                                <div class="card-body">
-                                                    <h4 class="card-title"><strong>@product.Name</strong></h4>
-                                                    <p class="card-text">By <strong>@product.Brand</strong></p>
-
-                                                    @if (product.Rating != null)
-                                                    {
-                                                        var ratingCount = @product.Rating;
-
-                                                        RatingStars(ratingCount);
-                                                    }
-
-
-                                                    <p class="card-text">Price: <strong>@product.Price</strong> </p>
-                                                    <div class="Btns d-flex my-4 background-img justify-content-around">
-                                                        <button class="">add to cart</button>
-                                                        <button class="">more</button>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-
-
-                                    }
-
+                        <div class="carousel-item">
+                            <div class="row">
+                                @{
+                                    RenderMostPopular();
                                 }
                             </div>
                         </div>
@@ -154,92 +244,10 @@
                         <div class="carousel-item">
                             <div class="row">
                                 @{
-                                    foreach (var product in productTake(4))
-                                    {
-
-
-                                        <div class="col-12 col-md-6 col-lg-3">
-
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src=@product.Image>
-                                                <div class="card-body">
-                                                    <h4 class="card-title"><strong>@product.Name</strong></h4>
-                                                    <p class="card-text">By <strong>@product.Brand</strong></p>
-
-                                                    @if (product.Rating != null)
-                                                    {
-                                                        var ratingCount = @product.Rating;
-
-                                                        RatingStars(ratingCount);
-                                                    }
-
-
-                                                    <p class="card-text">Price: <strong>@product.Price</strong> </p>
-                                                    <div class="Btns d-flex my-4 background-img justify-content-around">
-                                                        <button class="">add to cart</button>
-                                                        <button class="">more</button>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-
-
-                                    }
-                                }
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                @{
-                                    foreach (var product in productTake(4))
-                                    {
-
-
-                                        <div class="col-12 col-md-6 col-lg-3">
-
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src=@product.Image>
-                                                <div class="card-body">
-                                                    <h4 class="card-title"><strong>@product.Name</strong></h4>
-                                                    <p class="card-text">By <strong>@product.Brand</strong></p>
-
-                                                    @if (product.Rating != null)
-                                                    {
-                                                        var ratingCount = @product.Rating;
-
-                                                        RatingStars(ratingCount);
-                                                    }
-
-
-                                                    <p class="card-text">Price: <strong>@product.Price</strong> </p>
-                                                    <div class="Btns d-flex my-4 background-img justify-content-around">
-                                                        <button class="">add to cart</button>
-                                                        <button class="">more</button>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-
-
-                                    }
+                                    RenderMostPopular();
                                 }
 
-
-
-
-
-
-
-
+                                
                             </div>
                         </div>
                     </div>
@@ -256,7 +264,33 @@
                 <span class="visually-hidden">Next</span>
             </button>
 
-        </div>
-        
-    </div>
+            <div class="col-12 ">
+                <h3 class="mb-3 text-center text-white text-shadow background-img">Recommended for you </h3>
+            </div>
+            
+        <div class="col-12">
+            <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            @{
+                                RenderRecommended();
+                            }
+       
+                        </div>
+                    </div>
+                </div>
+              
+          
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+            </div>
 </section>

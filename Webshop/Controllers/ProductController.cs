@@ -15,7 +15,7 @@ namespace Webshop.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var productsList = await _productHandler.GetMostPopularProducts(12);
+            var productsList = await _productHandler.GetMostPopularProducts(11);
             return View("Index",productsList);
         }
         public async Task<IActionResult> GetApi()
