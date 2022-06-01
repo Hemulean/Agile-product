@@ -1,5 +1,96 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Razer Cosmetics</title>
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" asp-append-version="true"/>
+    <link href="~/css/global-style.css" rel="stylesheet" asp-append-version="true"/>
+  </head>
+  <body>
+    <header></header>
+    <nav>
+      <ul class="nav nav-justified align-items-end">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page"
+          asp-controller="Product" asp-action="Index">Home</a>
+        </li>
+        <li class="nav-item dropdown dropdown-center">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-expanded="false"
+            >Products</a
+          >
+          <ul class="dropdown-menu">
+            <li class="dropdown-item" style="font-weight: bold">Face</li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Foundation</a></li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Blush</a></li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Bronzer</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li class="dropdown-item" style="font-weight: bold">Eyes</li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Mascara</a></li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Eyeliner</a></li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Eyeshadow</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li class="dropdown-item" style="font-weight: bold">Lips</li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Lipstick</a></li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Lip Liner</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li class="dropdown-item" style="font-weight: bold">Brows</li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Eyebrow Pencil</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li class="dropdown-item" style="font-weight: bold">Nails</li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Nailpolish</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <img
+            class="logo-cropped"
+            src="~/img/logo.png"
+            alt=""
+          />
+        </li>
+
+        <li class="nav-item dropdown dropdown-center">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-expanded="false"
+            >About Us</a
+          >
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" 
+                asp-controller="Product" asp-action="AboutUs">About Us</a></li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Contact">Contact</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown dropdown-center">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-expanded="false"
+            >Account</a
+          >
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Register</a></li>
+            <li><a class="dropdown-item" href="#">Log In</a></li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="MyAccount">My Account</a></li>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Cart">Cart</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <main>
+        @RenderBody()
+    </main>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

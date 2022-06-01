@@ -13,8 +13,40 @@ namespace Webshop.Controllers
             _productHandler = productHandler;
         }
 
+        public class ProductController : Controller
+        {
 
-        public async Task<IActionResult> GetApi()
+            public IActionResult Index()
+            {
+                return View();
+            }
+
+            public IActionResult Product()
+            {
+                return View();
+            }
+
+            public IActionResult AboutUs()
+            {
+                return View();
+            }
+
+            public IActionResult Cart()
+            {
+                return View();
+            }
+
+            public IActionResult Contact()
+            {
+                return View();
+            }
+
+            public IActionResult MyAccount()
+            {
+                return View();
+            }
+
+            public async Task<IActionResult> GetApi()
         {
             var responseList = await _apiHandler.GetAllDataFromApi();
 
@@ -45,15 +77,5 @@ namespace Webshop.Controllers
         public async Task<IActionResult> GetProductsByCategory(string category)
         {
             var productsList = await _productHandler.GetProductsByCategory(category);
-
-            return View("Product", productsList);
-        }
-
-        public async Task<IActionResult> GetProductById(int id)
-        {
-            var productById = await _productHandler.GetProductById(id);
-
-            return View("Product", productById);
-        }
     }
 }
