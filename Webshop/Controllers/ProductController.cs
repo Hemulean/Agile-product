@@ -14,9 +14,10 @@ namespace Webshop.Controllers
         }
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var productsList = await _productHandler.GetMostPopularProducts(12);
+            return View("Index", productsList);
         }
 
         public IActionResult Product()
@@ -44,11 +45,7 @@ namespace Webshop.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var productsList = await _productHandler.GetMostPopularProducts(11);
-            return View("Index",productsList);
-        }
+       
         public async Task<IActionResult> GetApi()
         {
             var responseList = await _apiHandler.GetAllDataFromApi();
