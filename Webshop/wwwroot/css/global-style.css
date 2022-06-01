@@ -207,7 +207,7 @@ h2 {
 }
 
 @media screen and (max-width: 639px) {
-    img {
+    img  {
         width: 120px;
         height: 200px;
     }

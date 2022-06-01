@@ -1,6 +1,7 @@
 ﻿@inject Webshop.Services.ProductHandler _ProductHandler;
 @using System.Collections
 @using System.Diagnostics.Metrics
+@using System.Runtime.CompilerServices
 @using Webshop.Models
 @model IList<Webshop.Models.Product>;
 
@@ -114,7 +115,9 @@
 
         }
     }
-    void RenderMostPopular(int takeCounter)
+
+   
+   async Task RenderMostPopular(int takeCounter)
     {
         
         var popularProducts = @Model.Take(Range.All);
@@ -145,8 +148,8 @@
 
                         <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
                         <div class="Btns d-flex my-4 background-img justify-content-around">
-                            <button class="">add to cart</button>
-                            <button class="">more</button>
+                            <button asp-controller="Product" asp-action="Cart" asp-route-id=@product.Id>add to cart</button>
+                            <button asp-controller="Product" asp-action="GetProductById" asp-route-id=@product.Id>more</button>
                             
 
                             
@@ -195,8 +198,8 @@
 
                             <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
                             <div class="Btns d-flex my-4 background-img justify-content-around">
-                                <button class="">add to cart</button>
-                                <button class="">more</button>
+                                <button>add to cart</button>
+                                <button>more</button>
                             </div>
 
                         </div>
@@ -213,7 +216,7 @@
          
        
      
-    bool RenderByBrand(int takeCounter)
+   bool RenderByBrand(int takeCounter)
     {
         
         var fromBrandList =  _ProductHandler.GetProductsByBrand("maybelline",11).Result.AsEnumerable();
@@ -247,8 +250,8 @@
 
                         <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
                         <div class="Btns d-flex my-4 background-img justify-content-around">
-                            <button class="">add to cart</button>
-                            <button class="">more</button>
+                            <button>add to cart</button>
+                            <button>more</button>
                         </div>
 
                     </div>
@@ -304,7 +307,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
 
                                 @{
                                    int skipCounter = -1;
-                                    RenderMostPopular(skipCounter);
+                                   await RenderMostPopular(skipCounter);
                                 }
 
                             </div>
@@ -314,7 +317,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                             <div class="row">
                                 @{
                                     skipCounter += 4;
-                                    RenderMostPopular(skipCounter);
+                                   await RenderMostPopular(skipCounter);
                                 }
                             </div>
                         </div>
@@ -323,7 +326,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                             <div class="row">
                                 @{
                                     skipCounter += 4;
-                                    RenderMostPopular(skipCounter);
+                                   await RenderMostPopular(skipCounter);
                                 }
 
                                 
@@ -356,7 +359,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                         <div class="row">
                             @{
                                 skipCounter = -1;
-                                bool continueCarousel = RenderRecommended(skipCounter);
+                               bool continueCarousel =  RenderRecommended(skipCounter);
                             }
        
                         </div>
