@@ -80,7 +80,7 @@ nav {
 .fa {
     padding: 10px;
     font-size: 30px;
-    width: 45px;
+    width: 40px;
     text-align: end;
     text-decoration: none;
     margin: 0px 0px;
@@ -123,8 +123,10 @@ nav {
 .one {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: column;
+    display: grid;
+    grid-template-rows: 8fr 1fr 2fr;
     font-size: 20px;
 }
 
@@ -150,7 +152,6 @@ nav {
     justify-content: flex-start;
     flex-direction: column;
     font-size: 20px;
-    padding-bottom: 180px;
 }
 
 .info {
@@ -212,16 +213,10 @@ h2 {
         height: 200px;
     }
 
-    #footer {
-        height: 250px;
-    }
-
-        #footer div {
-            height: 250px;
-        }
+    
 
     h2 {
-        font-size: 6px;
+        font-size: 9px;
     }
 
     .build {
@@ -259,9 +254,6 @@ h2 {
         height: 350px;
     }
 
-    h2 {
-        font-size: 1px;
-    }
 
     .Two {
         font-size: 10px;
@@ -278,11 +270,6 @@ h2 {
     }
 }
 
-@media screen and (min-width: 1441px) {
-}
-
-@media screen and (min-width: 770px) {
-}
 
 @media screen and (max-width: 770px) {
 
