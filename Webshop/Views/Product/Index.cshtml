@@ -39,7 +39,7 @@
     }
 
     .img-product{
-        max-height: 211px;
+        max-height: 377px;
 
     }
 
@@ -88,6 +88,10 @@
     .carousel-control-prev,.carousel-control-next {
         color: black;
        
+    }
+    .scale {
+        zoom: 0.8; 
+        zoom: 90%; 
     }
  
 </style>
@@ -296,7 +300,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
 
 <section class="pt-5 pb-5  d-flex justify-content-center
 ">
-    <div class="container-fluid ">
+    <div class="container-fluid scale ">
         <div class="row row-cols-4 background-img ">
             <div class="col-12 ">
                 <h3 class="text-center text-white  text-shadow">Most Popular </h3>
@@ -330,12 +334,15 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                             <div class="row">
                                 @{
                                     skipCounter += 4;
-                                   await RenderMostPopular(skipCounter);
+                                    await RenderMostPopular(skipCounter);
                                 }
 
                                 
                             </div>
                         </div>
+                        <Carousel arrows>
+
+                       
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -344,6 +351,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
+                        </Carousel>
                     </div>
                    
                 </div>
@@ -363,42 +371,43 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                         <div class="row">
                             @{
                                 skipCounter = -1;
-                               bool continueCarousel =  RenderRecommended(skipCounter);
+                                bool continueCarousel =  RenderRecommended(skipCounter);
                             }
        
                         </div>
                     </div>
                 
-              @if (continueCarousel)
-              {
+                    @if (continueCarousel)
+                    {
                   
                  
-                      <div class="carousel-item ">
-                          <div class="row">
-                              @{
-                                  skipCounter += 4;
-                                  continueCarousel = RenderRecommended(skipCounter);
-                              }
+                        <div class="carousel-item ">
+                            <div class="row">
+                                @{
+                                    skipCounter += 4;
+                                    continueCarousel = RenderRecommended(skipCounter);
+                                }
                             
-                          </div>
-                      </div>
+                            </div>
+                        </div>
                   
-              }
-              @if (continueCarousel)
-              {
+                    }
+                    @if (continueCarousel)
+                    {
                   
                   
-                      <div class="carousel-item ">
-                          <div class="row">
-                              @{
-                                  skipCounter += 4;
-                                  continueCarousel = RenderRecommended(skipCounter);
-                              }
-                          </div>
-                      </div>
+                        <div class="carousel-item ">
+                            <div class="row">
+                                @{
+                                    skipCounter += 4;
+                                    continueCarousel = RenderRecommended(skipCounter);
+                                }
+                            </div>
+                        </div>
                   
-              }
+                    }
                 </div>
+                <Carousel arrows>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Prev</span>
@@ -407,7 +416,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-
+                </Carousel>
 
             </div>
         </div>
@@ -459,6 +468,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                 </div>
                   
             }
+            <Carousel arrows> 
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -467,6 +477,6 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-            
-            </div></div></div></div></div></div>
+            </Carousel>
+        </div></div></div></div></div>
 </section>
