@@ -9,14 +9,7 @@
     body {
         background: #FBF8F1;
     }
-    .container {
-        width: 100%;/*whatever size you want your container*/
-       
-       
-        display: flex; /*Make sure to call this on your container*/
-        align-items: stretch; /*stretches all cards same height*/
-        justify-content: space-around; /*some space between cards*/
-    }
+   
    
     .bi-star {
         color: goldenrod;
@@ -37,16 +30,16 @@
     }
     button {
        
-        background-color: white;
+  /*      background-color: white;
         border-top:1.5px solid #BA6D54;
         border-bottom:1.5px solid #BA6D54;
         border-right:none;
         border-left:none;
-       
+       */
     }
 
     .img-product{
-        max-height: 211px;
+        max-height: 377px;
 
     }
 
@@ -55,9 +48,10 @@
         background: bisque;
     }
     .background-img {
-        background-image: url("../img/shadow.jpg");
+        /*background-image: url("../img/shadow.jpg");
         background-attachment: fixed;
-        background-repeat:round;
+        background-repeat:round;*/
+        background: #E9DAC1;
     }
 
     .header {
@@ -86,7 +80,19 @@
 
          
     }
-    
+    .container-fluid {
+        max-width: 1800px;
+       /* margin-left: 5rem;
+        margin-right: 5rem;*/
+    }
+    .carousel-control-prev,.carousel-control-next {
+        color: black;
+       
+    }
+    .scale {
+        zoom: 0.8; 
+        zoom: 90%; 
+    }
  
 </style>
 
@@ -148,11 +154,12 @@
 
                         <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
                         <div class="Btns d-flex my-4 background-img justify-content-around">
-                            <button asp-controller="Product" asp-action="Cart" asp-route-id=@product.Id>add to cart</button>
-                            <button asp-controller="Product" asp-action="GetProductById" asp-route-id=@product.Id>more</button>
+                           
+                          
                             
-
-                            
+                            <button type="button" class="btn  btn-lg" asp-controller="Product" asp-action="Cart" asp-route-id=@product.Id><i class="bi bi-cart"></i></button>
+                            <button type="button" class="btn btn-outline-dark  btn-lg" asp-controller="Product" asp-action="GetProductById" asp-route-id=@product.Id>more info</button>
+                          
                         </div>
 
                     </div>
@@ -198,8 +205,8 @@
 
                             <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
                             <div class="Btns d-flex my-4 background-img justify-content-around">
-                                <button>add to cart</button>
-                                <button>more</button>
+                                <button type="button" class="btn  btn-lg"><i class="bi bi-cart"></i></button>
+                                <button type="button" class="btn btn-outline-dark  btn-lg">more info</button>
                             </div>
 
                         </div>
@@ -250,8 +257,8 @@
 
                         <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
                         <div class="Btns d-flex my-4 background-img justify-content-around">
-                            <button>add to cart</button>
-                            <button>more</button>
+                            <button type="button" class="btn  btn-lg"><i class="bi bi-cart"></i></button>
+                            <button type="button" class="btn btn-outline-dark  btn-lg">more info</button>
                         </div>
 
                     </div>
@@ -273,7 +280,7 @@
 
 
 <section class="header d-flex justify-content-center container-fluid w-100">
-    <div class="card background-img text-center justify-self-center text- px-3">
+    <div class="card background-img bg-transparent text-center justify-self-center text- px-3">
         <h1>
             Welcome to Razor Cosmetics
         </h1>
@@ -291,9 +298,10 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
 
 </section>
 
-<section class="pt-5 pb-5 ">
-    <div class="container ">
-        <div class="row row-cols-4 background-img">
+<section class="pt-5 pb-5  d-flex justify-content-center
+">
+    <div class="container-fluid scale ">
+        <div class="row row-cols-4 background-img ">
             <div class="col-12 ">
                 <h3 class="text-center text-white  text-shadow">Most Popular </h3>
             </div>
@@ -326,20 +334,24 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                             <div class="row">
                                 @{
                                     skipCounter += 4;
-                                   await RenderMostPopular(skipCounter);
+                                    await RenderMostPopular(skipCounter);
                                 }
 
                                 
                             </div>
                         </div>
-                        <button class="carousel-control-prev btn-outline-light" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                        <Carousel arrows>
+
+                       
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next btn-outline-light" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
+                        </Carousel>
                     </div>
                    
                 </div>
@@ -359,51 +371,52 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                         <div class="row">
                             @{
                                 skipCounter = -1;
-                               bool continueCarousel =  RenderRecommended(skipCounter);
+                                bool continueCarousel =  RenderRecommended(skipCounter);
                             }
        
                         </div>
                     </div>
                 
-              @if (continueCarousel)
-              {
+                    @if (continueCarousel)
+                    {
                   
                  
-                      <div class="carousel-item ">
-                          <div class="row">
-                              @{
-                                  skipCounter += 4;
-                                  continueCarousel = RenderRecommended(skipCounter);
-                              }
+                        <div class="carousel-item ">
+                            <div class="row">
+                                @{
+                                    skipCounter += 4;
+                                    continueCarousel = RenderRecommended(skipCounter);
+                                }
                             
-                          </div>
-                      </div>
+                            </div>
+                        </div>
                   
-              }
-              @if (continueCarousel)
-              {
+                    }
+                    @if (continueCarousel)
+                    {
                   
                   
-                      <div class="carousel-item ">
-                          <div class="row">
-                              @{
-                                  skipCounter += 4;
-                                  continueCarousel = RenderRecommended(skipCounter);
-                              }
-                          </div>
-                      </div>
+                        <div class="carousel-item ">
+                            <div class="row">
+                                @{
+                                    skipCounter += 4;
+                                    continueCarousel = RenderRecommended(skipCounter);
+                                }
+                            </div>
+                        </div>
                   
-              }
+                    }
                 </div>
-                <button class="carousel-control-prev btn-outline-light" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+                <Carousel arrows>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                    <span class="visually-hidden">Prev</span>
                 </button>
-                <button class="carousel-control-next btn-outline-light" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+                <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-
+                </Carousel>
 
             </div>
         </div>
@@ -445,7 +458,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                   
                  
                 <div class="carousel-item ">
-                    <div class="row">
+                    <div class="row ">
                         @{
                             skipCounter += 4;
                             continueCarousel = RenderByBrand(skipCounter);
@@ -455,13 +468,15 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                 </div>
                   
             }
-            <button class="carousel-control-prev btn-outline-light" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
+            <Carousel arrows> 
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next btn-outline-light" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
+            <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-            </div></div></div></div></div>
+            </Carousel>
+        </div></div></div></div></div>
 </section>
