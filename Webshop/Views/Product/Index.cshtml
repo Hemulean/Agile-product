@@ -318,8 +318,8 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                             <div class="row">
 
                                 @{
-                                   int skipCounter = -1;
-                                   await RenderMostPopular(skipCounter);
+                                    int skipCounter = -1;
+                                    await RenderMostPopular(skipCounter);
                                 }
 
                             </div>
@@ -329,7 +329,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                             <div class="row">
                                 @{
                                     skipCounter += 4;
-                                   await RenderMostPopular(skipCounter);
+                                    await RenderMostPopular(skipCounter);
                                 }
                             </div>
                         </div>
@@ -347,14 +347,14 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                         <Carousel arrows>
 
                        
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </Carousel>
                     </div>
                    
@@ -367,120 +367,125 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
                 <h3 class="mb-3 text-center text-white text-shadow background-img">Recommended for you </h3>
             </div>
             
-        <div class="col-12">
-            <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+            <div class="col-12">
+                <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
 
-                <div class="carousel-inner background-img">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            @{
-                                skipCounter = -1;
-                                bool continueCarousel =  RenderRecommended(skipCounter);
-                            }
+                    <div class="carousel-inner background-img">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                @{
+                                    skipCounter = -1;
+                                    bool continueCarousel =  RenderRecommended(skipCounter);
+                                }
        
+                            </div>
                         </div>
-                    </div>
                 
-                    @if (continueCarousel)
-                    {
+                        @if (continueCarousel)
+                        {
                   
                  
-                        <div class="carousel-item ">
-                            <div class="row">
-                                @{
-                                    skipCounter += 4;
-                                    continueCarousel = RenderRecommended(skipCounter);
-                                }
+                            <div class="carousel-item ">
+                                <div class="row">
+                                    @{
+                                        skipCounter += 4;
+                                        continueCarousel = RenderRecommended(skipCounter);
+                                    }
                             
+                                </div>
                             </div>
-                        </div>
                   
-                    }
-                    @if (continueCarousel)
-                    {
+                        }
+                        @if (continueCarousel)
+                        {
                   
                   
-                        <div class="carousel-item ">
-                            <div class="row">
-                                @{
-                                    skipCounter += 4;
-                                    continueCarousel = RenderRecommended(skipCounter);
-                                }
+                            <div class="carousel-item ">
+                                <div class="row">
+                                    @{
+                                        skipCounter += 4;
+                                        continueCarousel = RenderRecommended(skipCounter);
+                                    }
+                                </div>
                             </div>
-                        </div>
                   
-                    }
-                </div>
-                <Carousel arrows>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
-                    <span class="carousel-control-next-icon-dark" aria-hidden="true"></span>
-                    <span class="visually-hidden">Prev</span>
-                </button>
-                <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                </Carousel>
-
-            </div>
-        </div>
-
-        <div class="col-12 ">
-            <h3 class="mb-3 text-center text-white text-shadow background-img">By Maybelline </h3>
-        </div>
-        <div class="col-12">
-        <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
-
-        <div class="carousel-inner background-img">
-            <div class="carousel-item active">
-                <div class="row">
-
-                    @{
-                        skipCounter = -1;
-                      continueCarousel = RenderByBrand(skipCounter);
-                    }
+                        }
+                    </div>
+                    <Carousel arrows>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+                            <span class="carousel-control-next-icon-dark" aria-hidden="true"></span>
+                            <span class="visually-hidden">Prev</span>
+                        </button>
+                        <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </Carousel>
 
                 </div>
             </div>
-            @if (continueCarousel)
-            {
+
+            <div class="col-12 ">
+                <h3 class="mb-3 text-center text-white text-shadow background-img">By Maybelline </h3>
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner background-img">
+                        <div class="carousel-item active">
+                            <div class="row">
+
+                                @{
+                                    skipCounter = -1;
+                                    continueCarousel = RenderByBrand(skipCounter);
+                                }
+
+                            </div>
+                        </div>
+                        @if (continueCarousel)
+                        {
                   
                  
-                <div class="carousel-item ">
-                    <div class="row">
-                        @{
-                            skipCounter += 4;
-                            continueCarousel = RenderByBrand(skipCounter);
-                        }
+                            <div class="carousel-item ">
+                                <div class="row">
+                                    @{
+                                        skipCounter += 4;
+                                        continueCarousel = RenderByBrand(skipCounter);
+                                    }
                             
-                    </div>
-                </div>
+                                </div>
+                            </div>
                   
-            }
-            @if (continueCarousel)
-            {
+                        }
+                        @if (continueCarousel)
+                        {
                   
                  
-                <div class="carousel-item ">
-                    <div class="row ">
-                        @{
-                            skipCounter += 4;
-                            continueCarousel = RenderByBrand(skipCounter);
-                        }
+                            <div class="carousel-item ">
+                                <div class="row ">
+                                    @{
+                                        skipCounter += 4;
+                                        continueCarousel = RenderByBrand(skipCounter);
+                                    }
                             
-                    </div>
-                </div>
+                                </div>
+                            </div>
                   
-            }
-            <Carousel arrows> 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            </Carousel>
-        </div></div></div></div></div>
+                        }
+            
+
+                        <Carousel arrows> 
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </Carousel>
+                    </div></div></div></div></div>
 </section>
+
+
+
