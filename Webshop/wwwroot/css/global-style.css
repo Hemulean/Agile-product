@@ -1,12 +1,169 @@
 ﻿html {
-    -moz-transform: scale(0.5, 0.5); 
-    zoom: 0.5; 
-    zoom: 60%; 
+   
 }
 body {
     background-color: #f7ecde;
     color: black
 }
+/*Laptop*/
+@media screen and (max-width: 1024px) {
+    /*
+        Navbar settings
+    */
+    .navbar-nav .nav-link, a.dropdown-item {
+        font-size: 1.2vw;
+    }
+    li.dropdown-item {
+        font-size: 1.3vw;
+    }
+
+    /*
+        footer settings
+    */
+    #footer > div.one > ul.build > a {
+        font-size: 1.3vw;
+    }
+
+    .Three a {
+        font-size: 1.3vw;
+    }
+
+    ul.info a {
+        font-size: 1.3vw;
+    }
+    /*Razorcosmetic-header*/
+    #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
+        font-size: 2vw;
+       
+    }
+}
+/*Tablet*/
+@media screen and (max-width: 768px) {
+    /*
+        Navbar settings
+    */
+    .navbar-nav .nav-link, a.dropdown-item {
+        font-size: 1.8vw;
+    }
+    li.dropdown-item {
+        font-size: 2vw;
+    }
+
+    /*
+        footer settings
+    */
+
+    #footer > div.one > ul.build > a {
+        font-size: 1.5vw;
+    }
+
+    .Three a {
+        font-size: 1.5vw;
+    }
+
+    ul.info a {
+        font-size: 1.5vw;
+    }
+    /*Razorcosmetic-header*/
+    #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
+        font-size: 2vw;
+    }
+}
+/*Mobile-L*/
+@media screen and (max-width: 425px) {
+    /*
+        Navbar settings
+    */
+    .navbar-nav .nav-link, a.dropdown-item {
+        font-size: 2.8vw;
+    }
+
+    li.dropdown-item {
+        font-size: 3vw;
+    }
+
+    /*
+        footer settings
+    */
+
+    #footer > div.one > ul.build > a {
+        font-size: 1.8vw;
+    }
+
+    .Three a {
+        font-size: 1.8vw;
+    }
+
+    ul.info a {
+        font-size: 1.8vw;
+    }
+    /*Razorcosmetic-header*/
+    #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
+        font-size: 3vw;
+    }
+}
+/*
+    Mobile-m
+*/
+@media screen and (max-width: 375px) {
+    /*
+        Navbar settings
+    */
+    .navbar-nav .nav-link , a.dropdown-item {
+        font-size: 3.5vw;
+        
+        
+    }
+    li.dropdown-item {
+        font-size: 3.7vw;
+    }
+
+    /*
+        footer settings
+    */
+    #footer > div.one > ul.build > a {
+        font-size: 2.5vw;
+    }
+    .Three a {
+        font-size: 2.5vw;
+    }
+    ul.info a {
+        font-size: 2.5vw;
+    }
+}
+/*
+    Mobile-s 
+*/
+@media screen and (max-width: 320px) {
+    /*
+        Navbar settings
+    */
+    .navbar-nav .nav-link, a.dropdown-item {
+        font-size: 3.5vw;
+    }
+    li.dropdown-item {
+        font-size: 3.7vw;
+    }
+
+
+    /*
+        footer settings
+    */
+    #footer > div.one > ul.build > a {
+        font-size: 3vw;
+    }
+
+    .Three a {
+        font-size: 3vw;
+    }
+
+    ul.info a {
+        font-size: 3vw;
+    }
+}
+
+
+
 
 nav {
     background-color: #F7ECDE;
@@ -211,8 +368,44 @@ h2 {
     color: #BA6D54;
     text-decoration: none;
 }
+/*STORLEKAR FÖR WEBROWSER*/
+/*@media screen and (max-width: 1024px) {
+    {
+        font-size: 1.2vw;
+    }
+}
 
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 768px) {
+    {
+        font-size: 1.5vw;
+    }
+}*/
+
+
+
+/*En css selector för alla a-länkar till vänster i footer*/
+#footer > div.one > ul.build > a {
+    /*font-size: 1.5vw;*/
+    text-decoration: none;
+    color: #BA6D54;
+    
+}
+/*En css selector för alla a-länkar till höger i footer*/
+.Three a{
+   /* font-size: 1.5vw;*/
+    text-decoration: none;
+    color: #BA6D54;
+}
+/*En css selector för epost a-länkarna i footer*/
+ul.info a {
+    /*font-size: 7.5vw;*/
+}
+
+ul.Two h2 {
+
+}
+
+/*@media screen and (max-width: 639px) {
    footer img  {
         width: 120px;
         height: 200px;
@@ -290,4 +483,4 @@ h2 {
     .Three {
         font-size: 10px;
     }
-}
+}*/
