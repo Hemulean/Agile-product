@@ -1,6 +1,11 @@
-﻿html {
-   
+﻿
+
+
+
+
+html {
 }
+
 body {
     background-color: #f7ecde;
     color: black
@@ -13,6 +18,7 @@ body {
     .navbar-nav .nav-link, a.dropdown-item {
         font-size: 1.2vw;
     }
+
     li.dropdown-item {
         font-size: 1.3vw;
     }
@@ -34,7 +40,6 @@ body {
     /*Razorcosmetic-header*/
     #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
         font-size: 2vw;
-       
     }
 }
 /*Tablet*/
@@ -45,6 +50,7 @@ body {
     .navbar-nav .nav-link, a.dropdown-item {
         font-size: 1.8vw;
     }
+
     li.dropdown-item {
         font-size: 2vw;
     }
@@ -109,11 +115,10 @@ body {
     /*
         Navbar settings
     */
-    .navbar-nav .nav-link , a.dropdown-item {
+    .navbar-nav .nav-link, a.dropdown-item {
         font-size: 3.5vw;
-        
-        
     }
+
     li.dropdown-item {
         font-size: 3.7vw;
     }
@@ -124,9 +129,11 @@ body {
     #footer > div.one > ul.build > a {
         font-size: 2.5vw;
     }
+
     .Three a {
         font-size: 2.5vw;
     }
+
     ul.info a {
         font-size: 2.5vw;
     }
@@ -141,6 +148,7 @@ body {
     .navbar-nav .nav-link, a.dropdown-item {
         font-size: 3.5vw;
     }
+
     li.dropdown-item {
         font-size: 3.7vw;
     }
@@ -170,6 +178,20 @@ nav {
     font-size: 20px;
     color: black;
     box-shadow: 0 0 15px 0 rgb(153, 153, 153);
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar-collapse {
+        flex-grow: 0;
+    }
+
+    .container-fluid.my-container-fluid {
+        justify-content: center;
+    }
+
+    .navbar-collapse > ul {
+        align-items: flex-end;
+    }
 }
 
 .navbar-toggler-icon {
@@ -232,6 +254,12 @@ nav {
     .dropdown-menu > li > a:focus {
         color: #54BAB9;
     }
+
+.cart {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -388,11 +416,10 @@ h2 {
     /*font-size: 1.5vw;*/
     text-decoration: none;
     color: #BA6D54;
-    
 }
 /*En css selector för alla a-länkar till höger i footer*/
-.Three a{
-   /* font-size: 1.5vw;*/
+.Three a {
+    /* font-size: 1.5vw;*/
     text-decoration: none;
     color: #BA6D54;
 }
@@ -402,7 +429,6 @@ ul.info a {
 }
 
 ul.Two h2 {
-
 }
 
 /*@media screen and (max-width: 639px) {

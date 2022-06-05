@@ -21,7 +21,7 @@
         <a class="navbar-brand d-lg-none" href="#"
           ><img class="cropped-2" src="~/img/logo.png"
         /></a>
-        <div class="container-fluid">
+        <div class="container-fluid my-container-fluid">
           <button
             class="navbar-toggler navbar-text"
             type="button"
@@ -33,9 +33,14 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
+
+           <a class="d-lg-none" asp-controller="Product" asp-action="Cart"
+            ><img class="cart" src="~/img/shopping-cart.png" alt=""
+          /></a>
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul
-              class="navbar-nav mx-auto nav-justified align-items-end nav-fill w-100"
+              class="navbar-nav me-auto mb-2 mb-lg-0 w-100"
             >
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -104,8 +109,12 @@
                   <li><a class="dropdown-item" href="#">Register</a></li>
                   <li><a class="dropdown-item" href="#">Log In</a></li>
                   <li><a class="dropdown-item" asp-controller="Product" asp-action="MyAccount">My Account</a></li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Cart">Cart</a></li>
                 </ul>
+              </li>
+              <li>
+                <a class="d-none d-lg-block" asp-controller="Product" asp-action="Cart"
+                  ><img class="cart" src="~/img/shopping-cart.png" 
+                /></a>
               </li>
             </ul>
           </div>
@@ -192,3 +201,20 @@
 
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
