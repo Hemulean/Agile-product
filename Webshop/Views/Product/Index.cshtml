@@ -28,6 +28,12 @@
         justify-content: center;
         align-self: end;
     }
+    body > main > main > div > div:nth-child(2) >
+    div.container.py-5 > div > div:nth-child(1) >
+    div > div.card-body.align-content-stretch >
+    div > button:nth-child(1) > i {
+        border: 6px black;
+    }
     button {
        
   /*      background-color: white;
@@ -80,23 +86,10 @@
 
          
     }
-    .container-fluid {
-        max-width: 1800px;
-       /* margin-left: 5rem;
-        margin-right: 5rem;*/
-    }
-    carousel-control-next-icon {
-        color: black;
-    }
-    .carousel-control-prev,.carousel-control-next {
-        color: black;
-
-       
-    }
-   /* .scale {
-        zoom: 0.8; 
-        zoom: 90%; 
-    }*/
+    
+        
+      
+   
  
 </style>
 
@@ -127,12 +120,12 @@
     }
 
    
-   async Task RenderMostPopular(int takeCounter)
+   async Task RenderMostPopular()
     {
         
-        var popularProducts = @Model.Take(Range.All);
+        
       
-        foreach (var product in popularProducts.Skip(takeCounter).Take(4))
+        foreach (var product in @Model)
         {
             
           
@@ -176,14 +169,14 @@
 
         }
     }
-   bool RenderRecommended(int takeCounter)
+   async Task RenderRecommended()
     {
        
        var recommendedList =  _ProductHandler.GetRecommendedProducts("lipstick",12).Result.AsEnumerable();
-       bool carouselSwitch = recommendedList.Count() > 4;
+       
 
        
-            foreach (var product in recommendedList.Skip(takeCounter).Take(4))
+            foreach (var product in recommendedList)
             {
                 <div class="col-12  col-md-6 col-lg-3">
 
@@ -222,19 +215,19 @@
 
 
             }
-       return carouselSwitch;
+       
     } 
          
        
      
-   bool RenderByBrand(int takeCounter)
+   async Task RenderByBrand()
     {
         
         var fromBrandList =  _ProductHandler.GetProductsByBrand("maybelline",11).Result.AsEnumerable();
 
-        bool carouselSwitch = fromBrandList.Count() > 4;
+       
 
-        foreach (var product in fromBrandList.Skip(takeCounter).Take(4)) 
+        foreach (var product in fromBrandList) 
         {
             <div class="col-12  col-md-6 col-lg-3">
 
@@ -274,7 +267,7 @@
 
 
         }
-        return carouselSwitch;
+       
     } 
 }
 
@@ -302,190 +295,80 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
 
 </section>
 
-<section class="pt-5 pb-5  d-flex justify-content-center
+<main class="pt-5 pb-5  d-flex justify-content-center
 ">
-    <div class="container-fluid scale ">
-        <div class="row row-cols-4 background-img ">
+    <div class="container background-img">
+        <div class="row ">
             <div class="col-12 ">
                 <h3 class="text-center text-white  text-shadow">Most Popular </h3>
             </div>
            
-            <div class="col-12">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+       
 
-                    <div class="carousel-inner background-img">
-                        <div class="carousel-item active">
-                            <div class="row">
-
-                                @{
-                                    int skipCounter = -1;
-                                    await RenderMostPopular(skipCounter);
-                                }
-
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                @{
-                                    skipCounter += 4;
-                                    await RenderMostPopular(skipCounter);
-                                }
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                @{
-                                    skipCounter += 4;
-                                    await RenderMostPopular(skipCounter);
-                                }
-
-                                
-                            </div>
-                        </div>
-                        <Carousel arrows>
-
-                       
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </Carousel>
-                    </div>
-                   
+        
+            <div class="container py-5">
+                <div class="row">
+          
+                    @{
+                        
+                        await RenderMostPopular();
+                    }
+         
                 </div>
-               
+                </div>
+
+        
+
+                    
+        </div> 
+        <div class="row">
+            <div class="col-12 ">
+                <h3 class="text-center text-white  text-shadow">Recommended for you </h3>
             </div>
            
-
-            <div class="col-12 ">
-                <h3 class="mb-3 text-center text-white text-shadow background-img">Recommended for you </h3>
-            </div>
-            
-            <div class="col-12">
-                <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
-
-                    <div class="carousel-inner background-img">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                @{
-                                    skipCounter = -1;
-                                    bool continueCarousel =  RenderRecommended(skipCounter);
-                                }
        
-                            </div>
-                        </div>
-                
-                        @if (continueCarousel)
-                        {
-                  
-                 
-                            <div class="carousel-item ">
-                                <div class="row">
-                                    @{
-                                        skipCounter += 4;
-                                        continueCarousel = RenderRecommended(skipCounter);
-                                    }
-                            
-                                </div>
-                            </div>
-                  
+
+          
+                <div class="container py-5">
+                    <div class="row">
+          
+                        @{
+                        
+                            await RenderRecommended();
                         }
-                        @if (continueCarousel)
-                        {
-                  
-                  
-                            <div class="carousel-item ">
-                                <div class="row">
-                                    @{
-                                        skipCounter += 4;
-                                        continueCarousel = RenderRecommended(skipCounter);
-                                    }
-                                </div>
-                            </div>
-                  
-                        }
+         
                     </div>
-                    <Carousel arrows>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
-                            <span class="carousel-control-next-icon-dark" aria-hidden="true"></span>
-                            <span class="visually-hidden">Prev</span>
-                        </button>
-                        <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </Carousel>
-
                 </div>
-            </div>
 
-            <div class="col-12 ">
-                <h3 class="mb-3 text-center text-white text-shadow background-img">By Maybelline </h3>
-            </div>
-            <div class="col-12">
-                <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
-
-                    <div class="carousel-inner background-img">
-                        <div class="carousel-item active">
-                            <div class="row">
-
-                                @{
-                                    skipCounter = -1;
-                                    continueCarousel = RenderByBrand(skipCounter);
-                                }
-
-                            </div>
-                        </div>
-                        @if (continueCarousel)
-                        {
-                  
-                 
-                            <div class="carousel-item ">
-                                <div class="row">
-                                    @{
-                                        skipCounter += 4;
-                                        continueCarousel = RenderByBrand(skipCounter);
-                                    }
-                            
-                                </div>
-                            </div>
-                  
-                        }
-                        @if (continueCarousel)
-                        {
-                  
-                 
-                            <div class="carousel-item ">
-                                <div class="row ">
-                                    @{
-                                        skipCounter += 4;
-                                        continueCarousel = RenderByBrand(skipCounter);
-                                    }
-                            
-                                </div>
-                            </div>
-                  
-                        }
             
 
-                        <Carousel arrows> 
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </Carousel>
-                    </div></div></div></div></div>
-</section>
+                    
+        </div> 
+        <div class="row ">
+            <div class="col-12 ">
+                <h3 class="text-center text-white  text-shadow">Recommended for you </h3>
+            </div>
+           
+       
+
+            
+                <div class="container py-5">
+                    <div class="row">
+          
+                        @{
+                        
+                            await RenderByBrand();
+                        }
+         
+                    </div>
+                </div>
+
+           
+
+                    
+        </div> 
+    </div>         
+</main>
 
 
 
