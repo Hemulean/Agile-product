@@ -24,7 +24,7 @@
         margin-right: 5rem;
         padding: 80px 0 54px;
         background: rgb(186,109,84);
-        background: linear-gradient(180deg, rgba(186,109,84,0.6112715349811799) 0%, rgba(0,212,255,0.3871818991268382) 100%);
+        background: linear-gradient(180deg, rgba(186,109,84,0.5552491260175945) 0%, rgba(0,212,255,0.14628554058342091) 100%);
         margin-bottom: 5rem;
         box-shadow: 1px 1px 5px black;
     }
@@ -152,8 +152,7 @@
     .center {
         margin: auto;
         width: 70%;
-        
-        
+
     }
    
 
@@ -177,21 +176,15 @@
         /*border: 1px solid black;*/
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    .bi-cart-fill {
+        width: 10px;
+        height: 10px;
+    }
 </style>
 
 @{
-    //var top_products = await _ProductHandler.GetMostPopularProducts(12);
-    //var productSelection = productTake(3);
-    IEnumerable<Product> productTake(IEnumerable<Product> list, int select)
-    {
-        var newList = list.Take(select);
-        Model.RemoveAt(select - 2);
-
-
-
-        return newList;
-
-    }
+   
+    
 
     void RatingStars(double? rating)
     {
@@ -217,20 +210,25 @@
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div id="product-1" class="single-product">
                     <div class="part-1">
-                        <img class="part-1 img-product  border border-5" src=@product.Image 
-                             alt="100%x280" onerror="this.onerror=null;this.src='/img/hummingbird.png';" />
-                        <ul class="fixed-top mx-2 ">
-                            <li><a href="#"><i class="bi bi-cart-fill"></i></a></li>
-                        </ul>
+                        
+                        <img class="part-1 img-product  border border-5" src=@product.Image
+                             alt="100%x280" onerror="this.onerror = null;this.src = '/img/hummingbird.png';"/>
+
+
                     </div>
                     <div class="part-2 center text-center">
                         <h3 class="product-title">@product.Name</h3>
                       
                         <h4 class="product-title"> By: @product.Brand</h4>
                 
-                        <h4 class="product-price">@product.Price £</h4>
+                        <h4 class="product-price">@product.Price &euro</h4>
 
+                        <div class="btn-group justify-content-center">
+                           <a href="#"><i class="bi bi-cart btn btn-outline-dark btn-lg"></i></a>
+                            <button type="button" class="btn btn-outline-dark btn-lg" asp-controller="Product" asp-action="GetProductById" asp-route-id=@product.Id>more info</button>
+                        </div>
                     </div>
+
                 </div>
             </div>
             
@@ -251,17 +249,19 @@
                     <div class="part-1">
                         <img class="part-1 img-product border border-5" src=@product.Image 
                              alt="100%x280" onerror="this.onerror=null;this.src='/img/hummingbird.png';" />
-                        <ul class="fixed-top mx-2 ">
-                            <li><a href="#"><i class="bi bi-cart-fill"></i></a></li>
-                        </ul>
+                       
                     </div>
                     <div class="part-2 center text-center">
                         <h3 class="product-title">@product.Name</h3>
                       
                         <h4 class="product-title"> By: @product.Brand</h4>
                 
-                        <h4 class="product-price">@product.Price £</h4>
-
+                        <h4 class="product-price">@product.Price &euro</h4>
+                        
+                        <div class="btn-group justify-content-center">
+                            <a href="#"><i class="bi bi-cart btn btn-outline-dark btn-lg"></i></a>
+                            <button type="button" class="btn btn-outline-dark btn-lg" asp-controller="Product" asp-action="GetProductById" asp-route-id=@product.Id>more info</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -297,7 +297,11 @@
                         <h4 class="product-title"> By: @product.Brand</h4>
                 
                         <h4 class="product-price">@product.Price &euro;</h4>
-
+                        
+                        <div class="btn-group justify-content-center">
+                            <a href="#"><i class="bi bi-cart btn btn-outline-dark btn-lg"></i></a>
+                            <button type="button" class="btn btn-outline-dark btn-lg" asp-controller="Product" asp-action="GetProductById" asp-route-id=@product.Id>more info</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -316,9 +320,8 @@
         <h1>
             Welcome to Razer Cosmetics
         </h1>
-        <p >
-            <pre class="pre
-">
+        <p>
+            <pre>
 “Calliope leaned forward on the vanity,
 which was littered with gleaming silver beauty wands and powders
 - and a fresh manicolor mitt—all of it arrayed carefully before her,
@@ -333,7 +336,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
 
 <section class="section-products">
     <div class="container">
-        //header
+        
 
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
@@ -349,7 +352,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
             }
         </div>
 
-        //header
+     
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
                 <div class="header">
@@ -364,7 +367,7 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
             }
         </div>
 
-        //header
+       
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
                 <div class="header">
