@@ -1,0 +1,67 @@
+﻿
+main {
+    background-color: white;
+}
+
+/*BUTTONS START*/
+
+
+.description-button.btn {
+    font-weight: bold;
+    box-shadow: 0px 2px 5px #1b1717;
+    max-width: 200px;
+    cursor: pointer;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    background-color: #54BAB9;
+}
+/*BUTTONS END*/
+
+
+/*PRODUCTS PAGES STYLE START*/
+.main-title {
+    font-weight: bolder;
+    padding: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+  
+}
+
+.product-brand {
+    text-transform: uppercase;
+}
+.product-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.product-image {
+    width: 50%;
+    border-radius: 0.5rem;
+   
+}
+
+#ingredients-title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.pricing {
+    font-weight: bolder;
+}
+
+
+/* PRODUCTS PAGES STYLE END*/
+
+/*HOVER */
+
+
+.button-hover.btn:hover {
+   
+    transform: scale(1.1);
+}
+/*HOVER END*/
+
+
