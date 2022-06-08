@@ -74,6 +74,8 @@
                     height: 100%;
                     z-index: -1;
                     transition: all 0.3s;
+                  
+
                 }
 
             .section-products .single-product:hover .part-1::before {
@@ -109,21 +111,12 @@
                 font-size: 0.9rem;
             }
 
-    .center {
-        margin: auto;
-        width: 70%;
-    }
+    
+            .part2 {
+                min-height: 350px;
+            }
 
-
-    .section-products .single-product .part-2 .product-old-price::after {
-        content: "";
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: #444444;
-        transform: translateY(-50%);
-    }
+    
 
     .header-img {
         background: url("/img/makeup.jpg");
@@ -142,8 +135,9 @@
         width: 10px;
         height: 10px;
     }
-    .bi .big-star {
-        position: absolute;
+    .bi-star-fill {
+        color: goldenrod;
+      
     }
 
     .inner {
@@ -154,17 +148,17 @@
     .btn {
         font-size: 1vw;
     }
-    .stretched-link::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        pointer-events: auto;
-        content: "";
-        background-color: rgba(0,0,0,0);
+    .hide{ 
+        display: none;
     }
+    .show:hover + .hide {
+        display:block;
+        color: red;
+    }
+  .btn-group {
+      justify-items: self-start;
+  }
+    
    
 </style>
 
@@ -172,6 +166,11 @@
     
     void RatingStars(double? rating)
     {
+        @if (rating > 5)
+        {
+            rating = 5;
+        }
+           
         <div class="my-1">
           
             @for (int i = 0; i < rating; i++)
@@ -192,18 +191,28 @@
 
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-1" class="single-product">
+                <div id="product-1 show" class="single-product">
+                    
+                    
+                    
                     <div class="part-1 card ">
+                        <div class="hide">
+                            <a href="#"><i class="bi bi-cart btn  btn-outline-dark btn-lg"></i></a>
+                            <a type="button" class="btn btn-outline-dark  btn-lg" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id>more info</a>
+                        </div>
 
-                        <img class=" card-img-top "src=@product.Image
-                     alt="100%x280" onerror="this.onerror = null;this.src = '/img/hummingbird.png';" />
+                        <img class="card-img-top show"src=@product.Image
+                             alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
+
+
+
 
 
                     </div>
-                    <div class="part-2 card-body border-1 center text-center">
+                    <div class="part-2 card-body  center text-center">
                         <h3 class="product-title">@product.Name</h3>
-                        
-                        @if(product.Brand == "NULL")
+
+                        @if (product.Brand == "NULL")
                         {
                             <h6 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h6>
                         }
@@ -211,21 +220,18 @@
                         {
                             <h6 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h6>
                         }
-                       
+
 
                         <h4 class="product-price">@product.Price &euro;</h4>
                         @if (product.Rating != null)
                         {
                             var ratingCount = @product.Rating;
-                            
-                                RatingStars(ratingCount);
-                               
+
+                            RatingStars(ratingCount);
+
                         }
-                        <a type="button" class="btn btn-outline-dark btn-lg streched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id>more info</a>
-                        <div class="btn-group justify-content-center">
-                            <a href="#"><i class="bi bi-cart btn btn-outline-dark btn-lg"></i></a>
-                           
-                        </div>
+
+
                     </div>
 
                 </div>
@@ -245,8 +251,9 @@
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div id="product-1" class="single-product">
                     <div class="part-1">
-                        <img class="part-1 img-product border border-5" src=@product.Image
-                     alt="100%x280" onerror="this.onerror=null;this.src='/img/hummingbird.png';" />
+                     
+                        <img class=" card-img-top "src=@product.Image
+                             alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
 
                     </div>
                     <div class="part-2 center text-center">
@@ -291,9 +298,9 @@
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div id="product-1" class="single-product">
                     <div class="part-1">
-                        <img class="part-1 img-product border border-5" src=@product.Image
-                             alt="100%x280" onerror="this.onerror=null;this.src='/img/hummingbird.png';"/>
-              
+                        
+                        <img class=" card-img-top "src=@product.Image
+                             alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
                     </div>
                     <div class="part-2 center text-center">
                         <h3 class="product-title">@product.Name</h3>
@@ -305,6 +312,7 @@
                         @if (product.Rating != null)
                         {
                             var ratingCount = @product.Rating;
+                            
                             
                            RatingStars(ratingCount);
                                
