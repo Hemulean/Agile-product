@@ -53,19 +53,19 @@
             margin-bottom: 26px;
             
         }
-    .section-products .single-product .part-1:hover {
+    .section-products .single-product:hover {
         box-shadow: 0px 0px 10px teal;
     }
 
-            .section-products .single-product .part-1 {
+            .section-products .single-product  {
                 position: relative;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-                max-height: 300px;
+                max-height: 430px;
                 max-width: 350px;
-                margin-bottom: 10px;
+                
                 overflow: hidden;
             }
 
@@ -82,7 +82,7 @@
 
                 }
 
-            .section-products .single-product:hover .part-1::before {
+            .section-products .single-product:hover::before {
                 transform: scale(1.2,1.2) rotate(5deg);
             }
 
@@ -108,17 +108,15 @@
 
        
             .section-products .single-product .part-2 .product-title {
-                font-size: 1rem;
-            }
-
-            .section-products .single-product .part-2 h4 {
                 font-size: 0.9rem;
             }
 
-    
-            .part2 {
-                min-height: 350px;
+            .section-products .single-product .part-2 .card-subtitle {
+                font-size: 0.5rem;
             }
+
+    
+           
 
     
 
@@ -129,12 +127,11 @@
     }
 
     .img-product {
-        /*border: 1px solid black;*/
-       /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+       
         max-width: 240px;
-        min-height: 270px;
+        min-height: 280px;
         max-height: 300px;
-        object-fit: contain;
+        object-fit: cover;
     }
 
     .bi-cart-fill {
@@ -166,8 +163,21 @@
   }
     .card-body {
         padding: 0.5rem 0.5rem;
+
+    }
+    .card {
+        height: 450px;
+        background: none;
+        border: none;
     }
     
+    .cart + .card:hover {
+        display: flex;
+        
+    }
+    .txt-shadow-custom {
+        text-shadow: 1px 2px 3px whitesmoke;
+    }
    
 </style>
 
@@ -180,7 +190,7 @@
             rating = 5;
         }
            
-        <div class="my-1">
+        <div class="">
           
             @for (int i = 0; i < rating; i++)
             {
@@ -200,22 +210,24 @@
 
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-1 " class="single-product">
-                  
-                    
-                    <div class="part-1 card ">
+               
+                <div id="product-1 " class="single-product card">
+
+
+
+
+                    <div class="card">
                         <a class="  stretched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id></a>
-                        
                         <img class="card-img-top img-product"src=@product.Image
                              alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
+                    </div>
+                    
 
-                    </div>
-                    <div class="justify-content-start">
-                        <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
-                    </div>
-                    <div class="part-2 card-body center text-center">
-                        
-                       
+
+
+                    <div class="part-2 card-body  text-center">
+
+
                         <h3 class="product-title">@product.Name</h3>
 
                         @if (product.Brand == "NULL")
@@ -236,7 +248,9 @@
                             RatingStars(ratingCount);
 
                         }
-
+                        <div class="justify-content-start mb-3">
+                            <a href="#"><i class="bi bi-cart cart   btn-outline-dark "></i></a>
+                        </div>
 
                     </div>
 
@@ -255,19 +269,17 @@
 
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-1 " class="single-product">
+                <div id="product-1 " class="single-product card">
                   
                     
-                    <div class="part-1 card ">
-                        <a class="  stretched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id></a>
-                        
-                        <img class="card-img-top img-product"src=@product.Image
+                   
+                    <div class="card">
+                        <a class="stretched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id></a>
+                        <img class="card-img-top border-0 img-product"src=@product.Image
                              alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
-
                     </div>
-                    <div class="justify-content-start">
-                        <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
-                    </div>
+                    
+                   
                     <div class="part-2 card-body center text-center">
                         
                        
@@ -291,7 +303,9 @@
                             RatingStars(ratingCount);
 
                         }
-
+                        <div class="justify-content-start  mb-3">
+                            <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
+                        </div>
 
                     </div>
 
@@ -315,19 +329,17 @@
 
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-1 " class="single-product">
+                <div id="product-1 " class="single-product card">
                   
                     
-                    <div class="part-1 card ">
+                   
+                    <div class="card">
                         <a class="  stretched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id></a>
-                        
                         <img class="card-img-top img-product"src=@product.Image
                              alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
-
                     </div>
-                    <div class="justify-content-start">
-                        <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
-                    </div>
+                    
+                    
                     <div class="part-2 card-body center text-center">
                         
                        
@@ -351,7 +363,9 @@
                             RatingStars(ratingCount);
 
                         }
-
+                        <div class="justify-content-start   mb-3">
+                            <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
+                        </div>
 
                     </div>
 
@@ -379,7 +393,7 @@
         <div class="row justify-content-center text-center border-4">
             <div class="col-md-8 col-lg-6">
                 <div class="header my-4 border-bottom ">
-                    <h2>Popular Products</h2>
+                    <h2 class="txt-shadow-custom fw-bolder">Popular Products</h2>
                 </div>
             </div>
         </div>
@@ -396,7 +410,7 @@
         <div class="row justify-content-center text-center border-4">
             <div class="col-md-8 col-lg-6">
                 <div class="header my-4 border-bottom ">
-                    <h2>Recommended for you</h2>
+                    <h2 class="txt-shadow-custom fw-bolder">Recommended for you</h2>
                 </div>
             </div>
         </div>
@@ -413,7 +427,7 @@
         <div class="row justify-content-center text-center border-4">
             <div class="col-md-8 col-lg-6">
                 <div class="header my-4 border-bottom ">
-                    <h2>by Maybelline</h2>
+                    <h2 class="txt-shadow-custom fw-bolder">by Maybelline</h2>
                 </div>
             </div>
         </div>
