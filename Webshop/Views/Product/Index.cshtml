@@ -8,7 +8,6 @@
 <style>
     body {
         background: #FBF8F1;
-       
     }
 
 
@@ -17,17 +16,20 @@
         text-decoration: none;
         color: inherit;
     }
-   
 
-    .section-products {
+
+    /* .section-products {
+        
         margin-left: 5rem;
         margin-right: 5rem;
         padding: 80px 0 54px;
-        background: rgb(186,109,84);
+        background: #FBF8F1;
+        /* background: rgb(186,109,84);
         background: linear-gradient(180deg, rgba(186,109,84,0.5552491260175945) 0%, rgba(0,212,255,0.14628554058342091) 100%);
         margin-bottom: 5rem;
         box-shadow: 1px 1px 5px black;
-    }
+       
+    }*/
 
         .section-products .header {
             margin-bottom: 50px;
@@ -44,21 +46,23 @@
                 font-weight: 400;
                 color: #444444;
             }
-
+            .container {
+                max-width: 80%;
+            }
         .section-products .single-product {
-           
             margin-bottom: 26px;
+            
         }
 
             .section-products .single-product .part-1 {
                 position: relative;
                 display: flex;
                 justify-content: center;
-                height: 290px;
-                max-height: 290px;
+                height: 250px;
+                max-height: 250px;
+                max-width: 320px;
                 margin-bottom: 20px;
                 overflow: hidden;
-             
             }
 
                 .section-products .single-product .part-1::before {
@@ -76,132 +80,112 @@
                 transform: scale(1.2,1.2) rotate(5deg);
             }
 
-        /*.section-products #product-1 .part-1::before {
-            background-repeat: no-repeat center;
-            background-size: cover;
-            transition: all 0.3s;
-        }*/
 
 
-        .section-products .single-product .part-1 .discount,
-        .section-products .single-product .part-1 .new {
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            color: #ffffff;
-            background-color: #fe302f;
-            padding: 2px 8px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-        }
 
-        .section-products .single-product .part-1 .new {
-            left: 0;
-            background-color: #444444;
-        }
-
-        .section-products .single-product .part-1 ul {
-            position: absolute;
-            bottom: -41px;
-            left: 20px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            opacity: 0;
-            transition: bottom 0.5s, opacity 0.5s;
-        }
-
-        .section-products .single-product:hover .part-1 ul {
-            bottom: 30px;
-            opacity: 1;
-        }
-
-        .section-products .single-product .part-1 ul li {
-            display: inline-block;
-            margin-right: 4px;
-        }
-
-            .section-products .single-product .part-1 ul li a {
-                display: inline-block;
-                width: 40px;
-                height: 40px;
-                line-height: 40px;
-                background-color: #ffffff;
-                color: #444444;
-                text-align: center;
-                box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
-                transition: color 0.2s;
+            .section-products .single-product .part-1 .discount,
+            .section-products .single-product .part-1 .new {
+                position: absolute;
+                top: 15px;
+                left: 20px;
+                color: #ffffff;
+                background-color: #fe302f;
+                padding: 2px 8px;
+                text-transform: uppercase;
+                font-size: 0.85rem;
             }
 
-                .section-products .single-product .part-1 ul li a:hover {
-                    color: #fe302f;
-                }
+            .section-products .single-product .part-1 .new {
+                left: 0;
+                background-color: #444444;
+            }
 
-        .section-products .single-product .part-2 .product-title {
-            font-size: 1rem;
-            
-            
-        }
+       
+            .section-products .single-product .part-2 .product-title {
+                font-size: 1rem;
+            }
 
-        .section-products .single-product .part-2 h4 {
-         
-            font-size: 0.9rem;
-           
-        }
+            .section-products .single-product .part-2 h4 {
+                font-size: 0.9rem;
+            }
 
     .center {
         margin: auto;
         width: 70%;
-
     }
-   
 
-            .section-products .single-product .part-2 .product-old-price::after {
-                
-                content: "";
-                top: 50%;
-                left: 0;
-                width: 100%;
-                height: 1px;
-                background-color: #444444;
-                transform: translateY(-50%);
-            }
+
+    .section-products .single-product .part-2 .product-old-price::after {
+        content: "";
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #444444;
+        transform: translateY(-50%);
+    }
+
     .header-img {
         background: url("/img/makeup.jpg");
-        background-size:cover;
+        background-size: cover;
         background-repeat: no-repeat;
-       
     }
+
     .img-product {
         /*border: 1px solid black;*/
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        max-width: 300px;
+        max-height: 445px;
     }
+
     .bi-cart-fill {
         width: 10px;
         height: 10px;
     }
+    .bi .big-star {
+        position: absolute;
+    }
+
+    .inner {
+      
+        position: absolute;
+        
+    }
+    .btn {
+        font-size: 1vw;
+    }
+    .stretched-link::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: auto;
+        content: "";
+        background-color: rgba(0,0,0,0);
+    }
+   
 </style>
 
-@{
-   
+@functions{
     
-
     void RatingStars(double? rating)
     {
-
-        for (int i = 0; i < rating; i++)
-        {
-
-            <i class="bi bi-star"></i>
-
-
-        }
+        <div class="my-1">
+          
+            @for (int i = 0; i < rating; i++)
+            {
+                <i class="bi bi-star-fill"></i>
+            }
+        </div>
+        
     }
 
 
     async Task RenderMostPopular()
     {
-        
+
 
         foreach (var product in @Model)
         {
@@ -209,37 +193,51 @@
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div id="product-1" class="single-product">
-                    <div class="part-1">
-                        
-                        <img class="part-1 img-product  border border-5" src=@product.Image
-                             alt="100%x280" onerror="this.onerror = null;this.src = '/img/hummingbird.png';"/>
+                    <div class="part-1 card ">
+
+                        <img class=" card-img-top "src=@product.Image
+                     alt="100%x280" onerror="this.onerror = null;this.src = '/img/hummingbird.png';" />
 
 
                     </div>
-                    <div class="part-2 center text-center">
+                    <div class="part-2 card-body border-1 center text-center">
                         <h3 class="product-title">@product.Name</h3>
-                      
-                        <h4 class="product-title"> By: @product.Brand</h4>
-                
-                        <h4 class="product-price">@product.Price &euro</h4>
+                        
+                        @if(product.Brand == "NULL")
+                        {
+                            <h6 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h6>
+                        }
+                        else
+                        {
+                            <h6 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h6>
+                        }
+                       
 
+                        <h4 class="product-price">@product.Price &euro;</h4>
+                        @if (product.Rating != null)
+                        {
+                            var ratingCount = @product.Rating;
+                            
+                                RatingStars(ratingCount);
+                               
+                        }
+                        <a type="button" class="btn btn-outline-dark btn-lg streched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id>more info</a>
                         <div class="btn-group justify-content-center">
-                           <a href="#"><i class="bi bi-cart btn btn-outline-dark btn-lg"></i></a>
-                            <button type="button" class="btn btn-outline-dark btn-lg" asp-controller="Product" asp-action="GetProductById" asp-route-id=@product.Id>more info</button>
+                            <a href="#"><i class="bi bi-cart btn btn-outline-dark btn-lg"></i></a>
+                           
                         </div>
                     </div>
 
                 </div>
             </div>
-            
+
         }
     }
     async Task RenderRecommended()
     {
-
         var recommendedList = _ProductHandler.GetRecommendedProducts("lipstick", 12).Result.AsEnumerable();
 
-        
+
         foreach (var product in @recommendedList)
         {
 
@@ -247,34 +245,42 @@
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div id="product-1" class="single-product">
                     <div class="part-1">
-                        <img class="part-1 img-product border border-5" src=@product.Image 
-                             alt="100%x280" onerror="this.onerror=null;this.src='/img/hummingbird.png';" />
-                       
+                        <img class="part-1 img-product border border-5" src=@product.Image
+                     alt="100%x280" onerror="this.onerror=null;this.src='/img/hummingbird.png';" />
+
                     </div>
                     <div class="part-2 center text-center">
                         <h3 class="product-title">@product.Name</h3>
-                      
+
                         <h4 class="product-title"> By: @product.Brand</h4>
-                
-                        <h4 class="product-price">@product.Price &euro</h4>
+
+                        <h4 class="product-price">@product.Price &euro;</h4>
                         
+                        @if (product.Rating != null)
+                        {
+                            var ratingCount = @product.Rating;
+                            
+                            RatingStars(ratingCount);
+                               
+                        }
+
                         <div class="btn-group justify-content-center">
                             <a href="#"><i class="bi bi-cart btn btn-outline-dark btn-lg"></i></a>
-                            <button type="button" class="btn btn-outline-dark btn-lg" asp-controller="Product" asp-action="GetProductById" asp-route-id=@product.Id>more info</button>
+                            <a type="button" class="btn btn-outline-dark btn-lg" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id>more info</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         }
     }
 
 
 
-    async Task RenderByBrand()
+   async Task RenderByBrand()
     {
 
-        var fromBrandList = _ProductHandler.GetProductsByBrand("maybelline", 11).Result.AsEnumerable();
+        var fromBrandList =  _ProductHandler.GetProductsByBrand("maybelline", 11).Result.AsEnumerable();
 
 
 
@@ -285,27 +291,35 @@
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div id="product-1" class="single-product">
                     <div class="part-1">
-                        <img class="part-1 img-product border border-5" src=@product.Image 
-                             alt="100%x280" onerror="this.onerror=null;this.src='/img/hummingbird.png';" />
-                        <ul class="fixed-top mx-2 ">
-                            <li><a href="#"><i class="bi bi-cart-fill"></i></a></li>
-                        </ul>
+                        <img class="part-1 img-product border border-5" src=@product.Image
+                             alt="100%x280" onerror="this.onerror=null;this.src='/img/hummingbird.png';"/>
+              
                     </div>
                     <div class="part-2 center text-center">
                         <h3 class="product-title">@product.Name</h3>
-                      
+
                         <h4 class="product-title"> By: @product.Brand</h4>
-                
+
                         <h4 class="product-price">@product.Price &euro;</h4>
                         
+                        @if (product.Rating != null)
+                        {
+                            var ratingCount = @product.Rating;
+                            
+                           RatingStars(ratingCount);
+                               
+                        }
+
                         <div class="btn-group justify-content-center">
                             <a href="#"><i class="bi bi-cart btn btn-outline-dark btn-lg"></i></a>
-                            <button type="button" class="btn btn-outline-dark btn-lg" asp-controller="Product" asp-action="GetProductById" asp-route-id=@product.Id>more info</button>
+                            <a type="button" class="btn btn-outline-dark btn-lg" asp-controller="Product" asp-action="Product" asp-route-id=product.Id>more info</a>
                         </div>
                     </div>
                 </div>
             </div>
+           
         }
+       
 
     }
 }
@@ -318,25 +332,26 @@
 <section class="header d-flex justify-content-center container-fluid w-100">
     <div class="card background-img bg-transparent text-center justify-self-center text- px-3 header-img my-2">
         <h1>
-            Welcome to Razer Cosmetics
+           
         </h1>
         <p>
-            <pre>
+           <pre>
 “Calliope leaned forward on the vanity,
 which was littered with gleaming silver beauty wands and powders
 - and a fresh manicolor mitt—all of it arrayed carefully before her,
 like weapons polished and laid out for battle.
 Her own lethal tools, which had always made her so dangerously beautiful.” – Katharine McGee
-        </pre>
+      </pre>
 
-        </p>
+       </p>
     </div>
 
 </section>
 
 <section class="section-products">
     <div class="container">
-        
+        <div class="g-3">
+
 
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
@@ -347,15 +362,18 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
         </div>
 
         <div class="row">
+
             @{
-                @RenderMostPopular()
+                await RenderMostPopular();
             }
+
         </div>
 
-     
+        </div>
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
-                <div class="header">
+                <div class="header header-img w-100
+">
                     <h2>Recommended for you</h2>
                 </div>
             </div>
@@ -363,11 +381,13 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
 
         <div class="row">
             @{
-                @RenderRecommended()
+                await RenderRecommended();
             }
+
+
         </div>
 
-       
+
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
                 <div class="header">
@@ -377,8 +397,10 @@ Her own lethal tools, which had always made her so dangerously beautiful.” –
         </div>
         <div class="row">
             @{
-                @RenderByBrand()
+                await RenderByBrand();
             }
+
+
         </div>
 
 
