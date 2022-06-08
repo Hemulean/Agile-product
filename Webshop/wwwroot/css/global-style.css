@@ -1,11 +1,10 @@
 ﻿
 
 
-
-
-html {
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
-
 body {
     background-color: #f7ecde;
     color: black;
@@ -47,6 +46,8 @@ body {
     #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
         font-size: 2vw;
     }
+
+
 
 }
 /*Tablet*/
@@ -193,13 +194,17 @@ nav {
         flex-grow: 0;
     }
 
-    .container-fluid.my-container-fluid {
+    
+    .my-container-fluid {
         justify-content: center;
+        width: 100%;
     }
-
     .navbar-collapse > ul {
         align-items: flex-end;
     }
+    ul.navbar-nav {
+    justify-content: space-evenly;
+}
 }
 
 .navbar-toggler-icon {
@@ -518,3 +523,24 @@ ul.Two h2 {
         font-size: 10px;
     }
 }*/
+
+@media screen and (min-width: 375px) and (max-width: 990px) {
+
+    .navbar-collapse > ul {
+        align-items: stretch;
+    }
+
+    .my-container-fluid {
+        display: flex;
+        align-items: center;
+        flex-wrap: inherit;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+}
+
+
+
+
+

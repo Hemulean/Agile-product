@@ -1,1 +1,39 @@
-﻿<h1>Product Page</h1>
+﻿
+   @model Webshop.Models.Product
+   
+
+<head>
+    <link href="~/css/product-page.css" rel="stylesheet" asp-append-version="true"/>
+   
+</head>
+<section class="container-lg">
+    <div class="row justify-content-center align-items-center py-xl-5">
+        <div class="info-icons">
+            <span><i class="fa fa-chevron-circle-down"></i> In stock</span>
+            <span><i class="fa fa-truck"></i> Free shipping </span>
+            <span><i class="fa fa-check"></i> Quality guarantee</span>
+        
+       
+        </div>
+        <div class="col-lg-6 product-image-wrapper">
+            <img class="product-image" src="@Model.Image"/>
+
+        </div>
+
+        <section class="description-section col-lg-6">
+
+            <div class="m-md-5 my-5">
+                <h1 class="main-title">@Model.Name</h1>
+                <h3 class="product-brand">@Model.Brand</h3>
+                <p class="main-description-text">@Model.Description</p>
+                <p><span id="ingredients-title">Ingredients:</span>@Model.Ingredients</p>
+                <span class="pricing">Price: @Model.Price &euro;</span><br>
+                <button class="description-button button-hover btn mt-4 mb-2"> ADD TO CART</button>
+            </div>
+
+        </section>
+
+    </div>
+   
+
+</section>
