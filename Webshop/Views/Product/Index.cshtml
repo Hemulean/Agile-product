@@ -138,10 +138,11 @@
         width: 10px;
         height: 10px;
     }
-    .bi-star-fill {
+    .bi-star-fill, .bi-star {
         color: goldenrod;
       
     }
+    
 
     .inner {
       
@@ -185,16 +186,20 @@
     
     void RatingStars(double? rating)
     {
-        @if (rating > 5)
-        {
-            rating = 5;
-        }
+       
+
+        var emptyStars = 5 - rating;
+        
            
         <div class="">
           
             @for (int i = 0; i < rating; i++)
             {
                 <i class=" bi bi-star-fill"></i>
+            }
+            @for (int i = 0; i < emptyStars; i++)
+            {
+                <i class="bi bi-star"></i>
             }
         </div>
         
