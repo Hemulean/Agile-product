@@ -27,7 +27,10 @@ main {
     font-size: 2rem;
   
 }
-
+.info-icons {
+    display: flex;
+    flex-direction: column;
+}
 .product-brand {
     text-transform: uppercase;
 }
