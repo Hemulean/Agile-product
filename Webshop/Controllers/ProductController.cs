@@ -47,7 +47,12 @@ namespace Webshop.Controllers
             return View();
         }
 
-       
+        public IActionResult Products()
+        {
+            return View();
+        }
+
+
         public async Task<IActionResult> GetApi()
         {
             var responseList = await _apiHandler.GetAllDataFromApi();
