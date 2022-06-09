@@ -2,34 +2,45 @@
     <link href="~/css/my-account.css" rel="stylesheet" asp-append-version="true"/>
 </head>
 
-<h1>My Account</h1>
+ <div class="container-lg container-fluid mt-3">
+        <div class="row">
+          <div class="col-sm-4 p-3">
+            <h1>Welcome Diana</h1>
 
-<div class="container-lg">
-  <div class="row">
-    <div class="col">
-      <ul>
-          <li>
-              <a>
-                  My Profile
-              </a>
-          </li>
-          <li>
-              <a>
-                  My Orders
-              </a>
-          </li>
-          <li>
-              <a>
-                  My Offers
-              </a>
-          </li>
-      </ul>
-    </div>
-    <div class="col">
-      Column
-    </div>
-    <div class="col">
-      Column
-    </div>
-  </div>
-</div>
+            <ul>
+              <li class="list-item">
+                <a asp-controller="Product" asp-action="MyAccount"> My Profile </a>
+              </li>
+              <li class="list-item">
+                <a asp-controller="Product" asp-action="MyOrders"> My Orders </a>
+              </li>
+              <li class="list-item">
+                <a asp-controller="Product" asp-action="MyOffers"> My Offers </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-8 p-3">
+            <h1>My Profile</h1>
+            <ul>
+              <li class="list-item li-title">Customernumber</li>
+              <li class="list-item">4659454547</li>
+              <li class="list-item li-title">Firstname</li>
+              <li class="list-item">Diana</li>
+              <li class="list-item li-title">Lastname</li>
+              <li class="list-item">Smith</li>
+              <li class="list-item li-title">Address</li>
+              <li class="list-item">Dalagatan 7</li>
+              <li class="list-item li-title">Post Code</li>
+              <li class="list-item">411 10</li>
+              <li class="list-item li-title">City</li>
+              <li class="list-item">Gothenburg</li>
+              <li class="list-item li-title">Phonenumber</li>
+              <li class="list-item">0702 17 84 56</li>
+              <li class="list-item li-title">Email</li>
+              <li class="list-item">diana.smith@gmail.com</li>
+              <li class="list-item li-title">Membership Points</li>
+              <li class="list-item">289</li>
+            </ul>
+          </div>
+        </div>
+      </div>

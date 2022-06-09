@@ -1,2 +1,49 @@
-﻿body {
+﻿html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #FBF8F1;
+    color: black;
+}
+
+h1{
+    font-weight: bold;
+    margin-left:42px;
+}
+
+ul {
+    list-style-type: none;
+    padding-top: 25px;
+    margin-right: 70px;
+    font-size: 0.9vw;
+}
+
+/*.col-sm-4, .col-sm-8 {
+    border: solid 2px black;
+}*/
+
+/*.list-group {
+    max-width: 400px;
+    background-color: #FBF8F1;
+}*/
+
+.li-title {
+    font-weight: bold;
+    font-size: 0.7vw;
+}
+
+.list-item {
+    margin: 15px;
+}
+
+    .list-item a {
+        color: black;
+        text-decoration: none;
+    }
+
+        .list-item a:hover {
+            color: #54BAB9;
+        }
+
+.col-sm-8.p-3 > ul > li {
+    background-color: #FBF8F1;
 }
