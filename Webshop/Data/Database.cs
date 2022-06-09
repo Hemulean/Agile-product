@@ -38,26 +38,50 @@ namespace Webshop.Data
             var responseList = await _apiHandler.GetAllDataFromApi();
 
              foreach (var item in responseList)
-            {
+             {
+                 var rating = " ";
 
-                var product = new Product
+                if (item.Rating.ToString().Length == 2)
                 {
-                   
-                    Name = item.Name,
-                    Brand = item.Brand,
-                    Description = item.Description,
-                    Ingredients = item.Ingredients,
-                    Type = item.Type,
-                    Price = item.Price,
-                    Category = item.Category,
-                    Rating = item.Rating,
-                    Image = item.Image
-                };
+                    for(var i = 0; i < item.Rating.ToString().Length; i++)
+                    {
+                        rating = item.Rating.ToString()[0] + "," + item.Rating.ToString()[1];
 
-                _ctx.Products.Add(product);
+                    }
+                    var product = new Product
+                    {
 
+                        Name = item.Name,
+                        Brand = item.Brand,
+                        Description = item.Description,
+                        Ingredients = item.Ingredients,
+                        Type = item.Type,
+                        Price = item.Price,
+                        Category = item.Category,
+                        Rating = Convert.ToDouble(rating),
+                        Image = item.Image
+                    };
+                    _ctx.Products.Add(product);
+                }
+                else
+                {
+                    var product = new Product
+                    {
+
+                        Name = item.Name,
+                        Brand = item.Brand,
+                        Description = item.Description,
+                        Ingredients = item.Ingredients,
+                        Type = item.Type,
+                        Price = item.Price,
+                        Category = item.Category,
+                        Rating = item.Rating,
+                        Image = item.Image
+                    };
+                    _ctx.Products.Add(product);
+                }
+                
             }
-
 
             await _ctx.SaveChangesAsync();
         }
