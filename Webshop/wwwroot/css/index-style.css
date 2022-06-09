@@ -3,13 +3,6 @@ body {
     background: #FBF8F1;
 }
 
-
-
-
-
-
-
-
 .section-products .header {
     margin-bottom: 50px;
 }
@@ -133,6 +126,7 @@ body {
     font-size: 3.0VW;
     color: #BA6D54;
 }
+
 /*Tablet*/
 @media screen and (max-width: 768px) {
 
