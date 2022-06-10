@@ -458,11 +458,19 @@ h2 {
     #footer div.one {
         width: 33%;
     }
-    footer div { height: 55vh; }
+    footer div { height: 50vh; }
 
 
 }
-  
+@media screen and (min-width: 1440px) {
+    .one {
+        padding-bottom: 6%;
+    }
+    footer div {
+        height: 60vh;
+    }
+}
+
 
 
 
