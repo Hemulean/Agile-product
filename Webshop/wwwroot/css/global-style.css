@@ -462,18 +462,7 @@ h2 {
 
 
 }
-    /*STORLEKAR FÖR WEBROWSER*/
-    /*@media screen and (max-width: 1024px) {
-    {
-        font-size: 1.2vw;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    {
-        font-size: 1.5vw;
-    }
-}*/
+  
 
 
 
@@ -495,90 +484,4 @@ h2 {
         text-decoration: none;
         color: #BA6D54;
     }
-    /*En css selector för epost a-länkarna i footer*/
-    ul.info a {
-        /*font-size: 7.5vw;*/
-    }
-
-    ul.Two h2 {
-    }
-
-    /*@media screen and (max-width: 639px) {
-   footer img  {
-        width: 120px;
-        height: 200px;
-    }
-
     
-
-    h2 {
-        font-size: 9px;
-    }
-
-    .build {
-        font-size: 10px;
-        padding-bottom: 90px;
-    }
-
-    .Two {
-        font-size: 8px;
-    }
-
-    .info {
-        font-size: 10px;
-    }
-}
-
-@media screen and (min-width: 640px) {
-   footer img {
-        width: 250px;
-        height: 280px;
-    }
-
-    h2 {
-        font-size: 12px;
-    }
-
-    .Two {
-        font-size: 10px;
-    }
-}
-
-@media screen and (min-width: 1140px) {
-  footer img {
-        width: 350px;
-        height: 350px;
-    }
-
-
-    .Two {
-        font-size: 10px;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-   footer img {
-        height: 70%;
-    }
-
-  footer  h2 {
-        font-size: 15px;
-    }
-}
-
-
-@media screen and (max-width: 770px) {
-
-
-   footer .fa {
-        padding: 8px;
-        font-size: 20px;
-        width: 30px;
-    }
-}
-
-@media screen and (max-width: 770px) {
-    .Three {
-        font-size: 10px;
-    }
-}*/
