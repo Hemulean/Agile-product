@@ -1,22 +1,48 @@
-﻿
-   @model Webshop.Models.Product
-   
+﻿@model Webshop.Models.Product
 
 <head>
     <link href="~/css/product-page.css" rel="stylesheet" asp-append-version="true"/>
    
 </head>
-<section class="container-lg">
+<section class="section-wrapper container-lg">
     <div class="row justify-content-center align-items-center py-xl-5">
-        <div class="info-icons">
-            <span><i class="fa fa-chevron-circle-down"></i> In stock</span>
-            <span><i class="fa fa-truck"></i> Free shipping </span>
-            <span><i class="fa fa-check"></i> Quality guarantee</span>
-        
        
-        </div>
         <div class="col-lg-6 product-image-wrapper">
-            <img class="product-image" src="@Model.Image"/>
+            <div class="info-icons">
+                <span><i class="fa fa-chevron-circle-down"></i> In stock</span>
+                <span><i class="fa fa-truck"></i> Free shipping </span>
+                <span><i class="fa fa-check"></i> Quality guarantee</span>
+
+            </div>
+            <img class="product-image" src="@Model.Image" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
+          
+           
+                @{
+                    var rating = @Model.Rating;
+
+                    var emptyStars = 5 - @Model.Rating;
+                    if (@Model.Rating > 5)
+                    {
+                        rating = 5;
+                        
+                    }
+           
+                    <div>
+          
+                        @for (int i = 0; i < rating; i++)
+                        {
+                            <i class=" bi bi-star-fill"></i>
+                        }
+                        @for (int i = 0; i < emptyStars; i++)
+                        {
+                            <i class="bi bi-star"></i>
+                        }
+                        <span> (@rating/5)</span>
+                    </div>
+               
+                   
+                }
+            
 
         </div>
 
@@ -24,14 +50,57 @@
 
             <div class="m-md-5 my-5">
                 <h1 class="main-title">@Model.Name</h1>
-                <h3 class="product-brand">@Model.Brand</h3>
+                <h2 class="product-brand">@Model.Brand</h2>
                 <p class="main-description-text">@Model.Description</p>
-                <p><span id="ingredients-title">Ingredients:</span>@Model.Ingredients</p>
+                <p><span id="ingredients-title">Ingredients: </span>@Model.Ingredients</p>
                 <span class="pricing">Price: @Model.Price &euro;</span><br>
                 <button class="description-button button-hover btn mt-4 mb-2"> ADD TO CART</button>
             </div>
+            
+            <section class="payment-section">
+                <h5>PAY SMOOTH</h5>
+            
+                <div class="logo-payment">
+                    <img class="logo-size" alt="klarna-logo" src="~/img/klarna.png"/>
+                    <img class="logo-size"  alt="visa-logo" src="~/img/visa.png"/>
+                    <img class="logo-size"  alt="mastercard-logo" src="~/img/mastercard.png"/>
+                    <img class="logo-size"  alt="paypal-logo" src="~/img/paypal.png"/>
+                </div>
+            
+            </section>
+        </section>
+        
+     
+        
+        <section id="" class="row video-section" >
+            <video class="col-lg-6" src="~/img/VideoProductPage.mp4"  width="800px" height="400px" loop="true" autoplay="true" >
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="sale-content col-lg-6">
+                <h3>GET READY, SUMMER IS HERE</h3>
+                
+                <div class="button-link"><a class="btn">SUMMER SALE</a></div>
+            </div>
 
         </section>
+
+        <section id="" class="row video-section">
+            
+            <div class="sale-content col-lg-6">
+                <h3>NEED SOME BRUSHES, WE GOT YOU</h3>
+                
+                <div class="button-link"><a class="btn">SUMMER SALE</a></div>
+            </div>
+            <video class="col-lg-6" src="~/img/MakeUpBrushes.mp4" width="800px" height="400px" loop="true" autoplay="true">
+                Your browser does not support the video tag.
+            </video>
+
+
+
+        </section>
+        
+      
 
     </div>
    
