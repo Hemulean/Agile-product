@@ -221,26 +221,20 @@ body {
     /*
         footer settings
     */
-    #footer > div.one > ul.build > a {
-        font-size: 3vw;
-    }
+    #footer > div.one > ul.build > a { font-size: 3vw; }
 
-    .Three a {
-        font-size: 3vw;
-    }
+    .Three a { font-size: 3vw; }
 
-    ul.info a {
-        font-size: 1.5vw;
-    }
+    ul.info a { font-size: 1.5vw; }
+
     a.fa {
         padding: 2vw;
         font-size: 2vw;
         width: 5vw;
     }
-    div.Tr {
-        width: 25%;
-    }
 
+    div.Tr { width: 25%; }
+}
 @media screen and (min-width: 990px) {
     .navbar-collapse {
         flex-grow: 0;
@@ -259,7 +253,7 @@ body {
     div.one {
         width: 25%;
     }
-}
+
 
     .navbar-collapse > ul {
         align-items: flex-end;
@@ -570,11 +564,3 @@ ul.Two h2 {
 }
 
 
-
-
-    .Two a {
-        /* font-size: 1.5vw;*/
-        text-decoration: none;
-        color: #BA6D54;
-    }
-    
