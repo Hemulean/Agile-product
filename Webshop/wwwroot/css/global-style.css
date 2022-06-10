@@ -447,15 +447,15 @@ h2 {
     font-size: 2vw
 }
 @media screen and (min-width: 768px) {
-    div.Tr {
+    #footer div.Tr {
         width: 33%;
     }
 
-    div.Tw {
+    #footer div.Tw {
         width: 34%;
     }
 
-    div.one {
+    #footer div.one {
         width: 33%;
     }
     footer div { height: 55vh; }
