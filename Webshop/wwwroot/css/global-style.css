@@ -470,7 +470,10 @@ ul.Two h2 {
 
 
 
-
+/*RATING*/
+.bi-star-fill, .bi-star {
+    color: goldenrod;
+}
 
 
 
