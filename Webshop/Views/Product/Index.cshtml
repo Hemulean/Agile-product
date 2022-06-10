@@ -64,19 +64,19 @@
                     <div class="part-2 card-body  text-center">
 
 
-                        <h3 class="product-title">@product.Name</h3>
+                        <h4 class="product-title">@product.Name</h4>
 
                         @if (product.Brand == "NULL")
                         {
-                            <h6 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h6>
+                            <h5 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h5>
                         }
                         else
                         {
-                            <h6 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h6>
+                            <h8 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h8>
                         }
 
 
-                        <h4 class="product-price">@product.Price &euro;</h4>
+                        <h6 class="product-price">@product.Price &euro;</h6>
                         @if (product.Rating != null)
                         {
                             var ratingCount = @product.Rating;
@@ -84,7 +84,7 @@
                             RatingStars(ratingCount);
 
                         }
-                        <div class="justify-content-start mb-3">
+                        <div class="justify-content-start mb-5">
                             <a href="#"><i class="bi bi-cart cart   btn-outline-dark "></i></a>
                         </div>
 
@@ -116,22 +116,22 @@
                     </div>
                     
                    
-                    <div class="part-2 card-body center text-center">
+                    <div class="part-2 card-body  text-center">
                         
                        
-                        <h3 class="product-title">@product.Name</h3>
+                        <h4 class="product-title">@product.Name</h4>
 
                         @if (product.Brand == "NULL")
                         {
-                            <h6 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h6>
+                            <h5 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h5>
                         }
                         else
                         {
-                            <h6 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h6>
+                            <h8 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h8>
                         }
 
 
-                        <h4 class="product-price">@product.Price &euro;</h4>
+                        <h6 class="product-price">@product.Price &euro;</h6>
                         @if (product.Rating != null)
                         {
                             var ratingCount = @product.Rating;
@@ -139,7 +139,7 @@
                             RatingStars(ratingCount);
 
                         }
-                        <div class="justify-content-start  mb-3">
+                        <div class="justify-content-start  mb-5">
                             <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
                         </div>
 
@@ -179,19 +179,19 @@
                     <div class="part-2 card-body center text-center">
                         
                        
-                        <h3 class="product-title">@product.Name</h3>
+                        <h4 class="product-title">@product.Name</h4>
 
                         @if (product.Brand == "NULL")
                         {
-                            <h6 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h6>
+                            <h5 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h5>
                         }
                         else
                         {
-                            <h6 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h6>
+                            <h8 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h8>
                         }
 
 
-                        <h4 class="product-price">@product.Price &euro;</h4>
+                        <h6 class="product-price">@product.Price &euro;</h6>
                         @if (product.Rating != null)
                         {
                             var ratingCount = @product.Rating;
@@ -199,7 +199,7 @@
                             RatingStars(ratingCount);
 
                         }
-                        <div class="justify-content-start   mb-3">
+                        <div class="justify-content-start   mb-5">
                             <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
                         </div>
 
@@ -218,7 +218,9 @@
 
 
 
-
+<div class="container d-flex justify-content-center product-image-wrapper border ">
+    <img src="/img/salebanner.png" class="my-5 img-fluid " alt="...">
+</div>
 
 
 <section class="section-products">
