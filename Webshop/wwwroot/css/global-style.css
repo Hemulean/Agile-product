@@ -131,6 +131,9 @@ body {
         font-size: 6px;
         width: 15px;
     }
+    #footer div {
+        height: 36vh;
+    }
 }
 /*
     Mobile-m
@@ -160,6 +163,11 @@ body {
     ul.info a {
         font-size: 2.5vw;
     }
+    .Two {
+        padding-top: 50%;
+        padding-bottom: 50%;
+    }
+
 }
 /*
     Mobile-s 
@@ -341,20 +349,23 @@ nav {
     grid-template-rows: 8fr 1fr 2fr;
     font-size: 20px;
     padding-top: 4%;
-    padding-bottom: 4%;
+    padding-bottom: 16%;
 }
 
-.Two {
+div.Tw {
     background-image: url(/img/logo.png);
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.Two {
+    padding-top: 77.5%;
+    padding-bottom:22.5%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 20px;
-    padding-top: 70%;
-    padding-bottom: 30%;
+    font-size: 3.5vw;
 }
 
 .Three {
@@ -433,6 +444,7 @@ h1 {
 h2 {
     color: #BA6D54;
     text-decoration: none;
+    font-size: 2vw
 }
 @media screen and (min-width: 768px) {
     div.Tr {
@@ -447,6 +459,8 @@ h2 {
         width: 33%;
     }
     footer div { height: 55vh; }
+
+
 }
     /*STORLEKAR FÖR WEBROWSER*/
     /*@media screen and (max-width: 1024px) {
