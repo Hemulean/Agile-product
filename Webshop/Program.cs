@@ -26,6 +26,7 @@ using (var scope = app.Services.CreateScope())
     var database = scope.ServiceProvider
         .GetRequiredService<Database>();
 
+    await database.Delete();
     await database.CreateAndSeedIfNotExist();
  
 }

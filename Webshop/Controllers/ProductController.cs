@@ -20,9 +20,11 @@ namespace Webshop.Controllers
             return View("Index", productsList);
         }
 
-        public IActionResult Product()
+        public async Task<IActionResult> Product(int id)
         {
-            return View();
+            var product = await _productHandler.GetProductById(id);
+
+            return View("Product", product);
         }
 
         public IActionResult AboutUs()

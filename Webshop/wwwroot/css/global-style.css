@@ -1,20 +1,47 @@
-﻿html {
-   
+﻿html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: "montserrat";
 }
+
 body {
-    background-color: #f7ecde;
-    color: black
+    background-color: #EEEAE3;
+    color: black;
+    /*
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;*/
 }
+h6,h5,h4,h3,h2,h1 {
+    color: #ba6d54;
+}
+
 /*Laptop*/
+@media screen and (max-width: 1440px){
+    .navbar-nav .nav-link, a.dropdown-item {
+        font-size: 1.3vw;
+        padding-left: 10px;
+    }
+
+    li.dropdown-item {
+        font-size: 1.3vw;
+        padding-left: 10px;
+    }
+}
 @media screen and (max-width: 1024px) {
     /*
         Navbar settings
     */
     .navbar-nav .nav-link, a.dropdown-item {
-        font-size: 1.2vw;
+        font-size: 1.7vw;
+        padding-left: 10px;
     }
+
     li.dropdown-item {
-        font-size: 1.3vw;
+        font-size: 1.7vw;
+        padding-left: 10px;
     }
 
     /*
@@ -34,8 +61,8 @@ body {
     /*Razorcosmetic-header*/
     #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
         font-size: 2vw;
-       
     }
+    
 }
 /*Tablet*/
 @media screen and (max-width: 768px) {
@@ -43,10 +70,13 @@ body {
         Navbar settings
     */
     .navbar-nav .nav-link, a.dropdown-item {
-        font-size: 1.8vw;
+        font-size: 2vw;
+        padding-left: 10px;
     }
+
     li.dropdown-item {
         font-size: 2vw;
+        padding-left: 10px;
     }
 
     /*
@@ -67,6 +97,29 @@ body {
     /*Razorcosmetic-header*/
     #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
         font-size: 2vw;
+    }
+
+    a.fa {
+        padding: 2vw;
+        font-size: 2vw;
+        width: 5vw;
+    }
+    h2 {
+        font-size: 1.5vw;
+    }
+    div.Tr {
+        width: 30%;
+    }
+
+    div.Tw {
+        width: 40%;
+    }
+
+    div.one {
+        width: 30%;
+    }
+    #footer div {
+        height: 48vh;
     }
 }
 /*Mobile-L*/
@@ -75,11 +128,13 @@ body {
         Navbar settings
     */
     .navbar-nav .nav-link, a.dropdown-item {
-        font-size: 2.8vw;
+        font-size: 3.2vw;
+        padding-left: 10px;
     }
 
     li.dropdown-item {
-        font-size: 3vw;
+        font-size: 3.2vw;
+        padding-left: 10px;
     }
 
     /*
@@ -100,6 +155,15 @@ body {
     /*Razorcosmetic-header*/
     #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
         font-size: 3vw;
+    }
+
+    a.fa {
+        padding: 6px;
+        font-size: 6px;
+        width: 15px;
+    }
+    #footer div {
+        height: 36vh;
     }
 }
 /*
@@ -109,13 +173,14 @@ body {
     /*
         Navbar settings
     */
-    .navbar-nav .nav-link , a.dropdown-item {
-        font-size: 3.5vw;
-        
-        
+    .navbar-nav .nav-link, a.dropdown-item {
+        font-size: 3.6vw;
+        padding-left: 10px;
     }
+
     li.dropdown-item {
-        font-size: 3.7vw;
+        font-size: 3.6vw;
+        padding-left: 10px;
     }
 
     /*
@@ -124,12 +189,19 @@ body {
     #footer > div.one > ul.build > a {
         font-size: 2.5vw;
     }
+
     .Three a {
         font-size: 2.5vw;
     }
+
     ul.info a {
         font-size: 2.5vw;
     }
+    .Two {
+        padding-top: 50%;
+        padding-bottom: 50%;
+    }
+
 }
 /*
     Mobile-s 
@@ -139,45 +211,92 @@ body {
         Navbar settings
     */
     .navbar-nav .nav-link, a.dropdown-item {
-        font-size: 3.5vw;
+        font-size: 4vw;
+        padding-left: 10px;
     }
+
     li.dropdown-item {
-        font-size: 3.7vw;
+        font-size: 4vw;
+        padding-left: 10px;
     }
 
 
     /*
         footer settings
     */
-    #footer > div.one > ul.build > a {
-        font-size: 3vw;
+    #footer > div.one > ul.build > a { font-size: 3vw; }
+
+    .Three a { font-size: 3vw; }
+
+    ul.info a { font-size: 1.5vw; }
+
+    a.fa {
+        padding: 2vw;
+        font-size: 2vw;
+        width: 5vw;
     }
 
-    .Three a {
-        font-size: 3vw;
+    div.Tr { width: 25%; }
+}
+@media screen and (min-width: 990px) {
+    .navbar-collapse {
+        flex-grow: 0;
+    }
+    div.Tw {
+        width: 50%;
+    }
+    h2 {
+        font-size: 3.5vw
     }
 
-    ul.info a {
-        font-size: 3vw;
+    .my-container-fluid {
+        justify-content: center;
+        width: 100%;
+    }
+    div.one {
+        width: 25%;
+    }
+
+
+    .navbar-collapse > ul {
+        align-items: flex-end;
+    }
+
+    ul.navbar-nav {
+        justify-content: space-evenly;
     }
 }
 
+@media screen and (min-width: 320px) and (max-width: 990px) {
 
+    .navbar-collapse > ul {
+        align-items: stretch;
+    }
 
+    .my-container-fluid {
+        display: flex;
+        align-items: center;
+        flex-wrap: inherit;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
 
 nav {
-    background-color: #F7ECDE;
-    font-size: 20px;
+    background-color: #EEEAE3;
+    font-size: 1.0vw;
     color: black;
     box-shadow: 0 0 15px 0 rgb(153, 153, 153);
 }
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+
 }
 
 .navbar-toggler {
     border: 1px solid black;
+    margin-left: 8px;
 }
 
 .navbar .navbar-toggler:focus {
@@ -197,9 +316,9 @@ nav {
 }
 
 .cropped {
-    width: 500px;
-    height: 200px;
-    object-fit: cover;
+    width: 350px;
+    height: 150px;
+    object-fit:cover;
     object-position: 0% 50%;
 }
 
@@ -225,13 +344,25 @@ nav {
     box-shadow: 0 0 15px 0 rgb(153, 153, 153);
 }
 
-    .dropdown-menu > li > a:hover {
-        color: #54BAB9;
-    }
+.dropdown-menu > li > a:hover {
+     color: #54BAB9;
+}
 
-    .dropdown-menu > li > a:focus {
-        color: #54BAB9;
-    }
+.dropdown-menu > li > a:focus {
+     color: #54BAB9;
+}
+
+.cart {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.cart2 {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -240,9 +371,9 @@ nav {
 }
 
 .fa {
-    padding: 10px;
-    font-size: 30px;
-    width: 40px;
+    padding: 15px;
+    font-size: 45px;
+    width: 60px;
     text-align: end;
     text-decoration: none;
     margin: 0px 0px;
@@ -283,6 +414,7 @@ nav {
 }
 
 .one {
+    width: 33%;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -290,45 +422,61 @@ nav {
     display: grid;
     grid-template-rows: 8fr 1fr 2fr;
     font-size: 20px;
+    padding-top: 4%;
+    padding-bottom: 16%;
+}
+
+div.Tw {
+    background-image: url(/img/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .Two {
+    padding-top: 77.5%;
+    padding-bottom:22.5%;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 3.5vw;
 }
 
 .Three {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     font-size: 20px;
+    padding-top: 12%;
+    padding-bottom: 12%
 }
+
 
 .build {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     font-size: 20px;
 }
 
-.info {
+.info > a {
     color: #BA6D54;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     font-size: 20px;
 }
 
+
 #footer {
     width: 100%;
-    height: 400px;
+    overflow: hidden;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -337,10 +485,11 @@ nav {
 }
 
 
+
     #footer div {
-        width: 33.33%;
-        height: 400px;
-        background-color: #E9DAC1;
+        align-items: flex-start;
+        justify-content: flex-start;
+        background-color: #EEEAE3;
         text-decoration: none;
         flex-direction: column;
     }
@@ -354,32 +503,47 @@ footer img {
     height: 150px;
 }
 
-h1 {
-    color: #BA6D54;
-    font-size: 20px;
-    text-decoration: none;
+
+.bi-star-fill, .bi-star {
+    color: goldenrod;
 }
 
 .d {
     font-size: 10px;
 }
-
+h1 {
+    font-size: 2.5vw;
+}
 h2 {
     color: #BA6D54;
     text-decoration: none;
+    font-size: 2vw;
 }
-/*STORLEKAR FÖR WEBROWSER*/
-/*@media screen and (max-width: 1024px) {
-    {
-        font-size: 1.2vw;
+@media screen and (min-width: 768px) {
+    #footer div.Tr {
+        width: 33%;
+    }
+
+    #footer div.Tw {
+        width: 34%;
+    }
+
+    #footer div.one {
+        width: 33%;
+    }
+    footer div { height: 50vh; }
+
+
+}
+@media screen and (min-width: 1440px) {
+    .one {
+        padding-bottom: 6%;
+    }
+    footer div {
+        height: 60vh;
     }
 }
 
-@media screen and (max-width: 768px) {
-    {
-        font-size: 1.5vw;
-    }
-}*/
 
 
 
@@ -388,11 +552,10 @@ h2 {
     /*font-size: 1.5vw;*/
     text-decoration: none;
     color: #BA6D54;
-    
 }
 /*En css selector för alla a-länkar till höger i footer*/
-.Three a{
-   /* font-size: 1.5vw;*/
+.Three a {
+    /* font-size: 1.5vw;*/
     text-decoration: none;
     color: #BA6D54;
 }
@@ -402,85 +565,6 @@ ul.info a {
 }
 
 ul.Two h2 {
-
-}
-
-/*@media screen and (max-width: 639px) {
-   footer img  {
-        width: 120px;
-        height: 200px;
-    }
-
-    
-
-    h2 {
-        font-size: 9px;
-    }
-
-    .build {
-        font-size: 10px;
-        padding-bottom: 90px;
-    }
-
-    .Two {
-        font-size: 8px;
-    }
-
-    .info {
-        font-size: 10px;
-    }
-}
-
-@media screen and (min-width: 640px) {
-   footer img {
-        width: 250px;
-        height: 280px;
-    }
-
-    h2 {
-        font-size: 12px;
-    }
-
-    .Two {
-        font-size: 10px;
-    }
-}
-
-@media screen and (min-width: 1140px) {
-  footer img {
-        width: 350px;
-        height: 350px;
-    }
-
-
-    .Two {
-        font-size: 10px;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-   footer img {
-        height: 70%;
-    }
-
-  footer  h2 {
-        font-size: 15px;
-    }
 }
 
 
-@media screen and (max-width: 770px) {
-
-
-   footer .fa {
-        padding: 8px;
-        font-size: 20px;
-        width: 30px;
-    }
-}
-
-@media screen and (max-width: 770px) {
-    .Three {
-        font-size: 10px;
-    }
-}*/

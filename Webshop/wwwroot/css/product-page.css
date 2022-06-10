@@ -1,0 +1,105 @@
+﻿:root {
+    --main-width-icon: 80px;
+}
+
+
+
+main {
+    background-color: white;
+}
+
+/*BUTTONS START*/
+
+
+.btn {
+    font-weight: bold;
+    box-shadow: 0px 2px 5px #1b1717;
+    max-width: 200px;
+    cursor: pointer;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    background-color: #54BAB9;
+}
+
+.button-link {
+    padding-top: 2rem;
+}
+/*BUTTONS END*/
+/*PRODUCTS PAGES STYLE START*/
+.main-title {
+    font-weight: bolder;
+    padding: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+}
+.info-icons {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-bottom: 1rem;
+}
+
+.fa.fa-chevron-circle-down {
+    color: #54BAB9;
+}
+.product-brand {
+    text-transform: uppercase;
+}
+.product-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.product-image {
+    width: 50%;
+    border-radius: 0.5rem;
+    padding-bottom: 2.5rem;
+   
+}
+
+#ingredients-title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.pricing {
+    font-weight: bolder;
+}
+
+.section-wrapper {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.video-section {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.sale-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+
+.logo-size {
+    width: var(--main-width-icon);
+}
+/* PRODUCTS PAGES STYLE END*/
+/*HOVER */
+.btn:hover {
+    transform: scale(1.1);
+}
+/*HOVER END*/
+
+
+@media screen and (min-width: 1024px) {
+    #video-section { padding-top: 10rem; }
+}

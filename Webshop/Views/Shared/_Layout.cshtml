@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;1,500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
   </head>
   <body>
     <header>
@@ -21,7 +22,7 @@
         <a class="navbar-brand d-lg-none" href="#"
           ><img class="cropped-2" src="~/img/logo.png"
         /></a>
-        <div class="container-fluid">
+        <div class="my-container-fluid">
           <button
             class="navbar-toggler navbar-text"
             type="button"
@@ -33,9 +34,14 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
+
+           <a class="d-lg-none" asp-controller="Product" asp-action="Cart"
+            ><img class="cart" src="~/img/shopping-cart.png" alt=""
+          /></a>
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul
-              class="navbar-nav mx-auto nav-justified align-items-end nav-fill w-100"
+              class="navbar-nav me-auto mb-2 mb-lg-0 w-100"
             >
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -51,24 +57,24 @@
                 >
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li class="dropdown-item" style="font-weight: bold">Face</li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Foundation</a></li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Blush</a></li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Bronzer</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Foundation</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Blush</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Bronzer</a></li>
                   <li><hr class="dropdown-divider" /></li>
                   <li class="dropdown-item" style="font-weight: bold">Eyes</li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Mascara</a></li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Eyeliner</a></li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Eyeshadow</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Mascara</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Eyeliner</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Eyeshadow</a></li>
                   <li><hr class="dropdown-divider"/></li>
                   <li class="dropdown-item" style="font-weight: bold">Lips</li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Lipstick</a></li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Lip Liner</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Lipstick</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Lip Liner</a></li>
                   <li><hr class="dropdown-divider" /></li>
                   <li class="dropdown-item" style="font-weight: bold">Brows</li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Eyebrow Pencil</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Eyebrow Pencil</a></li>
                   <li><hr class="dropdown-divider" /></li>
                   <li class="dropdown-item" style="font-weight: bold">Nails</li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Product">Nailpolish</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Nailpolish</a></li>
                 </ul>
               </li>
 
@@ -104,15 +110,18 @@
                   <li><a class="dropdown-item" href="#">Register</a></li>
                   <li><a class="dropdown-item" href="#">Log In</a></li>
                   <li><a class="dropdown-item" asp-controller="Product" asp-action="MyAccount">My Account</a></li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Cart">Cart</a></li>
                 </ul>
               </li>
             </ul>
+            <a class="d-none d-lg-block" asp-controller="Product" asp-action="Cart"
+                  ><img class="cart2" src="~/img/shopping-cart.png" 
+                /></a>
           </div>
         </div>
       </nav>
     </header>
   <main>
+   
       @RenderBody()
   </main>
   <footer>
@@ -128,7 +137,7 @@
                       Return
                   </a>
                   <a href="#">
-                    About
+                      About
                   </a>
 
 
@@ -139,10 +148,13 @@
               </ul>
               <ul class="info">
                   <a href="#">
-                      Epost some@gmail.com
+                      Epost
                   </a>
                   <a href="#">
-                     tel 123-4567
+                      some@gmail.com
+                  </a>
+                  <a href="#">
+                      tel 123-4567
                   </a>
               </ul>
               <ul class="content">
@@ -154,20 +166,21 @@
                   <a href="#" class="fa fa-instagram"></a>
               </ul>
           </div>
-          <div>
+          <div class= "Tw">
               <ul class="Two">
-                  <c href="#">
-                      <img class="logo"
-                           src="~/img/logo.png">
-                  </c>
-                  <c href="#">
+                  <a href="#">
+                      <!--<img class="logo"
+                               src="~/img/logo.png"-->
+                  </a>
+                  <a href="#">
                       <h2>&copy; Razer Cosmetics 2022™</h2>
-                  </c>
+                  </a>
 
 
               </ul>
           </div>
-          <div>
+          
+          <div class="Tr">
               <ul class="Three">
                   <a href="#">
                       Service
@@ -179,16 +192,33 @@
                       Gift Card
                   </a>
                   <a href="#">
-                    Tearms of purchase
+                    Terms
                   </a>
                   <a href="#">
-                     Privacy Policy
+                     Privacy
                   </a>
               </ul>
           </div>
       </div>
   </footer>
   <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
-
+ 
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

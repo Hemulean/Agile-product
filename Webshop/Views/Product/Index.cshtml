@@ -5,264 +5,88 @@
 @using Webshop.Models
 @model IList<Webshop.Models.Product>;
 
-<style>
-    body {
-        background: #FBF8F1;
-    }
-   
-   
-    .bi-star {
-        color: goldenrod;
-    }
-    .card  {
-        margin-left: 6px;
-        margin-right: 6px;
-        box-shadow: 2px 2px 7px gray;
-        
-        align-self: stretch;
-    }
-    .Btns {
-        background: #BA6D54;
-        background: bisque;
-        border-radius: 5px 5px 5px 5px;
-        justify-content: center;
-        align-self: end;
-    }
-    button {
-       
-  /*      background-color: white;
-        border-top:1.5px solid #BA6D54;
-        border-bottom:1.5px solid #BA6D54;
-        border-right:none;
-        border-left:none;
-       */
-    }
+<head>
+    <link href="css/global-style.css" rel="stylesheet" asp-append-version="true"/>
+    <link href="~/css/index-style.css" rel="stylesheet" asp-append-version="true"/>
+</head>
 
-    .img-product{
-        max-height: 377px;
 
-    }
-
-    .prod-btn {
-        color: whitesmoke;
-        background: bisque;
-    }
-    .background-img {
-        /*background-image: url("../img/shadow.jpg");
-        background-attachment: fixed;
-        background-repeat:round;*/
-        background: #E9DAC1;
-    }
-
-    .header {
-        margin-top: 3rem;
-        height: 100%;
-        width: 100%;
-        justify-self: center;
-    }
-    .shadow-custom {
-        box-shadow: 0px -1px 10px gray;
-    }
-    .text-shadow {
-        text-shadow: 2px 1.5px 2px black;
-    }
-    .card-header {
-        max-height: 135px;
-        background: none;
-        border-bottom: none;
-    }
-     pre{
-         font-size: medium;
-         text-shadow: 1px 1px 2px whitesmoke;
-         font-weight: bold;
-         text-wrap: none;
-         overflow: hidden;
-
-         
-    }
-    .container-fluid {
-        max-width: 1800px;
-       /* margin-left: 5rem;
-        margin-right: 5rem;*/
-    }
-    carousel-control-next-icon {
-        color: black;
-    }
-    .carousel-control-prev,.carousel-control-next {
-        color: black;
-
-       
-    }
-   /* .scale {
-        zoom: 0.8; 
-        zoom: 90%; 
-    }*/
- 
-</style>
-
-@{
-    //var top_products = await _ProductHandler.GetMostPopularProducts(12);
-    //var productSelection = productTake(3);
-    IEnumerable<Product> productTake(IEnumerable<Product> list,int select)
-    {
-       var newList = list.Take(select);
-        Model.RemoveAt(select - 2);
-        
-       
-       
-        return newList;
-
-    }
-
+@functions{
+    
     void RatingStars(double? rating)
     {
+       
 
-        for (int i = 0; i < rating; i++)
+        var emptyStars = 5 - rating;
+        if (rating > 5)
         {
-
-            <i class="bi bi-star"></i>
-
-
+            rating = 5;
         }
-    }
-
-   
-   async Task RenderMostPopular(int takeCounter)
-    {
-        
-        var popularProducts = @Model.Take(Range.All);
-      
-        foreach (var product in popularProducts.Skip(takeCounter).Take(4))
-        {
-            
+           
+        <div class="">
           
-            <div class="col-12 col-md-6 col-lg-3">
-
-                <div class="card">
-                    <img class="img-product" src=@product.Image 
-                         alt="100%x280" onerror="this.onerror=null;this.src='/img/hummingbird.png';" />
-                    <div class="card-header">
-                        <h5 class="card-title title-font my-5"><strong>@product.Name</strong></h5>
-                    </div>
-                    <div class="card-body align-content-stretch ">
-
-                        <p class="card-text">By <strong>@product.Brand</strong></p>
-
-                        @if (product.Rating != null)
-                        {
-                            var ratingCount = @product.Rating;
-
-                            RatingStars(ratingCount);
-                        }
-
-
-                        <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
-                        <div class="Btns d-flex my-4 background-img justify-content-around">
-                           
-                          
-                            
-                            <button type="button" class="btn  btn-lg" asp-controller="Product" asp-action="Cart" asp-route-id=@product.Id><i class="bi bi-cart"></i></button>
-                            <button type="button" class="btn btn-outline-dark  btn-lg" asp-controller="Product" asp-action="GetProductById" asp-route-id=@product.Id>more info</button>
-                          
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-        }
-    }
-   bool RenderRecommended(int takeCounter)
-    {
-       
-       var recommendedList =  _ProductHandler.GetRecommendedProducts("lipstick",12).Result.AsEnumerable();
-       bool carouselSwitch = recommendedList.Count() > 4;
-
-       
-            foreach (var product in recommendedList.Skip(takeCounter).Take(4))
+            @for (int i = 0; i < rating; i++)
             {
-                <div class="col-12  col-md-6 col-lg-3">
+                <i class=" bi bi-star-fill"></i>
+            }
+            @for (int i = 0; i < emptyStars; i++)
+            {
+                <i class="bi bi-star"></i>
+            }
+        </div>
+        
+    }
+
+
+    async Task RenderMostPopular()
+    {
+
+
+        foreach (var product in @Model)
+        {
+
+            <!-- Single Product -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+               
+                <div id="product-1 " class="single-product card">
+
+
+
 
                     <div class="card">
-                   
-                        <img class="img-product" src=@product.Image 
-                             alt="100%x280" onerror="this.onerror=null;this.src='/img/hummingbird.png';" />
-                    
-                        <div class="card-header">
-                            <h5 class="card-title title-font my-5"><strong>@product.Name</strong></h5>
-                        </div>
-                        <div class="card-body align-content-stretch ">
-                    
-                            <p class="card-text">By <strong>@product.Brand</strong></p>
-
-                            @if (product.Rating != null)
-                            {
-                                var ratingCount = @product.Rating;
-
-                                RatingStars(ratingCount);
-                            }
-
-
-                            <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
-                            <div class="Btns d-flex my-4 background-img justify-content-around">
-                                <button type="button" class="btn  btn-lg"><i class="bi bi-cart"></i></button>
-                                <button type="button" class="btn btn-outline-dark  btn-lg">more info</button>
-                            </div>
-
-                        </div>
-
+                        <a class="  stretched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id></a>
+                        <img class="card-img-top img-product"src=@product.Image
+                             alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
                     </div>
-                </div>
+                    
 
 
 
+                    <div class="part-2 card-body  text-center">
 
-            }
-       return carouselSwitch;
-    } 
-         
-       
-     
-   bool RenderByBrand(int takeCounter)
-    {
-        
-        var fromBrandList =  _ProductHandler.GetProductsByBrand("maybelline",11).Result.AsEnumerable();
 
-        bool carouselSwitch = fromBrandList.Count() > 4;
+                        <h4 class="product-title">@product.Name</h4>
 
-        foreach (var product in fromBrandList.Skip(takeCounter).Take(4)) 
-        {
-            <div class="col-12  col-md-6 col-lg-3">
+                        @if (product.Brand == "NULL")
+                        {
+                            <h5 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h5>
+                        }
+                        else
+                        {
+                            <h8 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h8>
+                        }
 
-                <div class="card">
-                    @if (product.Image == null)
-                    {   
-                        <img class="img-product" alt="100%x280" src="/img/hummingbird.png">
-                    }
-                    <img class="img-product" alt="100%x280" src=@product.Image>
-                    <div class="card-header">
-                        <h5 class="card-title title-font my-5"><strong>@product.Name</strong></h5>
-                    </div>
-                    <div class="card-body align-content-stretch ">
-                        
-                        <p class="card-text">By <strong>@product.Brand</strong></p>
 
+                        <h6 class="product-price">@product.Price &euro;</h6>
                         @if (product.Rating != null)
                         {
                             var ratingCount = @product.Rating;
 
                             RatingStars(ratingCount);
+
                         }
-
-
-                        <p class="card-text">Price: <strong>@product.Price</strong>€ </p>
-                        <div class="Btns d-flex my-4 background-img justify-content-around">
-                            <button type="button" class="btn  btn-lg"><i class="bi bi-cart"></i></button>
-                            <button type="button" class="btn btn-outline-dark  btn-lg">more info</button>
+                        <div class="justify-content-start mb-5">
+                            <a href="#"><i class="bi bi-cart cart   btn-outline-dark "></i></a>
                         </div>
 
                     </div>
@@ -270,217 +94,191 @@
                 </div>
             </div>
 
+        }
+    }
+    async Task RenderRecommended()
+    {
+        var recommendedList = _ProductHandler.GetRecommendedProducts("lipstick", 12).Result.AsEnumerable();
 
 
+        foreach (var product in @recommendedList)
+        {
+
+            <!-- Single Product -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div id="product-1 " class="single-product card">
+                  
+                    
+                   
+                    <div class="card">
+                        <a class="stretched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id></a>
+                        <img class="card-img-top border-0 img-product"src=@product.Image
+                             alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
+                    </div>
+                    
+                   
+                    <div class="part-2 card-body  text-center">
+                        
+                       
+                        <h4 class="product-title">@product.Name</h4>
+
+                        @if (product.Brand == "NULL")
+                        {
+                            <h5 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h5>
+                        }
+                        else
+                        {
+                            <h8 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h8>
+                        }
+
+
+                        <h6 class="product-price">@product.Price &euro;</h6>
+                        @if (product.Rating != null)
+                        {
+                            var ratingCount = @product.Rating;
+
+                            RatingStars(ratingCount);
+
+                        }
+                        <div class="justify-content-start  mb-5">
+                            <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
 
         }
-        return carouselSwitch;
-    } 
+    }
+
+
+
+   async Task RenderByBrand()
+    {
+
+        var fromBrandList =  _ProductHandler.GetProductsByBrand("maybelline", 11).Result.AsEnumerable();
+
+
+
+        foreach (var product in @fromBrandList)
+        {
+
+            <!-- Single Product -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div id="product-1 " class="single-product card">
+                  
+                    
+                   
+                    <div class="card">
+                        <a class="  stretched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id></a>
+                        <img class="card-img-top img-product"src=@product.Image
+                             alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
+                    </div>
+                    
+                    
+                    <div class="part-2 card-body center text-center">
+                        
+                       
+                        <h4 class="product-title">@product.Name</h4>
+
+                        @if (product.Brand == "NULL")
+                        {
+                            <h5 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h5>
+                        }
+                        else
+                        {
+                            <h8 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h8>
+                        }
+
+
+                        <h6 class="product-price">@product.Price &euro;</h6>
+                        @if (product.Rating != null)
+                        {
+                            var ratingCount = @product.Rating;
+
+                            RatingStars(ratingCount);
+
+                        }
+                        <div class="justify-content-start   mb-5">
+                            <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        }
+       
+
+    }
 }
 
 
 
 
 
+<div class="container d-flex justify-content-center product-image-wrapper border ">
+    <img src="/img/salebanner.png" class="my-5 img-fluid " alt="...">
+</div>
 
-<section class="header d-flex justify-content-center container-fluid w-100">
-    <div class="card background-img bg-transparent text-center justify-self-center text- px-3">
-        <h1>
-            Welcome to Razer Cosmetics
-        </h1>
-        <p>
-            <pre class="">
-“Calliope leaned forward on the vanity,
-which was littered with gleaming silver beauty wands and powders
-- and a fresh manicolor mitt—all of it arrayed carefully before her,
-like weapons polished and laid out for battle.
-Her own lethal tools, which had always made her so dangerously beautiful.” – Katharine McGee
-        </pre>
 
-        </p>
+<section class="section-products">
+    <div class="container">
+    <div class="g-3">
+
+
+        <div class="row justify-content-center text-center border-4">
+            <div class="col-md-8 col-lg-6">
+                <div class="header my-4 border-bottom ">
+                    <h2 class="txt-shadow-custom fw-bolder">Popular Products</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            @{
+                await RenderMostPopular();
+            }
+
+        </div>
+
+        
+        <div class="row justify-content-center text-center border-4">
+            <div class="col-md-8 col-lg-6">
+                <div class="header my-4 border-bottom ">
+                    <h2 class="txt-shadow-custom fw-bolder">Recommended for you</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @{
+                await RenderRecommended();
+            }
+
+
+        </div>
+
+
+        <div class="row justify-content-center text-center border-4">
+            <div class="col-md-8 col-lg-6">
+                <div class="header my-4 border-bottom ">
+                    <h2 class="txt-shadow-custom fw-bolder">by Maybelline</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @{
+                await RenderByBrand();
+            }
+
+
+        </div>
+
+
     </div>
-
-</section>
-
-<section class="pt-5 pb-5  d-flex justify-content-center
-">
-    <div class="container-fluid scale ">
-        <div class="row row-cols-4 background-img ">
-            <div class="col-12 ">
-                <h3 class="text-center text-white  text-shadow">Most Popular </h3>
-            </div>
-           
-            <div class="col-12">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
-                    <div class="carousel-inner background-img">
-                        <div class="carousel-item active">
-                            <div class="row">
-
-                                @{
-                                   int skipCounter = -1;
-                                   await RenderMostPopular(skipCounter);
-                                }
-
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                @{
-                                    skipCounter += 4;
-                                   await RenderMostPopular(skipCounter);
-                                }
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                @{
-                                    skipCounter += 4;
-                                    await RenderMostPopular(skipCounter);
-                                }
-
-                                
-                            </div>
-                        </div>
-                        <Carousel arrows>
-
-                       
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                        </Carousel>
-                    </div>
-                   
-                </div>
-               
-            </div>
-           
-
-            <div class="col-12 ">
-                <h3 class="mb-3 text-center text-white text-shadow background-img">Recommended for you </h3>
-            </div>
-            
-        <div class="col-12">
-            <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
-
-                <div class="carousel-inner background-img">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            @{
-                                skipCounter = -1;
-                                bool continueCarousel =  RenderRecommended(skipCounter);
-                            }
-       
-                        </div>
-                    </div>
-                
-                    @if (continueCarousel)
-                    {
-                  
-                 
-                        <div class="carousel-item ">
-                            <div class="row">
-                                @{
-                                    skipCounter += 4;
-                                    continueCarousel = RenderRecommended(skipCounter);
-                                }
-                            
-                            </div>
-                        </div>
-                  
-                    }
-                    @if (continueCarousel)
-                    {
-                  
-                  
-                        <div class="carousel-item ">
-                            <div class="row">
-                                @{
-                                    skipCounter += 4;
-                                    continueCarousel = RenderRecommended(skipCounter);
-                                }
-                            </div>
-                        </div>
-                  
-                    }
-                </div>
-                <Carousel arrows>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
-                    <span class="carousel-control-next-icon-dark" aria-hidden="true"></span>
-                    <span class="visually-hidden">Prev</span>
-                </button>
-                <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                </Carousel>
-
-            </div>
-        </div>
-
-        <div class="col-12 ">
-            <h3 class="mb-3 text-center text-white text-shadow background-img">By Maybelline </h3>
-        </div>
-        <div class="col-12">
-        <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
-
-        <div class="carousel-inner background-img">
-            <div class="carousel-item active">
-                <div class="row">
-
-                    @{
-                        skipCounter = -1;
-                      continueCarousel = RenderByBrand(skipCounter);
-                    }
-
-                </div>
-            </div>
-            @if (continueCarousel)
-            {
-                  
-                 
-                <div class="carousel-item ">
-                    <div class="row">
-                        @{
-                            skipCounter += 4;
-                            continueCarousel = RenderByBrand(skipCounter);
-                        }
-                            
-                    </div>
-                </div>
-                  
-            }
-            @if (continueCarousel)
-            {
-                  
-                 
-                <div class="carousel-item ">
-                    <div class="row ">
-                        @{
-                            skipCounter += 4;
-                            continueCarousel = RenderByBrand(skipCounter);
-                        }
-                            
-                    </div>
-                </div>
-                  
-            }
-            <Carousel arrows> 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            </Carousel>
-        </div></div></div></div></div>
+    </div>
 </section>
