@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #f7ecde;
+    background-color: #EEEAE3;
     color: black;
     /*
     width: 100%;
@@ -286,7 +286,7 @@ body {
 }
 
 nav {
-    background-color: #F7ECDE;
+    background-color: #EEEAE3;
     font-size: 1.0vw;
     color: black;
     box-shadow: 0 0 15px 0 rgb(153, 153, 153);
@@ -486,15 +486,13 @@ div.Tw {
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
 }
-    
+
 
 
     #footer div {
-        
-        
         align-items: flex-start;
         justify-content: flex-start;
-        background-color: #E9DAC1;
+        background-color: #EEEAE3;
         text-decoration: none;
         flex-direction: column;
     }
