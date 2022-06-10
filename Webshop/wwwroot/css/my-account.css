@@ -1,7 +1,7 @@
 ﻿html, body {
     max-width: 100%;
     overflow-x: hidden;
-    background-color: #FBF8F1;
+    background-color: white;
     color: black;
 }
 
@@ -48,7 +48,7 @@ ul {
         }
 
 .col-sm-8.p-3 > ul > li {
-    background-color: #FBF8F1;
+    background-color: white;
 }
 
 .table {
@@ -60,7 +60,7 @@ ul {
 
 /* Cards */
 
-/*.section-products .header {
+.section-products .header {
     margin-bottom: 50px;
 }
 
@@ -74,10 +74,18 @@ ul {
         font-size: 2.2rem;
         font-weight: 400;
         color: #444444;
-    }*/
+    }
 
 .container {
     max-width:100%;
+}
+
+.cropped-3 {
+    width: 850px;
+    height: 270px;
+    object-fit: cover;
+    object-position: 0% 100%;
+    justify-content:left;
 }
 
 .section-products .single-product {
