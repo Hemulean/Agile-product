@@ -14,6 +14,9 @@ body {
     padding: 0;
     overflow-x: hidden;*/
 }
+h6,h5,h4,h3,h2,h1 {
+    color: #ba6d54;
+}
 
 /*Laptop*/
 @media screen and (max-width: 1440px){
@@ -473,7 +476,7 @@ div.Tw {
 
 #footer {
     width: 100%;
-    height: 55vh;
+    overflow: hidden;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -500,20 +503,21 @@ footer img {
     height: 150px;
 }
 
-h1 {
-    color: #BA6D54;
-    font-size: 20px;
-    text-decoration: none;
+
+.bi-star-fill, .bi-star {
+    color: goldenrod;
 }
 
 .d {
     font-size: 10px;
 }
-
+h1 {
+    font-size: 2.5vw;
+}
 h2 {
     color: #BA6D54;
     text-decoration: none;
-    font-size: 2vw
+    font-size: 2vw;
 }
 @media screen and (min-width: 768px) {
     #footer div.Tr {
