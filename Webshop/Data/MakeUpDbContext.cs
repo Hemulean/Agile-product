@@ -1,13 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Webshop.Models;
 
 namespace Webshop.Data
 {
-    public class MakeUpDbContext : DbContext
+    public class MakeUpDbContext : IdentityDbContext<User>
     {
         public DbSet<Product> Products { get; set; }
 
-        public MakeUpDbContext(DbContextOptions options) : base(options)
+        public MakeUpDbContext(DbContextOptions<MakeUpDbContext> options) : base(options)
         {
 
         }
