@@ -1,6 +1,6 @@
 ﻿
-body {
-   /* background: #FBF8F1;*/
+main {
+    /* background: #FBF8F1;*/
     background: white;
 }
 
@@ -64,6 +64,7 @@ body {
 
 .product-price {
     font-weight: 600;
+    color: black;
     text-decoration: underline #BA6D54;
 }
 
@@ -123,6 +124,7 @@ body {
 .cart + .card:hover {
     display: flex;
 }
+
 
 .txt-shadow-custom {
     text-shadow: 1px 2px 3px whitesmoke;
