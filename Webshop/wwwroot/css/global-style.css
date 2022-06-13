@@ -221,25 +221,20 @@ body {
     /*
         footer settings
     */
-    #footer > div.one > ul.build > a {
-        font-size: 3vw;
-    }
+    #footer > div.one > ul.build > a { font-size: 3vw; }
 
-    .Three a {
-        font-size: 3vw;
-    }
+    .Three a { font-size: 3vw; }
 
-    ul.info a {
-        font-size: 1.5vw;
-    }
+    ul.info a { font-size: 1.5vw; }
+
     a.fa {
         padding: 2vw;
         font-size: 2vw;
         width: 5vw;
     }
-    div.Tr {
-        width: 25%;
-    }
+
+    div.Tr { width: 25%; }
+}
 
 @media screen and (min-width: 990px) {
     .navbar-collapse {
@@ -268,7 +263,7 @@ body {
     ul.navbar-nav {
         justify-content: space-evenly;
     }
-}
+
 
 @media screen and (min-width: 320px) and (max-width: 990px) {
 
@@ -374,9 +369,10 @@ nav {
 }
 
 .fa {
-    padding: 15px;
-    font-size: 45px;
-    width: 60px;
+    padding: 2.5px;
+    font-size: 1vw;
+    width: 2vw;
+    height: 2vw;
     text-align: end;
     text-decoration: none;
     margin: 0px 0px;
@@ -396,20 +392,7 @@ nav {
     color: white;
 }
 
-.fa-google {
-    background: red;
-    color: white;
-}
 
-.fa-linkedin {
-    background: #007bb5;
-    color: white;
-}
-
-.fa-youtube {
-    background: red;
-    color: white;
-}
 
 .fa-instagram {
     background: #125688;
@@ -425,24 +408,22 @@ nav {
     display: grid;
     grid-template-rows: 8fr 1fr 2fr;
     font-size: 20px;
-    padding-top: 4%;
+    padding-top: 1%;
     padding-bottom: 16%;
 }
 
 div.Tw {
-    background-image: url(/img/logo.png);
+    background-image: url(/img/Tjock.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .Two {
-    padding-top: 77.5%;
-    padding-bottom:22.5%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 3.5vw;
+    font-size: 0.9vw;
 }
 
 .Three {
@@ -451,8 +432,8 @@ div.Tw {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 20px;
-    padding-top: 12%;
+    font-size: 1.1vw;
+    padding-top: 3%;
     padding-bottom: 12%
 }
 
@@ -462,7 +443,7 @@ div.Tw {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 1.0vw;
 }
 
 .info > a {
@@ -473,13 +454,18 @@ div.Tw {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 0.7vw;
 }
 
+.stickyFooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
 
 #footer {
     width: 100%;
-    height: 55vh;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -490,8 +476,6 @@ div.Tw {
 
 
     #footer div {
-        
-        
         align-items: flex-start;
         justify-content: flex-start;
         background-color: #E9DAC1;
@@ -525,17 +509,17 @@ h2 {
 }
 @media screen and (min-width: 768px) {
     #footer div.Tr {
-        width: 33%;
+        width: 40%;
     }
 
     #footer div.Tw {
-        width: 34%;
+        width: 20%;
     }
 
     #footer div.one {
-        width: 33%;
+        width: 40%;
     }
-    footer div { height: 50vh; }
+    footer div { height: 30vh; }
 
 
 }
