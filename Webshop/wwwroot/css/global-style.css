@@ -469,7 +469,19 @@ ul.info a {
 ul.Two h2 {
 }
 
+.btn {
+    font-weight: bold;
+    box-shadow: 0px 2px 5px #1b1717;
+    max-width: 200px;
+    cursor: pointer;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    background-color: #54BAB9;
+}
 
+    .btn:hover {
+        transform: scale(1.1);
+    }
 
 
 
