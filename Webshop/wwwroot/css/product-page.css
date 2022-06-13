@@ -40,6 +40,10 @@ main {
     padding-bottom: 1rem;
 }
 
+.info-icons > span > i {
+    font-size: 2rem;
+
+}
 .fa.fa-chevron-circle-down {
     color: #54BAB9;
 }
@@ -101,5 +105,25 @@ main {
 
 
 @media screen and (min-width: 1024px) {
-    #video-section { padding-top: 10rem; }
+    #spacing-for-video {
+        padding-top: 10rem;
+    }
+}
+
+
+@media screen and (max-width: 990px) {
+   
+    #video-section-reverse {
+        flex-direction: column-reverse;
+        padding-top: 2rem;
+    }
+
+
+    .info-icons > span > i{
+        font-size: 1.5rem;
+    }
+
+    .info-icons {
+        align-self: center;
+    }
 }
