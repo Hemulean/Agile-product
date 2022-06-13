@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Webshop.Models
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -107,8 +113,8 @@
                   >Account</a
                 >
                 <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Register</a></li>
-                  <li><a class="dropdown-item" href="#">Log In</a></li>
+                  <li><a type="button" id="register" class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                  <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Login">Log In</a></li>
                   <li><a class="dropdown-item" asp-controller="Product" asp-action="MyAccount">My Account</a></li>
                 </ul>
               </li>
@@ -202,7 +208,7 @@
       </div>
   </footer>
   <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
- 
+  @await RenderSectionAsync("Scripts", false)
   </body>
 </html>
 

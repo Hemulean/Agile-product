@@ -44,7 +44,8 @@ namespace Webshop.Models
         [CsvHelper.Configuration.Attributes.Index(9)]
         public string? Image { get; set; }
 
-
+       
+        public User? User { get; set; }
 
     }
 }
