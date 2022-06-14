@@ -1,6 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using Webshop.Models
-
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
@@ -13,8 +12,6 @@
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/css/global-style.css" rel="stylesheet" asp-append-version="true" />
-
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;1,500&display=swap" rel="stylesheet">
@@ -48,7 +45,7 @@
               class="navbar-nav me-auto mb-2 mb-lg-0 w-100"
             >
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" asp-controller="Product" asp-action="Index">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -109,7 +106,6 @@
                                 @if (SignInManager.IsSignedIn(User))
                                 {
 
-
                                     <li class="nav-item">
                                         <p id="manage" class="nav-link text-dark mb-3">Hello @UserManager.GetUserName(User)!</p>
                                     </li>
@@ -125,19 +121,7 @@
                                     <li><a type="button" id="register" class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
                                     <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Login">Log In</a></li>
 
-
                                 }
-
-
-
-
-
-
-
-
-
-
-
 
                             </ul>
                         </li>
