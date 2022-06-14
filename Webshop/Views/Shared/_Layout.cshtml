@@ -43,39 +43,44 @@
                     <img class="cart" src="~/img/shopping-cart.png" alt="" />
                 </a>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                               data-bs-toggle="dropdown"
-                               href="#"
-                               role="button"
-                               aria-expanded="false">Products</a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li class="dropdown-item" style="font-weight: bold">Face</li>
-                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Foundation</a></li>
-                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Blush</a></li>
-                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Bronzer</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li class="dropdown-item" style="font-weight: bold">Eyes</li>
-                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Mascara</a></li>
-                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Eyeliner</a></li>
-                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Eyeshadow</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li class="dropdown-item" style="font-weight: bold">Lips</li>
-                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Lipstick</a></li>
-                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Lip Liner</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li class="dropdown-item" style="font-weight: bold">Brows</li>
-                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Eyebrow Pencil</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li class="dropdown-item" style="font-weight: bold">Nails</li>
-                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Products">Nailpolish</a></li>
-                            </ul>
-                        </li>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul
+              class="navbar-nav me-auto mb-2 mb-lg-0 w-100"
+            >
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  >Products</a
+                >
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li class="dropdown-item" style="font-weight: bold">Face</li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="GetProductsByCategory" asp-route-category="foundation">Foundation</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="GetProductsByCategory" asp-route-category="blush">Blush</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="GetProductsByCategory" asp-route-category="bronzer">Bronzer</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li class="dropdown-item" style="font-weight: bold">Eyes</li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="GetProductsByCategory" asp-route-category="mascara">Mascara</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="GetProductsByCategory" asp-route-category="eyeliner">Eyeliner</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="GetProductsByCategory" asp-route-category="eyeshadow">Eyeshadow</a></li>
+                  <li><hr class="dropdown-divider"/></li>
+                  <li class="dropdown-item" style="font-weight: bold">Lips</li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="GetProductsByCategory" asp-route-category="lipstick">Lipstick</a></li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="GetProductsByCategory" asp-route-category="lip_liner">Lip Liner</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li class="dropdown-item" style="font-weight: bold">Brows</li>
+                  <li><a class="dropdown-item" asp-controller="Product" asp-action="GetProductsByCategory" asp-route-category="eyebrow">Eyebrow Pencil</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li class="dropdown-item" style="font-weight: bold">Nails</li>
+                    <li><a class="dropdown-item" asp-controller="Product"  asp-action="GetProductsByCategory" asp-route-category="nail_polish">Nailpolish</a></li>
+                </ul>
+              </li>
 
                         <a class="d-none d-lg-block" href="#">
                             <img class="cropped" src="~/img/logo.png" alt="" />
