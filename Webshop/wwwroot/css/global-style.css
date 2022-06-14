@@ -14,6 +14,14 @@ body {
     padding: 0;
     overflow-x: hidden;*/
 }
+.site-content {
+    flex: 1;
+}
+.site {
+    display: flex;
+    min-height: 120vh;
+    flex-direction: column;
+}
 
 /*Laptop*/
 @media screen and (max-width: 1440px){
@@ -45,15 +53,15 @@ body {
         footer settings
     */
     #footer > div.one > ul.build > a {
-        font-size: 1.3vw;
+        font-size: 1.2vw;
     }
 
     .Three a {
-        font-size: 1.3vw;
+        font-size: 1.2vw;
     }
 
     ul.info a {
-        font-size: 1.3vw;
+        font-size: 0.8vw;
     }
     /*Razorcosmetic-header*/
     #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
@@ -400,14 +408,11 @@ nav {
 }
 
 .one {
-    width: 33%;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     display: grid;
-    grid-template-rows: 8fr 1fr 2fr;
-    font-size: 20px;
     padding-top: 1%;
     padding-bottom: 16%;
 }
@@ -416,14 +421,22 @@ div.Tw {
     background-image: url(/img/Tjock.png);
     background-size: contain;
     background-repeat: no-repeat;
+    padding-top: 1%;
+    padding-bottom: 16%;
+}
+div.Tr {
+    padding-top: 1%;
+    padding-bottom: 16%;
 }
 
 .Two {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     font-size: 0.9vw;
+    padding-bottom: 0%;
+    padding-top: 50%;
 }
 
 .Three {
@@ -432,9 +445,7 @@ div.Tw {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 1.1vw;
-    padding-top: 3%;
-    padding-bottom: 12%
+    font-size: 1.2vw;
 }
 
 
@@ -443,7 +454,7 @@ div.Tw {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    font-size: 1.0vw;
+    font-size: 1.5vw;
 }
 
 .info > a {
@@ -454,14 +465,17 @@ div.Tw {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 0.7vw;
+    font-size: 0.6vw;
 }
 
 .stickyFooter {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    position: sticky;
+    display: flex;
+    min-height: 36vh;
+    flex-direction: column;
+    /*min-height: 100vh;
+    margin-bottom: 120px;
+    bottom: 0px;*/
 }
 
 #footer {
@@ -505,32 +519,32 @@ h1 {
 h2 {
     color: #BA6D54;
     text-decoration: none;
-    font-size: 2vw
+    font-size: 1.0vw
 }
 @media screen and (min-width: 768px) {
     #footer div.Tr {
-        width: 40%;
+        width: 37.5%;
     }
 
     #footer div.Tw {
-        width: 20%;
+        width: 25%;
     }
 
     #footer div.one {
-        width: 40%;
+        width: 37.5%;
     }
-    footer div { height: 30vh; }
+    footer div { height: 36vh; }
 
 
 }
-@media screen and (min-width: 1440px) {
+/*@media screen and (min-width: 1440px) {
     .one {
         padding-bottom: 6%;
     }
     footer div {
         height: 60vh;
     }
-}
+}*/
 
 
 
