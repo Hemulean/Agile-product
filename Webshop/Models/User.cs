@@ -4,6 +4,6 @@ namespace Webshop.Models
 {
     public class User : IdentityUser
     {
-        public IList<Product>? Products { get; set; } 
+        public IList<Product>? Products { get; set; }
     }
 }
