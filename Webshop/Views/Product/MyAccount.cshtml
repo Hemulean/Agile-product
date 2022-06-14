@@ -1,1 +1,50 @@
-﻿<h1>My Account</h1>
+﻿@using Microsoft.AspNetCore.Identity
+@using Webshop.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<head>
+    <link href="~/css/my-account.css" rel="stylesheet" asp-append-version="true"/>
+</head>
+
+ <div class="container-lg container-fluid mt-3">
+        <div class="row">
+          <div class="col-sm-4 p-3">
+            <h1>@UserManager.GetUserName(User)</h1>
+
+            <ul>
+              <li class="list-item-nav">
+                <a asp-controller="Product" asp-action="MyAccount"> My Profile </a>
+              </li>
+              <li class="list-item-nav">
+                <a asp-controller="Product" asp-action="MyOrders"> My Orders </a>
+              </li>
+              <li class="list-item-nav">
+                <a asp-controller="Product" asp-action="MyOffers"> My Offers </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-8 p-3">
+            <h1>My Profile</h1>
+            
+            <ul>
+              <li class="list-item li-title">Customernumber</li>
+              <li class="list-item">4659454547</li>
+              <li class="list-item li-title">Name</li>
+              <li class="list-item">Diana Smith</li>
+              <li class="list-item li-title">Address</li>
+              <li class="list-item">Dalagatan 7</li>
+              <li class="list-item li-title">Post Code</li>
+              <li class="list-item">411 10</li>
+              <li class="list-item li-title">City</li>
+              <li class="list-item">Gothenburg</li>
+              <li class="list-item li-title">Phonenumber</li>
+              <li class="list-item">0702 17 84 56</li>
+              <li class="list-item li-title">Email</li>
+              <li class="list-item">@UserManager.GetUserName(User)</li>
+              <li class="list-item li-title">Membership Points</li>
+              <li class="list-item">289</li>
+            </ul>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,139 @@
+﻿@inject Webshop.Services.ProductHandler _ProductHandler;
+@using System.Collections
+@using System.Diagnostics.Metrics
+@using System.Runtime.CompilerServices
+@using Webshop.Models
+@model IList<Webshop.Models.Product>;
+@using Microsoft.AspNetCore.Identity
+@using Webshop.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<head>
+    <link href="~/css/my-account.css" rel="stylesheet" asp-append-version="true"/>
+</head>
+
+
+@functions{
+    
+    void RatingStars(double? rating)
+    {
+       
+
+        var emptyStars = 5 - rating;
+        if (rating > 5)
+        {
+            rating = 5;
+        }
+           
+        <div class="">
+          
+            @for (int i = 0; i < rating; i++)
+            {
+                <i class=" bi bi-star-fill"></i>
+            }
+            @for (int i = 0; i < emptyStars; i++)
+            {
+                <i class="bi bi-star"></i>
+            }
+        </div>
+        
+    }
+
+   async Task RenderByBrand()
+    {
+
+        var fromBrandList =  _ProductHandler.GetProductsByBrand("revlon", 20).Result.AsEnumerable();
+
+        foreach (var product in @fromBrandList)
+        {
+
+            <!-- Single Product -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div id="product-1 " class="single-product card">
+                  
+                    <div class="card">
+                        <a class="  stretched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id></a>
+                        <img class="card-img-top img-product"src=@product.Image
+                             alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
+                    </div>
+                    
+                    <div class="part-2 card-body center text-center">
+                        
+                        <h4 class="product-title">@product.Name</h4>
+
+                        @if (product.Brand == "NULL")
+                        {
+                            <h5 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h5>
+                        }
+                        else
+                        {
+                            <h8 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h8>
+                        }
+
+
+                        <h6 class="product-price">@product.Price &euro;</h6>
+                        @if (product.Rating != null)
+                        {
+                            var ratingCount = @product.Rating;
+
+                            RatingStars(ratingCount);
+
+                        }
+                        <div class="justify-content-start   mb-3">
+                            <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        }
+       
+
+    }
+}
+
+ <div class="container-lg container-fluid mt-3">
+        <div class="row">
+          <div class="col-sm-4 p-3">
+            <h1>@UserManager.GetUserName(User)</h1>
+
+            <ul>
+              <li class="list-item-nav">
+                <a asp-controller="Product" asp-action="MyAccount"> My Profile </a>
+              </li>
+              <li class="list-item-nav">
+                <a asp-controller="Product" asp-action="MyOrders"> My Orders </a>
+              </li>
+              <li class="list-item-nav">
+                <a asp-controller="Product" asp-action="MyOffers"> My Offers </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-8 p-3">
+            <h1>My Offers</h1>
+           <div class="img-offer"> <img class="img-fluid" src="~/img/buy3payfor2banner.png" alt=""
+          /></div>
+            <section class="section-products">
+    <div class="container">
+    <div class="g-3">
+        <div class="row justify-content-center text-center border-4">
+            <div class="col-md-8 col-lg-6">
+                <div class="header my-4 border-bottom">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @{
+                await RenderByBrand();
+            }
+        </div>
+    </div>
+    </div>
+</section>
+            
+          </div>
+        </div>
+      </div>
