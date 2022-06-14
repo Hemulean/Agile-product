@@ -4,6 +4,10 @@
 @using System.Runtime.CompilerServices
 @using Webshop.Models
 @model IList<Webshop.Models.Product>;
+@using Microsoft.AspNetCore.Identity
+@using Webshop.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 
 <head>
     <link href="~/css/my-account.css" rel="stylesheet" asp-append-version="true"/>
@@ -94,7 +98,7 @@
  <div class="container-lg container-fluid mt-3">
         <div class="row">
           <div class="col-sm-4 p-3">
-            <h1>Welcome Diana</h1>
+            <h1>@UserManager.GetUserName(User)</h1>
 
             <ul>
               <li class="list-item-nav">

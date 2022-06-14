@@ -1,11 +1,16 @@
-﻿<head>
+﻿@using Microsoft.AspNetCore.Identity
+@using Webshop.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<head>
     <link href="~/css/my-account.css" rel="stylesheet" asp-append-version="true"/>
 </head>
 
  <div class="container-lg container-fluid mt-3">
         <div class="row">
           <div class="col-sm-4 p-3">
-            <h1>Welcome Diana</h1>
+            <h1>@UserManager.GetUserName(User)</h1>
 
             <ul>
               <li class="list-item-nav">
@@ -21,6 +26,7 @@
           </div>
           <div class="col-sm-8 p-3">
             <h1>My Profile</h1>
+            
             <ul>
               <li class="list-item li-title">Customernumber</li>
               <li class="list-item">4659454547</li>
@@ -35,7 +41,7 @@
               <li class="list-item li-title">Phonenumber</li>
               <li class="list-item">0702 17 84 56</li>
               <li class="list-item li-title">Email</li>
-              <li class="list-item">diana.smith@gmail.com</li>
+              <li class="list-item">@UserManager.GetUserName(User)</li>
               <li class="list-item li-title">Membership Points</li>
               <li class="list-item">289</li>
             </ul>
