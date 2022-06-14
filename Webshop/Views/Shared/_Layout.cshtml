@@ -6,44 +6,42 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Razer Cosmetics</title>
-    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" asp-append-version="true"/>
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="~/css/global-style.css" rel="stylesheet" asp-append-version="true"/>
-  
-     
+    <link href="~/css/global-style.css" rel="stylesheet" asp-append-version="true" />
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;1,500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    
-  </head>
-  <body>
+
+</head>
+<body>
     <header>
         <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand d-lg-none" href="#"
-          ><img class="cropped-2" src="~/img/logo.png"
-        /></a>
-        <div class="my-container-fluid">
-          <button
-            class="navbar-toggler navbar-text"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <a class="navbar-brand d-lg-none" href="#">
+                <img class="cropped-2" src="~/img/logo.png" />
+            </a>
+            <div class="my-container-fluid">
+                <button class="navbar-toggler navbar-text"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-           <a class="d-lg-none" asp-controller="Product" asp-action="Cart"
-            ><img class="cart" src="~/img/shopping-cart.png" alt=""
-          /></a>
+                <a class="d-lg-none" asp-controller="Product" asp-action="Cart">
+                    <img class="cart" src="~/img/shopping-cart.png" alt="" />
+                </a>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul
@@ -84,132 +82,157 @@
                 </ul>
               </li>
 
-              <a class="d-none d-lg-block" href="#"
-                ><img class="cropped" src="~/img/logo.png" alt=""
-              /></a>
+                        <a class="d-none d-lg-block" href="#">
+                            <img class="cropped" src="~/img/logo.png" alt="" />
+                        </a>
 
-              <li class="nav-item dropdown dropdown-center">
-                <a
-                  class="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  href="#"
-                  role="button"
-                  aria-expanded="false"
-                  >About Us</a
-                >
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="AboutUs">About Us</a></li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="Contact">Contact</a></li>
-                </ul>
-              </li>
+                        <li class="nav-item dropdown dropdown-center">
+                            <a class="nav-link dropdown-toggle"
+                               data-bs-toggle="dropdown"
+                               href="#"
+                               role="button"
+                               aria-expanded="false">About Us</a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" asp-controller="Product" asp-action="AboutUs">About Us</a></li>
+                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Contact">Contact</a></li>
+                            </ul>
+                        </li>
 
-              <li class="nav-item dropdown dropdown-center">
-                <a
-                  class="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  href="#"
-                  role="button"
-                  aria-expanded="false"
-                  >Account</a
-                >
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a type="button" id="register" class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
-                  <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Login">Log In</a></li>
-                  <li><a class="dropdown-item" asp-controller="Product" asp-action="MyAccount">My Account</a></li>
-                </ul>
-              </li>
-            </ul>
-            <a class="d-none d-lg-block" asp-controller="Product" asp-action="Cart"
-                  ><img class="cart2" src="~/img/shopping-cart.png" 
-                /></a>
-          </div>
-        </div>
-      </nav>
+                        <li class="nav-item dropdown dropdown-center">
+                            <a class="nav-link dropdown-toggle"
+                               data-bs-toggle="dropdown"
+                               href="#"
+                               role="button"
+                               aria-expanded="false">Account</a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+
+
+                                    <li class="nav-item">
+                                        <p id="manage" class="nav-link text-dark mb-3">Hello @UserManager.GetUserName(User)!</p>
+                                    </li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="MyAccount">My Account</a></li>
+                                    <li class="nav-item">
+                                        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Product", new { area = "" })">
+                                            <button id="logout" type="submit" class="dropdown-item">Logout</button>
+                                        </form>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li><a type="button" id="register" class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                                    <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Login">Log In</a></li>
+
+
+                                }
+
+
+
+
+
+
+
+
+
+
+
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <a class="d-none d-lg-block" asp-controller="Product" asp-action="Cart">
+                        <img class="cart2" src="~/img/shopping-cart.png" />
+                    </a>
+                </div>
+            </div>
+        </nav>
     </header>
-  <main>
-   
-      @RenderBody()
-  </main>
-  <footer>
+    <main>
 
-      <div id="footer">
+        @RenderBody()
+    </main>
+    <footer>
 
-          <div class=one>
-              <ul class="build">
-                  <a href="#">
-                      FAQ
-                  </a>
-                  <a href="#">
-                      Return
-                  </a>
-                  <a href="#">
-                      About
-                  </a>
+        <div id="footer">
 
-
+            <div class=one>
+                <ul class="build">
+                    <a href="#">
+                        FAQ
+                    </a>
+                    <a href="#">
+                        Return
+                    </a>
+                    <a href="#">
+                        About
+                    </a>
 
 
 
 
-              </ul>
-              <ul class="info">
-                  <a href="#">
-                      Epost
-                  </a>
-                  <a href="#">
-                      some@gmail.com
-                  </a>
-                  <a href="#">
-                      tel 123-4567
-                  </a>
-              </ul>
-              <ul class="content">
-                  <a href="#" class="fa fa-facebook"></a>
-                  <a href="#" class="fa fa-twitter"></a>
-                  <a href="#" class="fa fa-google"></a>
-                  <a href="#" class="fa fa-linkedin"></a>
-                  <a href="#" class="fa fa-youtube"></a>
-                  <a href="#" class="fa fa-instagram"></a>
-              </ul>
-          </div>
-          <div class= "Tw">
-              <ul class="Two">
-                  <a href="#">
-                      <!--<img class="logo"
-                               src="~/img/logo.png"-->
-                  </a>
-                  <a href="#">
-                      <h2>&copy; Razer Cosmetics 2022™</h2>
-                  </a>
 
 
-              </ul>
-          </div>
-          
-          <div class="Tr">
-              <ul class="Three">
-                  <a href="#">
-                      Service
-                  </a>
-                  <a href="#">
-                      Cookies
-                  </a>
-                  <a href="#">
-                      Gift Card
-                  </a>
-                  <a href="#">
-                    Terms
-                  </a>
-                  <a href="#">
-                     Privacy
-                  </a>
-              </ul>
-          </div>
-      </div>
-  </footer>
-  <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
-  @await RenderSectionAsync("Scripts", false)
-  </body>
+                </ul>
+                <ul class="info">
+                    <a href="#">
+                        Epost
+                    </a>
+                    <a href="#">
+                        some@gmail.com
+                    </a>
+                    <a href="#">
+                        tel 123-4567
+                    </a>
+                </ul>
+                <ul class="content">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </ul>
+            </div>
+            <div class="Tw">
+                <ul class="Two">
+                    <a href="#">
+                        <!--<img class="logo"
+                                 src="~/img/logo.png"-->
+                    </a>
+                    <a href="#">
+                        <h2>&copy; Razer Cosmetics 2022™</h2>
+                    </a>
+
+
+                </ul>
+            </div>
+
+            <div class="Tr">
+                <ul class="Three">
+                    <a href="#">
+                        Service
+                    </a>
+                    <a href="#">
+                        Cookies
+                    </a>
+                    <a href="#">
+                        Gift Card
+                    </a>
+                    <a href="#">
+                        Terms
+                    </a>
+                    <a href="#">
+                        Privacy
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+    @await RenderSectionAsync("Scripts", false)
+</body>
 </html>
 
 
