@@ -105,8 +105,9 @@ body {
     }
 
     a.fa {
-        padding: 2vw;
-        font-size: 2vw;
+        padding: 1vw;
+        font-size: 3.5vw;
+        height: 5vw;
         width: 5vw;
     }
     h2 {
@@ -124,7 +125,7 @@ body {
         width: 30%;
     }
     #footer div {
-        height: 48vh;
+        height: 40vh;
     }
 }
 /*Mobile-L*/
@@ -162,13 +163,9 @@ body {
         font-size: 3vw;
     }
 
-    a.fa {
-        padding: 6px;
-        font-size: 6px;
-        width: 15px;
-    }
+    
     #footer div {
-        height: 36vh;
+        height: 24vh;
     }
 }
 /*
@@ -377,33 +374,35 @@ nav {
 }
 
 .fa {
-    padding: 2.5px;
-    font-size: 1vw;
-    width: 2vw;
-    height: 2vw;
-    text-align: end;
+    padding: .3vw;
+    font-size: 2.5vw;
+    width: 3vw;
+    height: 3vw;
+    text-align: center;
     text-decoration: none;
     margin: 0px 0px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 5);
+    transition: .6s;
 }
 
     .fa:hover {
-        opacity: 0.6;
+        transform: translate(0, -10px);
     }
 
 .fa-facebook {
-    background: blue;
+    background: #4267B2;
     color: white;
 }
 
 .fa-twitter {
-    background: lightblue;
-    color: white;
+    background: white;
+    color: #00acee;
 }
 
 
 
 .fa-instagram {
-    background: #125688;
+    background: #feda77;
     color: white;
 }
 
@@ -413,7 +412,7 @@ nav {
     justify-content: flex-start;
     flex-direction: column;
     display: grid;
-    padding-top: 1%;
+    padding-top: 1.5%;
     padding-bottom: 16%;
 }
 
@@ -425,7 +424,7 @@ div.Tw {
     padding-bottom: 16%;
 }
 div.Tr {
-    padding-top: 1%;
+    padding-top: 1.5%;
     padding-bottom: 16%;
 }
 
@@ -445,7 +444,7 @@ div.Tr {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 1.2vw;
+    font-size: 1.4vw;
 }
 
 
@@ -454,7 +453,7 @@ div.Tr {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    font-size: 1.5vw;
+    font-size: 1.4vw;
 }
 
 .info > a {
@@ -465,13 +464,13 @@ div.Tr {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 0.6vw;
+    font-size: 0.8vw;
 }
 
 .stickyFooter {
     position: sticky;
     display: flex;
-    min-height: 36vh;
+    min-height: 38vh;
     flex-direction: column;
     /*min-height: 100vh;
     margin-bottom: 120px;
@@ -498,7 +497,7 @@ div.Tr {
     }
 
     #footer a:hover {
-        opacity: 0.6;
+        opacity: 0.8;
     }
 
 footer img {
@@ -533,7 +532,7 @@ h2 {
     #footer div.one {
         width: 37.5%;
     }
-    footer div { height: 36vh; }
+    footer div { height: 38vh; }
 
 
 }
