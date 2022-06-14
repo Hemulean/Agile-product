@@ -243,7 +243,9 @@ h6,h5,h4,h3,h2,h1 {
 
     .Three a { font-size: 3vw; }
 
-    ul.info a { font-size: 1.5vw; }
+    
+
+    ul.info a { font-size: 2vw; }
 
     a.fa {
         padding: 2vw;
@@ -271,6 +273,7 @@ h6,h5,h4,h3,h2,h1 {
     .navbar-collapse > ul { align-items: flex-end; }
 
     ul.navbar-nav { justify-content: space-evenly; }
+}
 
 
     @media screen and (min-width: 320px) and (max-width: 990px) {
