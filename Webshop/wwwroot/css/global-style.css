@@ -243,9 +243,10 @@ h6,h5,h4,h3,h2,h1 {
 
     .Three a { font-size: 3vw; }
 
-    
 
-    ul.info a { font-size: 2vw; }
+    ul.info a {
+        font-size: 2vw;
+    }
 
     a.fa {
         padding: 2vw;
