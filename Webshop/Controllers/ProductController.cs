@@ -94,7 +94,7 @@ namespace Webshop.Controllers
         {
             var productsList = await _productHandler.GetProductsByCategory(category);
 
-            return View("Product", productsList);
+            return View("Products", productsList);
         }
 
         public async Task<IActionResult> GetProductById(int id)
@@ -103,6 +103,9 @@ namespace Webshop.Controllers
 
             return View("Product", productById);
         }
+
+
+     
 
     }
 }

@@ -33,7 +33,7 @@ namespace Webshop.Services
                     MissingFieldFound = null
                 };
 
-                using (var reader = new StreamReader("DataBackUpMakeUpApi.csv"))
+                using (var reader = new StreamReader("MakeUpDb_v_2.csv"))
 
                 using (var csv = new CsvReader(reader, config))
                 {

@@ -66,7 +66,7 @@ namespace Webshop.Services
 
         public async Task<List<Product>> GetProductsByCategory(string category)
         {
-            var productsListByCategory = await _ctx.Products.Where(b => b.Category == category).ToListAsync();
+            var productsListByCategory = await _ctx.Products.Where(b => b.Type.Contains(category)).ToListAsync();
             var newList = new List<Product>();
 
             foreach (var item in productsListByCategory)
