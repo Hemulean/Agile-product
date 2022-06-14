@@ -19,7 +19,7 @@ body {
 }
 .site {
     display: flex;
-    min-height: 120vh;
+    min-height: 100vh;
     flex-direction: column;
 }
 
@@ -89,19 +89,19 @@ body {
     */
 
     #footer > div.one > ul.build > a {
-        font-size: 1.5vw;
+        font-size: 2vw;
     }
 
     .Three a {
-        font-size: 1.5vw;
+        font-size: 2vw;
     }
 
     ul.info a {
         font-size: 1.5vw;
     }
     /*Razorcosmetic-header*/
-    #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
-        font-size: 2vw;
+    #footer > div:nth-child(1) > ul > c:nth-child(1) > h2 {
+        font-size: 30vw;
     }
 
     a.fa {
@@ -110,9 +110,10 @@ body {
         height: 5vw;
         width: 5vw;
     }
-    h2 {
-        font-size: 1.5vw;
+    ul.h2 {
+        font-size: 8vw
     }
+    
     div.Tr {
         width: 30%;
     }
@@ -148,19 +149,23 @@ body {
     */
 
     #footer > div.one > ul.build > a {
-        font-size: 1.8vw;
+        font-size: 2.4vw;
     }
 
     .Three a {
-        font-size: 1.8vw;
+        font-size: 2.4vw;
+    }
+
+    .Two a {
+        font-size: 2.4vw;
     }
 
     ul.info a {
         font-size: 1.8vw;
     }
     /*Razorcosmetic-header*/
-    #footer > div:nth-child(2) > ul > c:nth-child(2) > h2 {
-        font-size: 3vw;
+    #footer > div:nth-child(2) > ul > c:nth-child(1) > h2 >a {
+        font-size: 5vw;
     }
 
     
@@ -189,11 +194,11 @@ body {
         footer settings
     */
     #footer > div.one > ul.build > a {
-        font-size: 2.5vw;
+        font-size: 3vw;
     }
 
     .Three a {
-        font-size: 2.5vw;
+        font-size: 30vw;
     }
 
     ul.info a {
@@ -201,8 +206,9 @@ body {
     }
     .Two {
         padding-top: 50%;
-        padding-bottom: 50%;
+        padding-bottom: 20%;
     }
+    .Two a { font-size: 3vw}
 
 }
 /*
@@ -238,7 +244,6 @@ body {
         width: 5vw;
     }
 
-    div.Tr { width: 25%; }
 }
 
 @media screen and (min-width: 990px) {
@@ -413,7 +418,7 @@ nav {
     flex-direction: column;
     display: grid;
     padding-top: 1.5%;
-    padding-bottom: 16%;
+    padding-bottom: 0%;
 }
 
 div.Tw {
@@ -422,6 +427,9 @@ div.Tw {
     background-repeat: no-repeat;
     padding-top: 1%;
     padding-bottom: 16%;
+    font-size: 1.5vw;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
 div.Tr {
     padding-top: 1.5%;
@@ -436,6 +444,8 @@ div.Tr {
     font-size: 0.9vw;
     padding-bottom: 0%;
     padding-top: 50%;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .Three {
@@ -470,7 +480,6 @@ div.Tr {
 .stickyFooter {
     position: sticky;
     display: flex;
-    min-height: 38vh;
     flex-direction: column;
     /*min-height: 100vh;
     margin-bottom: 120px;
@@ -485,15 +494,16 @@ div.Tr {
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
 }
-    
+
 
 
     #footer div {
         align-items: flex-start;
         justify-content: flex-start;
-        background-color: #E9DAC1;
+        background-color: #EEEAE3;
         text-decoration: none;
         flex-direction: column;
+        min-height: 32vh;
     }
 
     #footer a:hover {
@@ -518,7 +528,7 @@ h1 {
 h2 {
     color: #BA6D54;
     text-decoration: none;
-    font-size: 1.0vw
+    font-size: 1.5vw
 }
 @media screen and (min-width: 768px) {
     #footer div.Tr {
@@ -533,6 +543,9 @@ h2 {
         width: 37.5%;
     }
     footer div { height: 38vh; }
+    Tw {
+        font-size: 4.5vw;
+    }
 
 
 }
