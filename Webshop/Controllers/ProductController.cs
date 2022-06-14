@@ -32,9 +32,10 @@ namespace Webshop.Controllers
             return View();
         }
 
-        public IActionResult Cart()
+        public async Task<IActionResult> CartAsync(int id)
         {
-            return View();
+            var product = await _productHandler.GetProductById(id);
+            return View("Cart", product);
         }
 
         public IActionResult Contact()
