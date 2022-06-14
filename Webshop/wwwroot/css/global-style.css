@@ -535,14 +535,7 @@ h1 {
 
 
 }
-/*@media screen and (min-width: 1440px) {
-    .one {
-        padding-bottom: 6%;
-    }
-    footer div {
-        height: 60vh;
-    }
-}*/
+
 
 
 
@@ -560,14 +553,9 @@ h1 {
     color: #BA6D54;
 }
 /*En css selector för epost a-länkarna i footer*/
-
-
-
-
-
-    .Two a {
-        /* font-size: 1.5vw;*/
-        text-decoration: none;
-        color: #BA6D54;
-    }
+.Two a {
+    /* font-size: 1.5vw;*/
+    text-decoration: none;
+    color: #BA6D54;
+}
     
