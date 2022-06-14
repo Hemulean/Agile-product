@@ -1,1 +1,150 @@
-﻿<h1>Contact</h1>
+﻿<head>
+    <link href="~/css/contact.css" rel="stylesheet" asp-append-version="true" />
+</head>
+
+<section class="mb-4">
+    <div class="container contact-container">
+
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+
+        <p class="text-center w-responsive mx-auto mb-5">
+            Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+            a matter of hours to help you. We have put together our most Frequently Asked Questions on the bottom of this page, for your convenience
+        </p>
+
+        <div class="row">
+
+            <div class="col-md-9 mb-md-0 mb-5">
+                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="md-form">
+                                <label for="name" class="">Name:</label>
+                                <input type="text" id="name" name="name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="md-form">
+                                <label for="email" class="">Email:</label>
+                                <input type="text" id="email" name="email" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <select name="subject" class="form-control mt-4">
+                                <option value="Subject...">Subject...</option>
+                                <option value="Payment method">Payment methods</option>
+                                <option value="Missing order">Missing order</option>
+                                <option value="Missing items">Missing items in delivered order</option>
+                                <option value="Issue placing order">Issues placing an order</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+
+                            <div class="md-form mt-3">
+                                <label for="message">Message:</label>
+                                <textarea type="text" id="message" name="message" rows="3" class="form-control md-textarea"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+
+                <div class="text-center text-md-left">
+                    <a class="btn mt-4" onclick="document.getElementById('contact-form').submit();">Send</a>
+                </div>
+
+                <h3 class="h2-responsive font-weight-bold text-center my-4">Frequently Asked Questions</h3>
+                <div class="accordion accordion-styling mt-5" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How do I return an order?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>
+                                    If you are not completely satisfied with a Razer Cosmetics purchase or gift for any reason, Razer Cosmetics welcomes you to return new or gently used products for a full refund to your original method of payment if returned within 30 days of purchase, in most cases. Returns that are made from 31-60 days after purchase are eligible for online credit (if returned to us by mail) or store credit (if returned in-store). In order to complete the return, you must have a proof of purchase.
+                                    Products must be returned in new or gently used condition. Razer Cosmetics monitors return activity for abuse and reserves the right to limit returns or exchanges at Razer Cosmetics in all instances. All returns are subject to validation and approval at Razer Cosmetics discretion. We may ask you for a driver’s license or government ID to verify your identity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Do you ship internationally?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>No, unfortunately these orders can only ship within the US.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                I´m missing an item from my order
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>
+                                    We're sorry there's an item missing from your order. Before contacting our Customer Care team, we recommend checking the following: <br /> <br />
+
+                                    * We may have sent your items in separate parcels so please check your emails to see if any of your items will be arriving separately. <br /> <br />
+                                    * You can also check if your order has been split into more than one parcel by logging into 'My Account' and checking my orders. <br /> <br />
+                                    * The item/s you ordered may have been out of stock. It's worth checking your emails (including your junk/spam) to see if we've sent you an email about this. <br /> <br />
+                                    * If you’ve placed multiple orders within a few days of each other that qualify for free delivery and are being shipped to the same delivery address, your orders may have been combined and split across multiple parcels. You’ll be able to see whether they’ve been shipped together if the tracking information for each of the orders you’ve placed is the same. <br /> <br />
+                                    * If you have an item missing from your order, please let us know within 30 days of your order being delivered and we’ll do our best to help you.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 text-center">
+                <ul class="list-unstyled mb-0">
+                    <li>
+
+                        <img src="~/img/map.png" class="img-fluid" alt="map" width="200">
+
+                        <p>Boston, MA, 887 Huntz Lane, USA</p>
+                    </li>
+
+                    <li>
+                        <i class="fa fa-phone mt-4 fa-2x"></i>
+                        <p>+ 01 234 567 89</p>
+                    </li>
+
+                    <li>
+                        <i class="fa fa-envelope mt-4 fa-2x"></i>
+                        <p>contact@razercosmetics.com</p>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+
+</section>

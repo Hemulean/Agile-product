@@ -25,13 +25,15 @@ namespace Webshop.Services
                 // TODO Ta reda på skillnad mellan att skapa en HttpClient objekt eller använda DI IHttpClientFactory (CreateClient())
                 List<Product> makeUpList = new List<Product>();
 
+                
 
                 var config = new CsvConfiguration(CultureInfo.InvariantCulture)
                 {
                     Delimiter = ",",
+                    MissingFieldFound = null
                 };
 
-                using (var reader = new StreamReader("DataBackUpMakeUpApi.csv"))
+                using (var reader = new StreamReader("MakeUpDb_v_2.csv"))
 
                 using (var csv = new CsvReader(reader, config))
                 {

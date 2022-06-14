@@ -1,21 +1,7 @@
-﻿
-main {
-    background-color: white;
+﻿:root {
+    --main-width-icon: 80px;
 }
 
-/*BUTTONS START*/
-
-
-.description-button.btn {
-    font-weight: bold;
-    box-shadow: 0px 2px 5px #1b1717;
-    max-width: 200px;
-    cursor: pointer;
-    transition-property: transform;
-    transition-duration: 0.2s;
-    background-color: #54BAB9;
-}
-/*BUTTONS END*/
 
 
 /*PRODUCTS PAGES STYLE START*/
@@ -25,11 +11,20 @@ main {
     text-transform: uppercase;
     text-align: center;
     font-size: 2rem;
-  
 }
 .info-icons {
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
+    padding-bottom: 1rem;
+}
+
+.info-icons > span > i {
+    font-size: 2rem;
+
+}
+.fa.fa-chevron-circle-down {
+    color: #54BAB9;
 }
 .product-brand {
     text-transform: uppercase;
@@ -38,12 +33,13 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
 }
 
 .product-image {
     width: 50%;
     border-radius: 0.5rem;
+    padding-bottom: 2.5rem;
    
 }
 
@@ -55,16 +51,56 @@ main {
     font-weight: bolder;
 }
 
+.section-wrapper {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
 
+.video-section {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.sale-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+
+.logo-size {
+    width: var(--main-width-icon);
+}
 /* PRODUCTS PAGES STYLE END*/
 
-/*HOVER */
-
-
-.button-hover.btn:hover {
-   
-    transform: scale(1.1);
+@media screen and (min-width: 1024px) {
+    #spacing-for-video {
+        padding-top: 10rem;
+    }
 }
-/*HOVER END*/
 
 
+@media screen and (max-width: 990px) {
+   
+    #video-section-reverse {
+        flex-direction: column-reverse;
+        padding-top: 2rem;
+    }
+
+
+    .info-icons > span > i{
+        font-size: 1.5rem;
+    }
+
+    .info-icons {
+        align-self: center;
+    }
+
+    .main-title {
+        font-size: 1.2rem;
+    }
+}
