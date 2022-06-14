@@ -17,7 +17,15 @@
                             var type = "";
                             @foreach (var item in @Model)
                             {
-                                type = item.Type;
+                                if (item.Type.Contains("_"))
+                                {
+                                    var typeSplit = item.Type.Split("_");
+                                    type = typeSplit[0] + " " + typeSplit[1];
+                                }
+                                else
+                                {
+                                    type = item.Type;
+                                }
 
                             }
                        
