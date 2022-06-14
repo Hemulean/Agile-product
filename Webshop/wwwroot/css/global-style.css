@@ -26,7 +26,7 @@ h6,h5,h4,h3,h2,h1 {
         padding-left: 10px;
     }
 
-    li.dropdown-item {
+    li.dropdown-item, button.dropdown-item {
         font-size: 1.3vw;
         padding-left: 10px;
     }
@@ -40,7 +40,7 @@ h6,h5,h4,h3,h2,h1 {
         padding-left: 10px;
     }
 
-    li.dropdown-item {
+    li.dropdown-item, button.dropdown-item {
         font-size: 1.7vw;
         padding-left: 10px;
     }
@@ -133,7 +133,7 @@ h6,h5,h4,h3,h2,h1 {
         padding-left: 10px;
     }
 
-    li.dropdown-item {
+    li.dropdown-item, button.dropdown-item {
         font-size: 3.2vw;
         padding-left: 10px;
     }
@@ -179,7 +179,7 @@ h6,h5,h4,h3,h2,h1 {
         padding-left: 10px;
     }
 
-    li.dropdown-item {
+    li.dropdown-item, button.dropdown-item {
         font-size: 3.6vw;
         padding-left: 10px;
     }
@@ -216,7 +216,7 @@ h6,h5,h4,h3,h2,h1 {
         padding-left: 10px;
     }
 
-    li.dropdown-item {
+    li.dropdown-item, button.dropdown-item {
         font-size: 4vw;
         padding-left: 10px;
     }
