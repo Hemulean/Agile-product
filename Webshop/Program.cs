@@ -47,6 +47,7 @@ app.UseRouting();
 app.MapRazorPages();
 
 app.MapControllerRoute(name: "default", pattern: "{controller=product}/{action=index}");
-app.UseAuthentication();;
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();
