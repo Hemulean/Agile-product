@@ -32,9 +32,10 @@ namespace Webshop.Controllers
             return View();
         }
 
-        public IActionResult Cart()
+        public async Task<IActionResult> CartAsync(int id)
         {
-            return View();
+            var product = await _productHandler.GetProductById(id);
+            return View("Cart", product);
         }
 
         public IActionResult Contact()
@@ -47,7 +48,22 @@ namespace Webshop.Controllers
             return View();
         }
 
-       
+        public IActionResult MyOrders()
+        {
+            return View();
+        }
+
+        public IActionResult MyOffers()
+        {
+            return View();
+        }
+
+        public IActionResult Products()
+        {
+            return View();
+        }
+
+
         public async Task<IActionResult> GetApi()
         {
             var responseList = await _apiHandler.GetAllDataFromApi();
@@ -79,7 +95,7 @@ namespace Webshop.Controllers
         {
             var productsList = await _productHandler.GetProductsByCategory(category);
 
-            return View("Product", productsList);
+            return View("Products", productsList);
         }
 
         public async Task<IActionResult> GetProductById(int id)
@@ -88,6 +104,9 @@ namespace Webshop.Controllers
 
             return View("Product", productById);
         }
+
+
+     
 
     }
 }

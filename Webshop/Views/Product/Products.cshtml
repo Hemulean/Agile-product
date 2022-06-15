@@ -1,5 +1,123 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model IList<Webshop.Models.Product>;
+
+<head>
+    <link href="~/css/index-style.css" rel="stylesheet" asp-append-version="true"/>
+</head>
+<section class="section-products">
+    <div class="container">
+        <div class="g-3">
+
+
+            <div class="row justify-content-center text-center border-4">
+                <div class="col-md-8 col-lg-6">
+                    <div class="header my-4 border-bottom ">
+                        
+                        
+                        @{
+                            var type = "";
+                            @foreach (var item in @Model)
+                            {
+                                if (item.Type.Contains("_"))
+                                {
+                                    var typeSplit = item.Type.Split("_");
+                                    type = typeSplit[0] + " " + typeSplit[1];
+                                }
+                                else
+                                {
+                                    type = item.Type;
+                                }
+
+                            }
+                       
+                        }
+
+                        <h2 class="txt-shadow-custom fw-bolder text-capitalize">@type</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                @foreach (var product in @Model)
+                {
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div id="product-1 " class="single-product card">
+                  
+
+                            <div class="card">
+                                <a class="  stretched-link" asp-controller="Product" asp-action="Product" asp-route-id=@product.Id></a>
+                                <img class="card-img-top img-product"src=@product.Image
+                                     alt="100%x280" onerror="this.onerror = null;this.src = '/img/Razor Cosmetics placeholder.png';"/>
+                            </div>
+                    
+                    
+                            <div class="part-2 card-body center text-center">
+                        
+                       
+                                <h4 class="product-title">@product.Name</h4>
+
+                                @if (product.Brand == "NULL")
+                                {
+                                    <h5 class="product-subtitle mb-2 text-muted"> By: <strong>Static Void Cosmetics</strong></h5>
+                                }
+                                else
+                                {
+                                    <h8 class="product-subtitle mb-2 text-muted"> By: <strong>@product.Brand</strong></h8>
+                                }
+
+
+                                <h6 class="product-price">@product.Price &euro;</h6>
+                                @if (product.Rating != null)
+                                {
+                                    var ratingCount = @product.Rating;
+
+                                    RatingStars(ratingCount);
+
+                                }
+                                <div class="justify-content-start   mb-5">
+                                    <a href="#"><i class="bi bi-cart   btn-outline-dark "></i></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+
+
+           
+
+
+        </div>
+    </div>
+</section>
+
+@functions
+{
+        
+    void RatingStars(double? rating)
+    {
+       
+
+        var emptyStars = 5 - rating;
+        if (rating > 5)
+        {
+            rating = 5;
+        }
+           
+        <div class="">
+          
+            @for (int i = 0; i < rating; i++)
+            {
+                <i class=" bi bi-star-fill"></i>
+            }
+            @for (int i = 0; i < emptyStars; i++)
+            {
+                <i class="bi bi-star"></i>
+            }
+        </div>
+        
+    }
 }

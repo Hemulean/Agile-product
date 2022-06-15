@@ -1,0 +1,20 @@
+﻿.contact-container {
+    max-width: 50rem;
+}
+
+.accordion-button {
+    background: rgb(224,146,120);
+    background: radial-gradient(circle, rgba(224,146,120,1) 50%, rgba(186,109,84,1) 100%, rgba(235,157,131,0.05395661682641806) 100%);
+}
+
+    .accordion-button:not(.collapsed) {
+        color: white;
+    }
+
+.accordion-button {
+    color: white;
+}
+
+h2 {
+    font-size: 2.5rem;
+}

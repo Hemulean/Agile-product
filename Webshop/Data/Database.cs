@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Razor.Hosting;
-using Microsoft.EntityFrameworkCore.Storage;
-using Webshop.Models;
+﻿using Webshop.Models;
 using Webshop.Services;
 
 namespace Webshop.Data
@@ -30,20 +28,20 @@ namespace Webshop.Data
         //TODO Ta bort Delete metoden 
         public async Task Delete()
         {
-           await _ctx.Database.EnsureDeletedAsync();
+            await _ctx.Database.EnsureDeletedAsync();
         }
         public async Task Seed()
         {
 
             var responseList = await _apiHandler.GetAllDataFromApi();
 
-             foreach (var item in responseList)
-             {
-                 var rating = " ";
+            foreach (var item in responseList)
+            {
+                var rating = " ";
 
                 if (item.Rating.ToString().Length == 2)
                 {
-                    for(var i = 0; i < item.Rating.ToString().Length; i++)
+                    for (var i = 0; i < item.Rating.ToString().Length; i++)
                     {
                         rating = item.Rating.ToString()[0] + "," + item.Rating.ToString()[1];
 
@@ -80,11 +78,11 @@ namespace Webshop.Data
                     };
                     _ctx.Products.Add(product);
                 }
-                
+
             }
 
             await _ctx.SaveChangesAsync();
         }
     }
 }
-  
+

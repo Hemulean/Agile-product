@@ -4,27 +4,6 @@
 
 
 
-main {
-    background-color: white;
-}
-
-/*BUTTONS START*/
-
-
-.btn {
-    font-weight: bold;
-    box-shadow: 0px 2px 5px #1b1717;
-    max-width: 200px;
-    cursor: pointer;
-    transition-property: transform;
-    transition-duration: 0.2s;
-    background-color: #54BAB9;
-}
-
-.button-link {
-    padding-top: 2rem;
-}
-/*BUTTONS END*/
 /*PRODUCTS PAGES STYLE START*/
 .main-title {
     font-weight: bolder;
@@ -40,6 +19,14 @@ main {
     padding-bottom: 1rem;
 }
 
+.info-icons > span > i {
+    font-size: 2rem;
+
+}
+
+.icons-product-span {
+    padding-bottom: 1.5rem;
+}
 .fa.fa-chevron-circle-down {
     color: #54BAB9;
 }
@@ -93,13 +80,31 @@ main {
     width: var(--main-width-icon);
 }
 /* PRODUCTS PAGES STYLE END*/
-/*HOVER */
-.btn:hover {
-    transform: scale(1.1);
-}
-/*HOVER END*/
-
 
 @media screen and (min-width: 1024px) {
-    #video-section { padding-top: 10rem; }
+    #spacing-for-video {
+        padding-top: 10rem;
+    }
+}
+
+
+@media screen and (max-width: 990px) {
+   
+    #video-section-reverse {
+        flex-direction: column-reverse;
+        padding-top: 2rem;
+    }
+
+
+    .info-icons > span > i{
+        font-size: 1.5rem;
+    }
+
+    .info-icons {
+        align-self: center;
+    }
+
+    .main-title {
+        font-size: 1.2rem;
+    }
 }
